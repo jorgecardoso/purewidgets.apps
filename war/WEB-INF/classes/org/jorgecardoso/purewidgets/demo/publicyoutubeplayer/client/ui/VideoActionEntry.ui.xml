@@ -1,0 +1,89 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+<ui:style>
+@external pwButton;
+
+.videoactionentry-outerpanel {
+	width: 550px;
+	
+	margin: 0px;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 550px;
+}
+
+.videoactionentry-outerpanel td{
+	margin:0px;
+	padding:0px;
+}
+
+.videoactionentry-thumbnail {
+	height: 130px;
+	width: 180px;
+	margin-right:10px;
+	margin-bottom:0px;
+}
+
+.videoactionentry-infoPanel {
+display:inline-table;
+	height:100%;
+	width:370px;
+margin-top:0px;
+margin-bottom:0px;
+padding-top:0px;
+padding-bottom:0px;
+}
+
+.videoactionentry-infoPanel-title {
+	font-size: 2.2em;
+	height: 75px;
+	width:100%;
+	overflow:hidden;
+}
+
+.videoactionentry-infoPanel-user {
+	font-size: 1.5em;
+	width:100%;
+	overflow:hidden;
+}
+
+.videoactionentry-button {
+	height:75px;
+	width:100%;
+	margin-top: auto;
+	margin-bottom: 0px;
+	padding:0px;
+}
+
+.videoactionentry-button .pwButton {
+	display:inline-block;
+	width: 100%;
+	height: 50px;
+	
+}
+
+</ui:style>
+
+
+<g:HorizontalPanel ui:field="outerPanel" styleName="{style.videoactionentry-outerpanel}" >
+	<g:cell width="180px">
+	    <g:VerticalPanel>
+		<g:Image ui:field="image" styleName="{style.videoactionentry-thumbnail}" />
+		<g:Label ui:field="uiLabelUser" styleName="{style.videoactionentry-infoPanel-user}" > </g:Label>
+		</g:VerticalPanel>
+	</g:cell>
+	<g:cell  height="100%" width="100%">
+		<g:VerticalPanel styleName="{style.videoactionentry-infoPanel}">
+			<g:cell verticalAlignment="top" width="100%">
+				<g:Label ui:field="title" styleName="{style.videoactionentry-infoPanel-title}" > </g:Label>
+			</g:cell>
+		
+			<g:cell verticalAlignment="bottom" width="100%" >
+				<g:HTMLPanel ui:field="buttonPanel" styleName="{style.videoactionentry-button}" />
+			</g:cell>
+		</g:VerticalPanel>
+	</g:cell>
+</g:HorizontalPanel>
+</ui:UiBinder> 

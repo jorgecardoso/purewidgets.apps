@@ -1,0 +1,2 @@
+serviceClass: org.jorgecardoso.purewidgets.demo.everybodyvotes.client.service.PollService
+path: 32AD837F2430C4D46733E3E7000BC3E9.gwt.rpc

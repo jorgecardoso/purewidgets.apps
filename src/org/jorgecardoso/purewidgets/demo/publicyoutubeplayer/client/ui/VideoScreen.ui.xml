@@ -1,0 +1,113 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:p="urn:import:org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.ui"
+	xmlns:pw="urn:import:org.purewidgets.client.widgets"
+	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+    ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+    ui:generateLocales="default">
+	
+	<ui:style>
+
+
+.all {
+	height: 100%;
+	width: 100%;
+	
+}
+
+
+.title {
+	font-size: 5em !important;
+	margin-top:25px;
+	margin-bottom:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+.title img {
+	height:100px;
+}
+
+.youtube {
+	height:100%;
+	width:100%;
+	background-color: #BBB;
+}
+
+.youtube div {
+	height:100%;
+	width:100%;
+	margin-top:auto;
+	margin-bottom:auto;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+.id-globalBottomPanel{
+	height: 75%;
+	width: 90%;
+	background-color: transparent;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: auto;
+	
+}
+
+
+.recentlyPlayed {
+
+	background-color: #FFF;
+	height: 100%;
+	width: 75%;
+}
+
+.tagcloudtitle {
+	background-image: literal("-webkit-linear-gradient(top left, #FFFFFF 0%, #1CA312 100%)");
+	font-size: 24pt;
+	margin:0px;
+	padding:0px;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+}
+
+.tagcloud {
+height:100%;
+text-align:center;
+}
+	</ui:style>
+  
+	<g:DeckPanel ui:field='deckPanelTop' styleName='{style.all}'>
+		<g:SimplePanel ui:field='simplePanelPlayer' styleName='{style.youtube}'/>
+		<g:HTMLPanel ui:field='htmlPanel'>
+			<h1 align="center" class="{style.title}"><img src="horizontalIcon.svg"/></h1>
+			
+			<g:DeckPanel ui:field='deckPanelBottom' styleName='{style.id-globalBottomPanel}'>
+  				<p:VideoList maxEntries="6" cols="1"  rows = "3" listId="like" title="Recently played" visibleButtonLabel="Like" createDownloadButton="true" createReportButton="true" ui:field="recentlyPlayed" styleName='{style.recentlyPlayed}' >
+  					<ui:attribute name='visibleButtonLabel' description='Recently played button label'/>
+  					<ui:attribute name='title' description='Recently played title'/>
+  				</p:VideoList>     
+  				
+				<g:VerticalPanel>
+				    <g:cell height="50px">
+	    				<g:Label styleName="{style.tagcloudtitle}"><ui:msg description='Title to appear next to the tag cloud'>Tag cloud</ui:msg></g:Label>
+					</g:cell>
+					<pw:PdTagCloud widgetId="tagcloud" ui:field="tagCloud" styleName="{style.tagcloud}"/>
+				</g:VerticalPanel>
+	
+  				
+	
+			    <p:VideoList  maxEntries="6" cols="2"  rows = "3"  listId="play" title="What to play next" visibleButtonLabel="Play" createDownloadButton="false" createReportButton="false" ui:field="toPlayNext" >
+     				<ui:attribute name='visibleButtonLabel' description='To play next button label'/>
+     				<ui:attribute name='title' description='To play next title'/>
+     			</p:VideoList>    
+				
+			</g:DeckPanel>
+			
+		</g:HTMLPanel>
+
+	</g:DeckPanel>
+</ui:UiBinder> 

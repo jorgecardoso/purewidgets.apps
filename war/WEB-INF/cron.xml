@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+
+ <cron>
+    <url>/everybodyvotes/update</url>
+    <description>Updates the Everybody Votes app</description>
+    <schedule>every 120 minutes</schedule>
+  </cron>
+    
+</cronentries>

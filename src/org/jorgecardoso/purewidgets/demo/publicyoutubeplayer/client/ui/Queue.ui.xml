@@ -1,0 +1,55 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+    ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+    ui:generateLocales="default" >
+
+<ui:style>
+@external gwt-Label, gwt-PopupPanel;
+
+.queue {
+	background: rgb(255, 217, 217);
+	float:right;
+	width: 100%;
+	height: 100%;
+	border-radius:20px;
+	border: 1px solid black;
+}
+.queue h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 3em;
+	text-align:center;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+	background-color:red;
+}
+
+
+.queue .gwt-Label {
+	font-size: 2.4em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.gwt-PopupPanel {
+	background:transparent;
+	border:none;
+}
+</ui:style>
+		
+
+	<g:VerticalPanel styleName='{style.queue}'>
+		<g:HTMLPanel>
+			<h2><ui:msg description="Queue">Videos in queue</ui:msg></h2>
+		</g:HTMLPanel>
+		<g:VerticalPanel ui:field="verticalPanelQueue"/>
+	</g:VerticalPanel>
+
+</ui:UiBinder> 
+
