@@ -3,6 +3,8 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:noNamespaceSchemaLocation="http://java.sun.com/xml/ns/jdo/jdoconfig">
 
+    <!-- 
+    This must be commented because purewidgets.jar also defines transactions-optional
    <persistence-manager-factory name="transactions-optional">
        <property name="javax.jdo.PersistenceManagerFactoryClass"
            value="org.datanucleus.store.appengine.jdo.DatastoreJDOPersistenceManagerFactory"/>
@@ -12,4 +14,6 @@
        <property name="javax.jdo.option.RetainValues" value="true"/>
        <property name="datanucleus.appengine.autoCreateDatastoreTxns" value="true"/>
    </persistence-manager-factory>
+   
+   -->
 </jdoconfig>

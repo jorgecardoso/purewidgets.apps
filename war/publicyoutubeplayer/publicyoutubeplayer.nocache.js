@@ -1,20 +1,21 @@
 function publicyoutubeplayer(){
-  var $wnd_0 = window, $doc_0 = document, $stats = $wnd_0.__gwtStatsEvent?function(a){
-    return $wnd_0.__gwtStatsEvent(a);
+  var $intern_0 = '', $intern_35 = '" for "gwt:onLoadErrorFn"', $intern_33 = '" for "gwt:onPropertyErrorFn"', $intern_21 = '"><\/script>', $intern_10 = '#', $intern_43 = '&', $intern_70 = '.cache.html', $intern_12 = '/', $intern_64 = '1DD631CD9BC0D9B323B05790C4E9F271', $intern_65 = '7C61FB3D593E506C6AFED59C004A5437', $intern_69 = ':', $intern_27 = '::', $intern_81 = '<script defer="defer">publicyoutubeplayer.onInjectionDone(\'publicyoutubeplayer\')<\/script>', $intern_20 = '<script id="', $intern_79 = '<script language="javascript" src="', $intern_30 = '=', $intern_11 = '?', $intern_67 = 'AEDB4A2F16AF9251044D30AA9F35B21F', $intern_51 = 'ActiveXObject', $intern_32 = 'Bad handler "', $intern_52 = 'ChromeTab.ChromeFrame', $intern_77 = 'DOMContentLoaded', $intern_68 = 'EA6FD2512DFF04D42F5CD62EE3377D9D', $intern_22 = 'SCRIPT', $intern_46 = 'Unexpected exception in locale detection, using default: ', $intern_45 = '_', $intern_44 = '__gwt_Locale', $intern_19 = '__gwt_marker_publicyoutubeplayer', $intern_23 = 'base', $intern_15 = 'baseUrl', $intern_4 = 'begin', $intern_3 = 'bootstrap', $intern_50 = 'chromeframe', $intern_14 = 'clear.cache.gif', $intern_29 = 'content', $intern_41 = 'default', $intern_9 = 'end', $intern_58 = 'gecko', $intern_59 = 'gecko1_8', $intern_5 = 'gwt.codesvr=', $intern_6 = 'gwt.hosted=', $intern_7 = 'gwt.hybrid', $intern_71 = 'gwt/standard/standard.css', $intern_34 = 'gwt:onLoadErrorFn', $intern_31 = 'gwt:onPropertyErrorFn', $intern_28 = 'gwt:property', $intern_76 = 'head', $intern_62 = 'hosted.html?publicyoutubeplayer', $intern_75 = 'href', $intern_57 = 'ie6', $intern_56 = 'ie8', $intern_55 = 'ie9', $intern_36 = 'iframe', $intern_13 = 'img', $intern_37 = "javascript:''", $intern_72 = 'link', $intern_61 = 'loadExternalRefs', $intern_40 = 'locale', $intern_42 = 'locale=', $intern_24 = 'meta', $intern_39 = 'moduleRequested', $intern_8 = 'moduleStartup', $intern_54 = 'msie', $intern_25 = 'name', $intern_48 = 'opera', $intern_38 = 'position:absolute;width:0;height:0;border:none', $intern_66 = 'pt', $intern_1 = 'publicyoutubeplayer', $intern_17 = 'publicyoutubeplayer.nocache.js', $intern_26 = 'publicyoutubeplayer::', $intern_73 = 'rel', $intern_53 = 'safari', $intern_16 = 'script', $intern_63 = 'selectingPermutation', $intern_2 = 'startup', $intern_74 = 'stylesheet', $intern_78 = 'swfobject-2.2.js', $intern_80 = 'swfobject-2.2.js"><\/script>', $intern_18 = 'undefined', $intern_60 = 'unknown', $intern_47 = 'user.agent', $intern_49 = 'webkit';
+  var $wnd = window, $doc = document, $stats = $wnd.__gwtStatsEvent?function(a){
+    return $wnd.__gwtStatsEvent(a);
   }
-  :null, $sessionId_0 = $wnd_0.__gwtStatsSessionId?$wnd_0.__gwtStatsSessionId:null, scriptsDone, loadDone, bodyDone, base = '', metaProps = {}, values = [], providers = [], answers = [], softPermutationId = 0, onLoadErrorFunc, propertyErrorFunc;
-  $stats && $stats({moduleName:'publicyoutubeplayer', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'begin'});
-  if (!$wnd_0.__gwt_stylesLoaded) {
-    $wnd_0.__gwt_stylesLoaded = {};
+  :null, $sessionId = $wnd.__gwtStatsSessionId?$wnd.__gwtStatsSessionId:null, scriptsDone, loadDone, bodyDone, base = $intern_0, metaProps = {}, values = [], providers = [], answers = [], softPermutationId = 0, onLoadErrorFunc, propertyErrorFunc;
+  $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_3, millis:(new Date).getTime(), type:$intern_4});
+  if (!$wnd.__gwt_stylesLoaded) {
+    $wnd.__gwt_stylesLoaded = {};
   }
-  if (!$wnd_0.__gwt_scriptsLoaded) {
-    $wnd_0.__gwt_scriptsLoaded = {};
+  if (!$wnd.__gwt_scriptsLoaded) {
+    $wnd.__gwt_scriptsLoaded = {};
   }
   function isHostedMode(){
     var result = false;
     try {
-      var query = $wnd_0.location.search;
-      return (query.indexOf('gwt.codesvr=') != -1 || (query.indexOf('gwt.hosted=') != -1 || $wnd_0.external && $wnd_0.external.gwtOnLoad)) && query.indexOf('gwt.hybrid') == -1;
+      var query = $wnd.location.search;
+      return (query.indexOf($intern_5) != -1 || (query.indexOf($intern_6) != -1 || $wnd.external && $wnd.external.gwtOnLoad)) && query.indexOf($intern_7) == -1;
     }
      catch (e) {
     }
@@ -27,72 +28,72 @@ function publicyoutubeplayer(){
 
   function maybeStartModule(){
     if (scriptsDone && loadDone) {
-      var iframe = $doc_0.getElementById('publicyoutubeplayer');
+      var iframe = $doc.getElementById($intern_1);
       var frameWnd = iframe.contentWindow;
       if (isHostedMode()) {
-        frameWnd.__gwt_getProperty = function(name_0){
-          return computePropValue(name_0);
+        frameWnd.__gwt_getProperty = function(name){
+          return computePropValue(name);
         }
         ;
       }
       publicyoutubeplayer = null;
-      frameWnd.gwtOnLoad(onLoadErrorFunc, 'publicyoutubeplayer', base, softPermutationId);
-      $stats && $stats({moduleName:'publicyoutubeplayer', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'moduleStartup', millis:(new Date).getTime(), type:'end'});
+      frameWnd.gwtOnLoad(onLoadErrorFunc, $intern_1, base, softPermutationId);
+      $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_8, millis:(new Date).getTime(), type:$intern_9});
     }
   }
 
   function computeScriptBase(){
     function getDirectoryOfFile(path){
-      var hashIndex = path.lastIndexOf('#');
+      var hashIndex = path.lastIndexOf($intern_10);
       if (hashIndex == -1) {
         hashIndex = path.length;
       }
-      var queryIndex = path.indexOf('?');
+      var queryIndex = path.indexOf($intern_11);
       if (queryIndex == -1) {
         queryIndex = path.length;
       }
-      var slashIndex = path.lastIndexOf('/', Math.min(queryIndex, hashIndex));
-      return slashIndex >= 0?path.substring(0, slashIndex + 1):'';
+      var slashIndex = path.lastIndexOf($intern_12, Math.min(queryIndex, hashIndex));
+      return slashIndex >= 0?path.substring(0, slashIndex + 1):$intern_0;
     }
 
     function ensureAbsoluteUrl(url){
       if (url.match(/^\w+:\/\//)) {
       }
        else {
-        var img = $doc_0.createElement('img');
-        img.src = url + 'clear.cache.gif';
+        var img = $doc.createElement($intern_13);
+        img.src = url + $intern_14;
         url = getDirectoryOfFile(img.src);
       }
       return url;
     }
 
     function tryMetaTag(){
-      var metaVal = __gwt_getMetaProperty('baseUrl');
+      var metaVal = __gwt_getMetaProperty($intern_15);
       if (metaVal != null) {
         return metaVal;
       }
-      return '';
+      return $intern_0;
     }
 
     function tryNocacheJsTag(){
-      var scriptTags = $doc_0.getElementsByTagName('script');
+      var scriptTags = $doc.getElementsByTagName($intern_16);
       for (var i = 0; i < scriptTags.length; ++i) {
-        if (scriptTags[i].src.indexOf('publicyoutubeplayer.nocache.js') != -1) {
+        if (scriptTags[i].src.indexOf($intern_17) != -1) {
           return getDirectoryOfFile(scriptTags[i].src);
         }
       }
-      return '';
+      return $intern_0;
     }
 
     function tryMarkerScript(){
       var thisScript;
-      if (typeof isBodyLoaded == 'undefined' || !isBodyLoaded()) {
-        var markerId = '__gwt_marker_publicyoutubeplayer';
+      if (typeof isBodyLoaded == $intern_18 || !isBodyLoaded()) {
+        var markerId = $intern_19;
         var markerScript;
-        $doc_0.write('<script id="' + markerId + '"><\/script>');
-        markerScript = $doc_0.getElementById(markerId);
+        $doc.write($intern_20 + markerId + $intern_21);
+        markerScript = $doc.getElementById(markerId);
         thisScript = markerScript && markerScript.previousSibling;
-        while (thisScript && thisScript.tagName != 'SCRIPT') {
+        while (thisScript && thisScript.tagName != $intern_22) {
           thisScript = thisScript.previousSibling;
         }
         if (markerScript) {
@@ -102,29 +103,29 @@ function publicyoutubeplayer(){
           return getDirectoryOfFile(thisScript.src);
         }
       }
-      return '';
+      return $intern_0;
     }
 
     function tryBaseTag(){
-      var baseElements = $doc_0.getElementsByTagName('base');
+      var baseElements = $doc.getElementsByTagName($intern_23);
       if (baseElements.length > 0) {
         return baseElements[baseElements.length - 1].href;
       }
-      return '';
+      return $intern_0;
     }
 
     var tempBase = tryMetaTag();
-    if (tempBase == '') {
+    if (tempBase == $intern_0) {
       tempBase = tryNocacheJsTag();
     }
-    if (tempBase == '') {
+    if (tempBase == $intern_0) {
       tempBase = tryMarkerScript();
     }
-    if (tempBase == '') {
+    if (tempBase == $intern_0) {
       tempBase = tryBaseTag();
     }
-    if (tempBase == '') {
-      tempBase = getDirectoryOfFile($doc_0.location.href);
+    if (tempBase == $intern_0) {
+      tempBase = getDirectoryOfFile($doc.location.href);
     }
     tempBase = ensureAbsoluteUrl(tempBase);
     base = tempBase;
@@ -132,48 +133,48 @@ function publicyoutubeplayer(){
   }
 
   function processMetas(){
-    var metas = document.getElementsByTagName('meta');
+    var metas = document.getElementsByTagName($intern_24);
     for (var i = 0, n = metas.length; i < n; ++i) {
-      var meta = metas[i], name_0 = meta.getAttribute('name'), content_0;
-      if (name_0) {
-        name_0 = name_0.replace('publicyoutubeplayer::', '');
-        if (name_0.indexOf('::') >= 0) {
+      var meta = metas[i], name = meta.getAttribute($intern_25), content;
+      if (name) {
+        name = name.replace($intern_26, $intern_0);
+        if (name.indexOf($intern_27) >= 0) {
           continue;
         }
-        if (name_0 == 'gwt:property') {
-          content_0 = meta.getAttribute('content');
-          if (content_0) {
-            var value, eq = content_0.indexOf('=');
+        if (name == $intern_28) {
+          content = meta.getAttribute($intern_29);
+          if (content) {
+            var value, eq = content.indexOf($intern_30);
             if (eq >= 0) {
-              name_0 = content_0.substring(0, eq);
-              value = content_0.substring(eq + 1);
+              name = content.substring(0, eq);
+              value = content.substring(eq + 1);
             }
              else {
-              name_0 = content_0;
-              value = '';
+              name = content;
+              value = $intern_0;
             }
-            metaProps[name_0] = value;
+            metaProps[name] = value;
           }
         }
-         else if (name_0 == 'gwt:onPropertyErrorFn') {
-          content_0 = meta.getAttribute('content');
-          if (content_0) {
+         else if (name == $intern_31) {
+          content = meta.getAttribute($intern_29);
+          if (content) {
             try {
-              propertyErrorFunc = eval(content_0);
+              propertyErrorFunc = eval(content);
             }
              catch (e) {
-              alert('Bad handler "' + content_0 + '" for "gwt:onPropertyErrorFn"');
+              alert($intern_32 + content + $intern_33);
             }
           }
         }
-         else if (name_0 == 'gwt:onLoadErrorFn') {
-          content_0 = meta.getAttribute('content');
-          if (content_0) {
+         else if (name == $intern_34) {
+          content = meta.getAttribute($intern_29);
+          if (content) {
             try {
-              onLoadErrorFunc = eval(content_0);
+              onLoadErrorFunc = eval(content);
             }
              catch (e) {
-              alert('Bad handler "' + content_0 + '" for "gwt:onLoadErrorFn"');
+              alert($intern_32 + content + $intern_35);
             }
           }
         }
@@ -185,8 +186,8 @@ function publicyoutubeplayer(){
     return propValue in values[propName];
   }
 
-  function __gwt_getMetaProperty(name_0){
-    var value = metaProps[name_0];
+  function __gwt_getMetaProperty(name){
+    var value = metaProps[name];
     return value == null?null:value;
   }
 
@@ -217,27 +218,27 @@ function publicyoutubeplayer(){
   function maybeInjectFrame(){
     if (!frameInjected) {
       frameInjected = true;
-      var iframe = $doc_0.createElement('iframe');
-      iframe.src = "javascript:''";
-      iframe.id = 'publicyoutubeplayer';
-      iframe.style.cssText = 'position:absolute;width:0;height:0;border:none';
+      var iframe = $doc.createElement($intern_36);
+      iframe.src = $intern_37;
+      iframe.id = $intern_1;
+      iframe.style.cssText = $intern_38;
       iframe.tabIndex = -1;
-      $doc_0.body.appendChild(iframe);
-      $stats && $stats({moduleName:'publicyoutubeplayer', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'moduleStartup', millis:(new Date).getTime(), type:'moduleRequested'});
+      $doc.body.appendChild(iframe);
+      $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_8, millis:(new Date).getTime(), type:$intern_39});
       iframe.contentWindow.location.replace(base + initialHtml);
     }
   }
 
-  providers['locale'] = function(){
+  providers[$intern_40] = function(){
     var locale = null;
-    var rtlocale = 'default';
+    var rtlocale = $intern_41;
     try {
       if (!locale) {
         var queryParam = location.search;
-        var qpStart = queryParam.indexOf('locale=');
+        var qpStart = queryParam.indexOf($intern_42);
         if (qpStart >= 0) {
           var value = queryParam.substring(qpStart + 7);
-          var end = queryParam.indexOf('&', qpStart);
+          var end = queryParam.indexOf($intern_43, qpStart);
           if (end < 0) {
             end = queryParam.length;
           }
@@ -245,16 +246,16 @@ function publicyoutubeplayer(){
         }
       }
       if (!locale) {
-        locale = __gwt_getMetaProperty('locale');
+        locale = __gwt_getMetaProperty($intern_40);
       }
       if (!locale) {
-        locale = $wnd_0['__gwt_Locale'];
+        locale = $wnd[$intern_44];
       }
       if (locale) {
         rtlocale = locale;
       }
-      while (locale && !__gwt_isKnownPropertyValue('locale', locale)) {
-        var lastIndex = locale.lastIndexOf('_');
+      while (locale && !__gwt_isKnownPropertyValue($intern_40, locale)) {
+        var lastIndex = locale.lastIndexOf($intern_45);
         if (lastIndex < 0) {
           locale = null;
           break;
@@ -263,32 +264,32 @@ function publicyoutubeplayer(){
       }
     }
      catch (e) {
-      alert('Unexpected exception in locale detection, using default: ' + e);
+      alert($intern_46 + e);
     }
-    $wnd_0['__gwt_Locale'] = rtlocale;
-    return locale || 'default';
+    $wnd[$intern_44] = rtlocale;
+    return locale || $intern_41;
   }
   ;
-  values['locale'] = {'default':0, pt:1};
-  providers['user.agent'] = function(){
+  values[$intern_40] = {'default':0, pt:1};
+  providers[$intern_47] = function(){
     var ua = navigator.userAgent.toLowerCase();
     var makeVersion = function(result){
       return parseInt(result[1]) * 1000 + parseInt(result[2]);
     }
     ;
     if (function(){
-      return ua.indexOf('opera') != -1;
+      return ua.indexOf($intern_48) != -1;
     }
     ())
-      return 'opera';
+      return $intern_48;
     if (function(){
-      return ua.indexOf('webkit') != -1 || function(){
-        if (ua.indexOf('chromeframe') != -1) {
+      return ua.indexOf($intern_49) != -1 || function(){
+        if (ua.indexOf($intern_50) != -1) {
           return true;
         }
-        if (typeof window['ActiveXObject'] != 'undefined') {
+        if (typeof window[$intern_51] != $intern_18) {
           try {
-            var obj = new ActiveXObject('ChromeTab.ChromeFrame');
+            var obj = new ActiveXObject($intern_52);
             if (obj) {
               obj.registerBhoIfNeeded();
               return true;
@@ -302,33 +303,33 @@ function publicyoutubeplayer(){
       ();
     }
     ())
-      return 'safari';
+      return $intern_53;
     if (function(){
-      return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 9;
+      return ua.indexOf($intern_54) != -1 && $doc.documentMode >= 9;
     }
     ())
-      return 'ie9';
+      return $intern_55;
     if (function(){
-      return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 8;
+      return ua.indexOf($intern_54) != -1 && $doc.documentMode >= 8;
     }
     ())
-      return 'ie8';
+      return $intern_56;
     if (function(){
       var result = /msie ([0-9]+)\.([0-9]+)/.exec(ua);
       if (result && result.length == 3)
         return makeVersion(result) >= 6000;
     }
     ())
-      return 'ie6';
+      return $intern_57;
     if (function(){
-      return ua.indexOf('gecko') != -1;
+      return ua.indexOf($intern_58) != -1;
     }
     ())
-      return 'gecko1_8';
-    return 'unknown';
+      return $intern_59;
+    return $intern_60;
   }
   ;
-  values['user.agent'] = {gecko1_8:0, ie6:1, ie8:2, ie9:3, opera:4, safari:5};
+  values[$intern_47] = {gecko1_8:0, ie6:1, ie8:2, ie9:3, opera:4, safari:5};
   publicyoutubeplayer.onScriptLoad = function(){
     if (frameInjected) {
       loadDone = true;
@@ -338,7 +339,7 @@ function publicyoutubeplayer(){
   ;
   publicyoutubeplayer.onInjectionDone = function(){
     scriptsDone = true;
-    $stats && $stats({moduleName:'publicyoutubeplayer', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'loadExternalRefs', millis:(new Date).getTime(), type:'end'});
+    $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_61, millis:(new Date).getTime(), type:$intern_9});
     maybeStartModule();
   }
   ;
@@ -347,27 +348,27 @@ function publicyoutubeplayer(){
   var strongName;
   var initialHtml;
   if (isHostedMode()) {
-    if ($wnd_0.external && ($wnd_0.external.initModule && $wnd_0.external.initModule('publicyoutubeplayer'))) {
-      $wnd_0.location.reload();
+    if ($wnd.external && ($wnd.external.initModule && $wnd.external.initModule($intern_1))) {
+      $wnd.location.reload();
       return;
     }
-    initialHtml = 'hosted.html?publicyoutubeplayer';
-    strongName = '';
+    initialHtml = $intern_62;
+    strongName = $intern_0;
   }
-  $stats && $stats({moduleName:'publicyoutubeplayer', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'selectingPermutation'});
+  $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_3, millis:(new Date).getTime(), type:$intern_63});
   if (!isHostedMode()) {
     try {
-      unflattenKeylistIntoAnswers(['pt', 'safari'], '22DC00CEFA19801CAF6C1A67ED09A4A3');
-      unflattenKeylistIntoAnswers(['default', 'safari'], '76C4A77C3EF4D3905696B0469ACF440E');
-      unflattenKeylistIntoAnswers(['pt', 'gecko1_8'], 'CB3A595C369E88F4B38D1A45FB4E14F2');
-      unflattenKeylistIntoAnswers(['default', 'gecko1_8'], 'D642E5CFA9EC20C59AD201DAC0722433');
-      strongName = answers[computePropValue('locale')][computePropValue('user.agent')];
-      var idx = strongName.indexOf(':');
+      unflattenKeylistIntoAnswers([$intern_41, $intern_53], $intern_64);
+      unflattenKeylistIntoAnswers([$intern_41, $intern_59], $intern_65);
+      unflattenKeylistIntoAnswers([$intern_66, $intern_59], $intern_67);
+      unflattenKeylistIntoAnswers([$intern_66, $intern_53], $intern_68);
+      strongName = answers[computePropValue($intern_40)][computePropValue($intern_47)];
+      var idx = strongName.indexOf($intern_69);
       if (idx != -1) {
         softPermutationId = Number(strongName.substring(idx + 1));
         strongName = strongName.substring(0, idx);
       }
-      initialHtml = strongName + '.cache.html';
+      initialHtml = strongName + $intern_70;
     }
      catch (e) {
       return;
@@ -377,16 +378,16 @@ function publicyoutubeplayer(){
   function onBodyDone(){
     if (!bodyDone) {
       bodyDone = true;
-      if (!__gwt_stylesLoaded['gwt/standard/standard.css']) {
-        var l = $doc_0.createElement('link');
-        __gwt_stylesLoaded['gwt/standard/standard.css'] = l;
-        l.setAttribute('rel', 'stylesheet');
-        l.setAttribute('href', base + 'gwt/standard/standard.css');
-        $doc_0.getElementsByTagName('head')[0].appendChild(l);
+      if (!__gwt_stylesLoaded[$intern_71]) {
+        var l = $doc.createElement($intern_72);
+        __gwt_stylesLoaded[$intern_71] = l;
+        l.setAttribute($intern_73, $intern_74);
+        l.setAttribute($intern_75, base + $intern_71);
+        $doc.getElementsByTagName($intern_76)[0].appendChild(l);
       }
       maybeStartModule();
-      if ($doc_0.removeEventListener) {
-        $doc_0.removeEventListener('DOMContentLoaded', onBodyDone, false);
+      if ($doc.removeEventListener) {
+        $doc.removeEventListener($intern_77, onBodyDone, false);
       }
       if (onBodyDoneTimerId) {
         clearInterval(onBodyDoneTimerId);
@@ -394,27 +395,27 @@ function publicyoutubeplayer(){
     }
   }
 
-  if ($doc_0.addEventListener) {
-    $doc_0.addEventListener('DOMContentLoaded', function(){
+  if ($doc.addEventListener) {
+    $doc.addEventListener($intern_77, function(){
       maybeInjectFrame();
       onBodyDone();
     }
     , false);
   }
   var onBodyDoneTimerId = setInterval(function(){
-    if (/loaded|complete/.test($doc_0.readyState)) {
+    if (/loaded|complete/.test($doc.readyState)) {
       maybeInjectFrame();
       onBodyDone();
     }
   }
   , 50);
-  $stats && $stats({moduleName:'publicyoutubeplayer', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'end'});
-  $stats && $stats({moduleName:'publicyoutubeplayer', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'loadExternalRefs', millis:(new Date).getTime(), type:'begin'});
-  if (!__gwt_scriptsLoaded['swfobject-2.2.js']) {
-    __gwt_scriptsLoaded['swfobject-2.2.js'] = true;
-    document.write('<script language="javascript" src="' + base + 'swfobject-2.2.js"><\/script>');
+  $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_3, millis:(new Date).getTime(), type:$intern_9});
+  $stats && $stats({moduleName:$intern_1, sessionId:$sessionId, subSystem:$intern_2, evtGroup:$intern_61, millis:(new Date).getTime(), type:$intern_4});
+  if (!__gwt_scriptsLoaded[$intern_78]) {
+    __gwt_scriptsLoaded[$intern_78] = true;
+    document.write($intern_79 + base + $intern_80);
   }
-  $doc_0.write('<script defer="defer">publicyoutubeplayer.onInjectionDone(\'publicyoutubeplayer\')<\/script>');
+  $doc.write($intern_81);
 }
 
 publicyoutubeplayer();
