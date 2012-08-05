@@ -1,6 +1,7 @@
 package org.jorgecardoso.purewidgets.demo.everybodyvotes.client.ui;
 
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.SlidingPanel;
+import org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -24,21 +25,17 @@ public class MainScreen extends Composite {
 	@UiField
 	SlidingPanel slidingPanel;
 	
-	@UiField
-	Label subtitleLabel;
+//	@UiField
+//	Label subtitleLabel;
 	
 	public MainScreen() {
 		initWidget(uiBinder.createAndBindUi(this));
 		
 	}
 
-	public void show(Widget widget, boolean open, String timeleft) {
-		if (open) {
-			this.subtitleLabel.setText("Open Poll. " + timeleft);
-		} else {
-			this.subtitleLabel.setText("Closed Poll");
-		}
-		this.slidingPanel.setWidget(widget);
+	public void show(EBVPollDao poll) {
+		PollScreen pollScreen = new PollScreen(poll);
+		this.slidingPanel.setWidget(pollScreen);
 	}
 	
 	/**

@@ -36,7 +36,7 @@
 		class='org.jorgecardoso.purewidgets.demo.everybodyvotes.client.EveryBodyVotes' />
 		
 
- 	<set-property name="user.agent" value="gecko1_8,safari"/>
+ 	<set-property name="user.agent" value="safari"/>
 	<!-- Specify the paths for translatable code -->
 	<source path='client' />
 	<source path='shared' />

@@ -66,7 +66,7 @@ public class VideoScreen extends Composite  {
 		queue = new Queue();
 		
 		channelLogo = new PopupPanel();
-		Image logo = new Image("icon_white.png");
+		Image logo = new Image("iconWhite.svg");
 		logo.setSize("100px", "100px");
 		channelLogo.add( logo );
 		channelLogo.setPopupPosition(20, 20);

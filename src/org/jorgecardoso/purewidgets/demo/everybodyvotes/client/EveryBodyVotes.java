@@ -53,7 +53,7 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 	
 	private static final String LS_CURRENT_POLL_INDEX = "currentPollIndex";
 	
-	private static final int POLL_DISPLAY_INTERVAL = 30000; 
+	private static final int POLL_DISPLAY_INTERVAL = 10000; 
 	//private static final int POLL_RESULT_DISPLAY_INTERVAL = 15000; 
 	
 	
@@ -264,16 +264,16 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 		float timeLeftDays = timeLeftHours/24;
 		float timeLeftWeeks = timeLeftDays/7;
 		
-		String timeLeft = "";
-		if ( timeLeftWeeks >= 1 ) {
-			timeLeft = "This poll closes in about "  + ((int)timeLeftWeeks) + "week(s)."; 
-		} else if ( timeLeftDays >= 1 ){
-			timeLeft = "This poll closes in about "  + ((int)timeLeftDays) + "day(s).";
-		} else if ( timeLeftHours >= 1) {
-			timeLeft = "This poll closes in about "  + ((int)timeLeftHours) + "hour(s).";
-		}
-		this.mainScreen.show(this.getPollWidget(nextPoll), nextPoll.getClosesOn() >= System.currentTimeMillis(), timeLeft );
-	//	this.showPoll(this.polls.get(this.currentPollIndex));
+//		String timeLeft = "";
+//		if ( timeLeftWeeks >= 1 ) {
+//			timeLeft = "This poll closes in about "  + ((int)timeLeftWeeks) + "week(s)."; 
+//		} else if ( timeLeftDays >= 1 ){
+//			timeLeft = "This poll closes in about "  + ((int)timeLeftDays) + "day(s).";
+//		} else if ( timeLeftHours >= 1) {
+//			timeLeft = "This poll closes in about "  + ((int)timeLeftHours) + "hour(s).";
+//		}
+		this.mainScreen.show( nextPoll ); //, nextPoll.getClosesOn() >= System.currentTimeMillis(), timeLeft );
+
 		
 		this.startRegularTimer();
 		
@@ -311,20 +311,20 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 				 */
 				EveryBodyVotes.this.polls.addAll(0, result);
 				
-				EveryBodyVotes.this.widgets = new HashMap<String, PdListBox>();
-				for ( EBVPollDao poll : result ) {
-					ArrayList<String> l = new ArrayList<String>();
-					for ( EBVPollOptionDao pollOption : poll.getPollOptions() ) {
-						l.add(pollOption.getOption());
-					}
-					
-					PdListBox tb = new PdListBox("poll " + poll.getPollId(), poll.getPollQuestion(), l);
-					tb.setShortDescription("Vote");
-					tb.setLongDescription(poll.getPollQuestion() );
-					tb.addActionListener(EveryBodyVotes.this);
-					EveryBodyVotes.this.widgets.put(poll.getPollId().toString(), tb);
-					//EveryBodyVotes.this.slidingPanel.add(tb);
-				}
+//				EveryBodyVotes.this.widgets = new HashMap<String, PdListBox>();
+//				for ( EBVPollDao poll : result ) {
+//					ArrayList<String> l = new ArrayList<String>();
+//					for ( EBVPollOptionDao pollOption : poll.getPollOptions() ) {
+//						l.add(pollOption.getOption());
+//					}
+//					
+//					PdListBox tb = new PdListBox("poll " + poll.getPollId(), poll.getPollQuestion(), l);
+//					tb.setShortDescription("Vote");
+//					tb.setLongDescription(poll.getPollQuestion() );
+//					tb.addActionListener(EveryBodyVotes.this);
+//					EveryBodyVotes.this.widgets.put(poll.getPollId().toString(), tb);
+//					//EveryBodyVotes.this.slidingPanel.add(tb);
+//				}
 				
 				
 				EveryBodyVotes.this.checkAdvancePoll(++EveryBodyVotes.this.receivedCount);
