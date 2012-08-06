@@ -23,7 +23,7 @@ import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
-public class PollScreen extends Composite {
+public class PollScreen extends Composite  implements PollScreenInterface {
 
 	private static PollScreenUiBinder uiBinder = GWT.create(PollScreenUiBinder.class);
 
@@ -36,7 +36,7 @@ public class PollScreen extends Composite {
 	@UiField
 	Label labelCloseTime;
 
-	EBVPollDao poll;
+	private EBVPollDao poll;
 	
 	public PollScreen(EBVPollDao poll) {
 		this.poll = poll;
@@ -85,6 +85,19 @@ public class PollScreen extends Composite {
 			});
 			return tb;
     }
+
+	/**
+	 * @return the poll
+	 */
+	public EBVPollDao getPoll() {
+		return poll;
+	}
+
+	@Override
+	public Composite getUi() {
+		return this;
+	}
+
 
 
 }

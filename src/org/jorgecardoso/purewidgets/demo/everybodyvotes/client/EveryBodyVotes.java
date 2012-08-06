@@ -9,13 +9,11 @@ import java.util.List;
 
 import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.application.PDApplicationLifeCycle;
-import org.purewidgets.client.im.WidgetManager;
 import org.purewidgets.client.storage.LocalStorage;
 import org.purewidgets.client.widgets.PdListBox;
 
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
-import org.purewidgets.shared.im.Application;
 import org.purewidgets.shared.logging.Log;
 
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.admin.Admin;
@@ -53,7 +51,7 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 	
 	private static final String LS_CURRENT_POLL_INDEX = "currentPollIndex";
 	
-	private static final int POLL_DISPLAY_INTERVAL = 10000; 
+	private static final int POLL_DISPLAY_INTERVAL = 15000; 
 	//private static final int POLL_RESULT_DISPLAY_INTERVAL = 15000; 
 	
 	
@@ -81,62 +79,9 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 	private Timer timer;
 	private long timerRegularStart;
 	private long timerResultStart;
-	
-	private HashMap<String, PdListBox> widgets;
-	
+
 	private MainScreen mainScreen;
 	
-	SimplePanel getPollResult(EBVPollDao poll) {
-		DataTable dt = DataTable.create();
-		dt.addColumn(ColumnType.STRING, "Option");
-		dt.addColumn(ColumnType.NUMBER, "Votes"); 
-		for ( EBVPollOptionDao pollOption : poll.getPollOptions() ) {
-			int i = dt.addRow();
-			dt.setValue(i, 0, pollOption.getOption() + " (" + pollOption.getVotes()+")");
-			dt.setValue(i, 1, pollOption.getVotes());
-		}
-		
-		PieChart.PieOptions options = PieChart.PieOptions.create();
-		//Options options = Options.create();
-		
-		options.setSliceVisibilityThreshold(0);
-		
-	    options.setFontSize(23);
-	    
-	    
-	    ChartArea ca = ChartArea.create();
-	    ca.setTop(0);
-	    ca.setLeft(0);
-	    ca.setWidth("100%");
-	    ca.setHeight("100%");
-	    //options.setChartArea(ca);
-	    
-	    options.setTitle("Results for: " + poll.getPollQuestion());
-	    
-
-	    AxisOptions ao = AxisOptions.create();
-//	    ao.setTextPosition("in");
-//	    options.setVAxisOptions(ao);
-//	    
-//	    ao = AxisOptions.create();
-//	    ao.setTextPosition("none");
-//	    ao.setMinValue(0);
-//	    options.setHAxisOptions(ao);
-		PieChart pie = new PieChart(dt, options);
-		
-		//pie.setWidth("500");
-		//pie.setHeight("400");
-		
-		SimplePanel p = new SimplePanel();
-		p.setStyleName("pieChartPanel");
-		
-		p.add(pie);
-		
-		pie.setWidth(Window.getClientWidth()+"px");
-		pie.setHeight(Window.getClientHeight()*0.9+"px");
-		
-		return p;
-	}
 	
 	
 	@Override
@@ -369,24 +314,24 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 		}
 	}
 	
-	private  SimplePanel getPollListBox(EBVPollDao poll) {
-		
-		PdListBox tb = EveryBodyVotes.this.widgets.get(poll.getPollId().toString());
-		
-			SimplePanel panel = new SimplePanel();
-			panel.setStyleName("listboxPanel");
-			panel.add(tb);
-			return panel;
+//	private  SimplePanel getPollListBox(EBVPollDao poll) {
+//		
+//		PdListBox tb = EveryBodyVotes.this.widgets.get(poll.getPollId().toString());
+//		
+//			SimplePanel panel = new SimplePanel();
+//			panel.setStyleName("listboxPanel");
+//			panel.add(tb);
+//			return panel;
+//	
+//	}
 	
-	}
-	
-	private SimplePanel getPollWidget(EBVPollDao poll) {
-		if ( EveryBodyVotes.this.widgets.containsKey(poll.getPollId().toString()) ) {
-			return getPollListBox(poll);
-		} else {
-			return getPollResult(poll);
-		}
-	}
+//	private SimplePanel getPollWidget(EBVPollDao poll) {
+//		if ( EveryBodyVotes.this.widgets.containsKey(poll.getPollId().toString()) ) {
+//			return getPollListBox(poll);
+//		} else {
+//			return getPollResult(poll);
+//		}
+//	}
 	
 	private void onTimerElapsed() {
 //		if ( this.showingPollResult ) {

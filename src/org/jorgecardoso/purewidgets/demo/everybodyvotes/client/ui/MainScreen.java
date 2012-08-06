@@ -1,18 +1,15 @@
 package org.jorgecardoso.purewidgets.demo.everybodyvotes.client.ui;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.SlidingPanel;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HasText;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
 public class MainScreen extends Composite {
@@ -22,22 +19,45 @@ public class MainScreen extends Composite {
 	interface MainScreenUiBinder extends UiBinder<Widget, MainScreen> {
 	}
 
+	
+	ArrayList<PollScreenInterface> pollScreens;
+	
 	@UiField
 	SlidingPanel slidingPanel;
 	
-//	@UiField
-//	Label subtitleLabel;
-	
 	public MainScreen() {
 		initWidget(uiBinder.createAndBindUi(this));
-		
+		this.pollScreens = new ArrayList<PollScreenInterface>();
 	}
 
 	public void show(EBVPollDao poll) {
-		PollScreen pollScreen = new PollScreen(poll);
-		this.slidingPanel.setWidget(pollScreen);
+		PollScreenInterface pollScreen = this.get(poll);
+		
+		if ( null == pollScreen ) {
+			long now = new Date().getTime();
+			
+			if ( poll.getClosesOn() < now ) { // closed poll
+				pollScreen = new PollResultsScreen(poll);
+				// we cant add this to the list because the results screen must be recreated every time due to google charts
+			} else {
+				pollScreen = new PollScreen(poll);
+				this.pollScreens.add(pollScreen);
+			}
+			
+		}
+		
+		this.slidingPanel.setWidget(pollScreen.getUi());
 	}
 	
+	
+	private PollScreenInterface get(EBVPollDao poll) {
+		for ( PollScreenInterface pollScreen : this.pollScreens ) {
+			if ( pollScreen.getPoll().getPollId().equals(poll.getPollId()) ) {
+				return pollScreen;
+			}
+		}
+		return null;
+	}
 	/**
 	 * @return the slidingPanel
 	 */

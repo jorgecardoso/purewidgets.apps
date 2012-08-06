@@ -1,0 +1,67 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.pieChart {
+			
+		}
+
+	.pollQuestionContainer {
+		display: table;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		height: 100%;
+		width: 30%;
+		margin: -50% 0 0 0;
+		
+	}
+  	.pollQuestion  {
+		display: table-cell;
+		padding-left:15px;
+		padding-right:5px;
+		text-align:left;
+		height: 100%;
+		vertical-align: middle;
+		font-size: 38pt;
+		font-family: 'Nunito', sans-serif;
+  	}
+.closetime {
+		position: absolute;
+		bottom: 10%;
+		left: 75%;
+		width:20%;
+		text-align:center;
+	}
+	.closetimelabel {
+		font-size: 30pt;
+		text-transform: uppercase;
+		color:red;
+		font-family: 'Nunito', sans-serif;
+		
+	}
+	.closetimetime {
+		font-family: 'Nunito', sans-serif;
+		font-size: 34pt;
+		background-color: red;
+		color: white;
+		border: 10px solid white;
+		border-radius: 15px;
+		box-shadow: 1px 1px 3px 3px #AAA;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+
+	    
+		<g:SimplePanel styleName="{style.pieChart}"/>
+		
+	    <g:HTMLPanel styleName="{style.pollQuestionContainer}">
+	    	<g:InlineLabel ui:field="labelQuestion" styleName="{style.pollQuestion}">sdfk slld </g:InlineLabel>
+	    </g:HTMLPanel> 
+	    		
+		<g:HTMLPanel styleName="{style.closetime}">
+		    
+		    <g:Label ui:field="labelCloseTime" styleName="{style.closetimetime}">Voting closed</g:Label>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 
