@@ -35,12 +35,13 @@
 		border-radius: 40px;
 		box-shadow: 5px 5px 3px 3px #aaa;
   		position: absolute;
-		top: 50%;
+		bottom: 10%;
 		left: 50%;
-		height: 70%;
+		height: 60%;
 		width: 40%;
-		margin: -35% 0 0 -20%;
+		margin: 0 0 0 -20%;
 		text-align:center;
+		padding-top:20px;
   }
 	.closetime {
 		position: absolute;
@@ -75,9 +76,12 @@
 	}
 
 	.pwListboxItem {
+		margin:0px;
+		padding:0px;
 		margin-top: 15px;
 		padding-left: 10px;
 		padding-right:10px;
+		
 		
 	}
 	.pwListboxItemLabel {
