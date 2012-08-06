@@ -4,7 +4,7 @@ var $gwt_version = "2.4.0";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = '46BFBE89D4F26E4C5D337558E6845432';
+var $strongName = 'BC313E8F1C027BB5767A8FF7EA7AF93A';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'everybodyvotes',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
@@ -16600,7 +16600,7 @@ function $run_1(this$static){
   var getPollsButton, place;
   this$static.pollService = new PollService_Proxy_0;
   this$static.pollService.remoteServiceURL = '/pollservice';
-  place = (ensureParameterMap() , dynamicCast(paramMap.get('placename'), Q$String));
+  place = (ensureParameterMap() , dynamicCast(paramMap.get('placeid'), Q$String));
   (null == place || place.length == 0) && (place = 'DefaultPlace');
   this$static.placeTextBox = new TextBox_0;
   $setText_1(this$static.placeTextBox, place);

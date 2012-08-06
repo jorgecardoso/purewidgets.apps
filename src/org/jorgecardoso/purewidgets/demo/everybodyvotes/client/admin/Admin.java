@@ -100,7 +100,7 @@ public class Admin implements PollActionListener {
 		pollService = GWT.create(PollService.class);
 		((ServiceDefTarget)pollService).setServiceEntryPoint("/pollservice"); 
 		
-		String place = com.google.gwt.user.client.Window.Location.getParameter("placename");
+		String place = com.google.gwt.user.client.Window.Location.getParameter("placeid");
 		
 		if ( null == place || place.length() == 0) {
 			place = "DefaultPlace";
