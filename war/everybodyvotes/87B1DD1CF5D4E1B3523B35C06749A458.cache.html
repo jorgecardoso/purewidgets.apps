@@ -4,7 +4,7 @@ var $gwt_version = "2.4.0";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = 'B22532452D76535FEE2957D8F2797D79';
+var $strongName = '87B1DD1CF5D4E1B3523B35C06749A458';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'everybodyvotes',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
@@ -160,7 +160,7 @@ function onLoadCallback(){
 var alreadyInjected = false, initialized = false, loaded = false, queuedApiLoads;
 function AjaxLoader$1_0(val$copyOfSettings){
   this.val$api = 'visualization';
-  this.val$version = '1';
+  this.val$version = '1.1';
   this.val$copyOfSettings = val$copyOfSettings;
 }
 
@@ -3106,7 +3106,7 @@ function $format(this$static, date, timeZone){
     if (ch >= 97 && ch <= 122 || ch >= 65 && ch <= 90) {
       for (j = i + 1; j < n && $charAt(this$static.pattern, j) == ch; ++j) {
       }
-      $subFormat(toAppendTo, ch, j - i, keepDate, keepTime, timeZone);
+      $subFormat(this$static, toAppendTo, ch, j - i, keepDate, keepTime, timeZone);
       i = j;
     }
      else if (ch == 39) {
@@ -3281,7 +3281,7 @@ function $parse_0(this$static, text, date){
             return 0;
           }
         }
-        if (!$subParse(text, parsePos, part, count, cal)) {
+        if (!$subParse(this$static, text, parsePos, part, count, cal)) {
           i = abutPat - 1;
           parsePos[0] = 0;
           continue;
@@ -3289,7 +3289,7 @@ function $parse_0(this$static, text, date){
       }
        else {
         abutPat = -1;
-        if (!$subParse(text, parsePos, part, 0, cal)) {
+        if (!$subParse(this$static, text, parsePos, part, 0, cal)) {
           return 0;
         }
       }
@@ -3438,7 +3438,7 @@ function $skipSpace(text, pos){
   }
 }
 
-function $subFormat(buf, ch, count, adjustedDate, adjustedTime, timezone){
+function $subFormat(this$static, buf, ch, count, adjustedDate, adjustedTime, timezone){
   var value, value_0, value_1, value_2, value_3, value_4, value_5, value_6, value_7, value_8, value_9, value_10;
   switch (ch) {
     case 71:
@@ -3479,11 +3479,11 @@ function $subFormat(buf, ch, count, adjustedDate, adjustedTime, timezone){
       break;
     case 99:
       value_5 = adjustedDate.jsdate.getDay();
-      count == 5?$append_3(buf, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['S', 'M', 'T', 'W', 'T', 'F', 'S'])[value_5]):count == 4?$append_3(buf, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'])[value_5]):count == 3?$append_3(buf, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'])[value_5]):$zeroPaddingNumber(buf, value_5, 1);
+      count == 5?$append_3(buf, (this$static.dateTimeFormatInfo , initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['S', 'M', 'T', 'W', 'T', 'F', 'S']))[value_5]):count == 4?$append_3(buf, (this$static.dateTimeFormatInfo , initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']))[value_5]):count == 3?$append_3(buf, (this$static.dateTimeFormatInfo , initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']))[value_5]):$zeroPaddingNumber(buf, value_5, 1);
       break;
     case 76:
       value_6 = adjustedDate.jsdate.getMonth();
-      count == 5?$append_3(buf, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'])[value_6]):count == 4?$append_3(buf, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])[value_6]):count == 3?$append_3(buf, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])[value_6]):$zeroPaddingNumber(buf, value_6 + 1, count);
+      count == 5?$append_3(buf, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'])[value_6]):count == 4?$append_3(buf, (this$static.dateTimeFormatInfo , initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']))[value_6]):count == 3?$append_3(buf, (this$static.dateTimeFormatInfo , initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']))[value_6]):$zeroPaddingNumber(buf, value_6 + 1, count);
       break;
     case 81:
       value_7 = ~~(adjustedDate.jsdate.getMonth() / 3);
@@ -3515,7 +3515,7 @@ function $subFormat(buf, ch, count, adjustedDate, adjustedTime, timezone){
   return true;
 }
 
-function $subParse(text, pos, part, digitCount, cal){
+function $subParse(this$static, text, pos, part, digitCount, cal){
   var ch, start, value;
   $skipSpace(text, pos);
   start = pos[0];
@@ -3540,11 +3540,11 @@ function $subParse(text, pos, part, digitCount, cal){
     case 77:
       return $subParseMonth(text, pos, cal, value, start);
     case 76:
-      return $subParseStandaloneMonth(text, pos, cal, value, start);
+      return $subParseStandaloneMonth(this$static, text, pos, cal, value, start);
     case 69:
       return $subParseDayOfWeek(text, pos, start, cal);
     case 99:
-      return $subParseStandaloneDay(text, pos, start, cal);
+      return $subParseStandaloneDay(this$static, text, pos, start, cal);
     case 97:
       value = $matchString(text, start, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['AM', 'PM']), pos);
       cal.ampm = value;
@@ -3646,10 +3646,10 @@ function $subParseMonth(text, pos, cal, value, start){
   return false;
 }
 
-function $subParseStandaloneDay(text, pos, start, cal){
+function $subParseStandaloneDay(this$static, text, pos, start, cal){
   var value;
-  value = $matchString(text, start, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']), pos);
-  value < 0 && (value = $matchString(text, start, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']), pos));
+  value = $matchString(text, start, (this$static.dateTimeFormatInfo , initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'])), pos);
+  value < 0 && (value = $matchString(text, start, (this$static.dateTimeFormatInfo , initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'])), pos));
   if (value < 0) {
     return false;
   }
@@ -3657,10 +3657,10 @@ function $subParseStandaloneDay(text, pos, start, cal){
   return true;
 }
 
-function $subParseStandaloneMonth(text, pos, cal, value, start){
+function $subParseStandaloneMonth(this$static, text, pos, cal, value, start){
   if (value < 0) {
-    value = $matchString(text, start, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']), pos);
-    value < 0 && (value = $matchString(text, start, initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']), pos));
+    value = $matchString(text, start, (this$static.dateTimeFormatInfo , initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])), pos);
+    value < 0 && (value = $matchString(text, start, (this$static.dateTimeFormatInfo , initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])), pos));
     if (value < 0) {
       return false;
     }
@@ -3733,6 +3733,7 @@ _.getClass$ = function getClass_92(){
   return Lcom_google_gwt_i18n_shared_DateTimeFormat_2_classLit;
 }
 ;
+_.dateTimeFormatInfo = null;
 _.pattern = null;
 function $clinit_DateTimeFormat_0(){
   $clinit_DateTimeFormat_0 = nullMethod;
@@ -3740,10 +3741,11 @@ function $clinit_DateTimeFormat_0(){
   cache = new HashMap_0;
 }
 
-function DateTimeFormat_1(pattern){
+function DateTimeFormat_1(pattern, dtfi){
   $clinit_DateTimeFormat();
   this.patternParts = new ArrayList_0;
   this.pattern = pattern;
+  this.dateTimeFormatInfo = dtfi;
   $parsePattern(this, pattern);
 }
 
@@ -3878,7 +3880,7 @@ function getFormat_0(pattern, dtfi){
   dtf = null;
   dtfi == defaultDtfi && (dtf = dynamicCast(cache.get(pattern), Q$DateTimeFormat));
   if (!dtf) {
-    dtf = new DateTimeFormat_1(pattern);
+    dtf = new DateTimeFormat_1(pattern, dtfi);
     dtfi == defaultDtfi && cache.put(pattern, dtf);
   }
   return dtf;
@@ -4055,6 +4057,8 @@ _.timeFormatFull = function timeFormatFull(){
   return 'HH:mm:ss zzzz';
 }
 ;
+--></script>
+<script><!--
 _.timeFormatLong = function timeFormatLong(){
   return 'HH:mm:ss z';
 }
@@ -4075,8 +4079,6 @@ _.getClass$ = function getClass_96(){
   return Lcom_google_gwt_i18n_client_DefaultDateTimeFormatInfo_2_classLit;
 }
 ;
---></script>
-<script><!--
 function $clinit_HasDirection$Direction(){
   $clinit_HasDirection$Direction = nullMethod;
   RTL = new HasDirection$Direction_0('RTL', 0);
@@ -5189,6 +5191,8 @@ function throwClassCastExceptionUnlessNull(o){
   return null;
 }
 
+--></script>
+<script><!--
 function init_0(){
   var runtimeValue;
   !!$stats && onModuleStart('com.google.gwt.user.client.UserAgentAsserter');
@@ -5202,8 +5206,6 @@ function init_0(){
   loadVisualizationApi(new EveryBodyVotes$2_0(new EveryBodyVotes_0), toJsArrayString(initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$Object_$1]), Q$String, ['corechart'])));
 }
 
---></script>
-<script><!--
 function caught_0(e){
   if (instanceOf(e, Q$Throwable)) {
     return e;
@@ -6231,6 +6233,8 @@ _.publish = function publish(record){
   window.console.log(msg);
 }
 ;
+--></script>
+<script><!--
 _.castableTypeMap$ = makeCastMap([Q$Handler]);
 function HasWidgetsLogHandler_0(){
   $setFormatter(this, new HtmlLogFormatter_0);
@@ -6264,8 +6268,6 @@ _.getClass$ = function getClass_122(){
   return Ljava_util_logging_Formatter_2_classLit;
 }
 ;
---></script>
-<script><!--
 function $getRecordInfo(event_0, newline){
   var date, s;
   date = new Date_3(event_0.millis);
@@ -7305,6 +7307,8 @@ function Timer$1(){
 }
 
 _ = Timer$1_0.prototype = Timer$1.prototype = new Object_0;
+--></script>
+<script><!--
 _.getClass$ = function getClass_149(){
   return Lcom_google_gwt_user_client_Timer$1_2_classLit;
 }
@@ -7316,8 +7320,6 @@ _.onClose_0 = function onClose(event_0){
 }
 ;
 _.castableTypeMap$ = makeCastMap([Q$CloseHandler, Q$EventHandler]);
---></script>
-<script><!--
 function $getRuntimeValue(){
   var ua = navigator.userAgent.toLowerCase();
   var makeVersion = function(result){
@@ -8348,12 +8350,12 @@ _.getClass$ = function getClass_166(){
 }
 ;
 _.objectCount = 0;
+--></script>
+<script><!--
 function $getString(this$static, index){
   return index > 0?this$static.stringTable[index - 1]:null;
 }
 
---></script>
-<script><!--
 function $prepareToRead(this$static, encoded){
   this$static.results = eval(encoded);
   this$static.index_0 = this$static.results.length;
@@ -9195,14 +9197,14 @@ function Widget(){
 }
 
 _ = Widget.prototype = new UIObject;
+--></script>
+<script><!--
 _.doAttachChildren = function doAttachChildren(){
 }
 ;
 _.doDetachChildren = function doDetachChildren(){
 }
 ;
---></script>
-<script><!--
 _.fireEvent = function fireEvent_1(event_0){
   $fireEvent_0(this, event_0);
 }
@@ -10228,12 +10230,12 @@ function LabelBase(){
 }
 
 _ = LabelBase.prototype = new Widget;
+--></script>
+<script><!--
 _.getClass$ = function getClass_206(){
   return Lcom_google_gwt_user_client_ui_LabelBase_2_classLit;
 }
 ;
---></script>
-<script><!--
 _.castableTypeMap$ = makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]);
 _.directionalTextHelper = null;
 function $setText_0(this$static, text){
@@ -11183,6 +11185,8 @@ function cannotResolveTwice(){
   throw 'A PotentialElement cannot be resolved twice.';
 }
 
+--></script>
+<script><!--
 function isPotential(o){
   try {
     return !!o && !!o.__gwt_resolve;
@@ -11192,8 +11196,6 @@ function isPotential(o){
   }
 }
 
---></script>
-<script><!--
 function PushButton_0(){
   $clinit_FocusWidget();
   ButtonBase_0.call(this, ($clinit_FocusPanel() , createFocusable0(($clinit_FocusImpl() , focusHandler_0)?focusHandler_0:(focusHandler_0 = $createFocusHandler()))));
@@ -12186,12 +12188,12 @@ function $parse_1(this$static, dateBox, dateText, reportError){
   return date;
 }
 
+--></script>
+<script><!--
 function DateBox$DefaultFormat_0(){
   this.dateTimeFormat = ($clinit_DateTimeFormat_0() , getFormat(($clinit_DateTimeFormat$PredefinedFormat() , DATE_TIME_MEDIUM)));
 }
 
---></script>
-<script><!--
 function DateBox$DefaultFormat(){
 }
 
@@ -13070,6 +13072,8 @@ function Byte(){
 }
 
 _ = Byte_0.prototype = Byte.prototype = new Number_0;
+--></script>
+<script><!--
 _.compareTo$ = function compareTo_2(b){
   return $compareTo_2(this, dynamicCast(b, Q$Byte));
 }
@@ -13078,8 +13082,6 @@ _.equals$ = function equals_8(o){
   return instanceOf(o, Q$Byte) && dynamicCast(o, Q$Byte).value_0 == this.value_0;
 }
 ;
---></script>
-<script><!--
 _.getClass$ = function getClass_282(){
   return Ljava_lang_Byte_2_classLit;
 }
@@ -14234,6 +14236,8 @@ _.nullSlot = null;
 _.nullSlotLive = false;
 _.size = 0;
 _.stringMap = null;
+--></script>
+<script><!--
 function $contains(this$static, o){
   var entry, key, value;
   if (instanceOf(o, Q$Map$Entry)) {
@@ -14247,8 +14251,6 @@ function $contains(this$static, o){
   return false;
 }
 
---></script>
-<script><!--
 function AbstractHashMap$EntrySet_0(this$0){
   this.this$0 = this$0;
 }
@@ -15477,6 +15479,8 @@ _.getValue = function getValue_4(){
   return this.value_0;
 }
 ;
+--></script>
+<script><!--
 _.setValue_0 = function setValue_2(value){
   return $setValue_6(this, value);
 }
@@ -15492,8 +15496,6 @@ function $addToEnd(this$static){
   tail.next = this$static.this$0.head.prev = this$static;
 }
 
---></script>
-<script><!--
 function $remove_13(this$static){
   this$static.next.prev = this$static.prev;
   this$static.prev.next = this$static.next;
@@ -16567,6 +16569,8 @@ _.onFailure = function onFailure_0(caught){
   $onFailure(this, caught);
 }
 ;
+--></script>
+<script><!--
 _.onSuccess = function onSuccess_0(result){
   $onSuccess(this, dynamicCast(result, Q$List));
 }
@@ -16578,8 +16582,6 @@ function $onFailure_0(this$static, caught){
   $checkAdvancePoll(this$static.this$0, ++this$static.this$0.receivedCount);
 }
 
---></script>
-<script><!--
 function $onSuccess_0(this$static, result){
   (!result || result.size_0() == 0) && ($clinit_Log() , warn(Lorg_jorgecardoso_purewidgets_demo_everybodyvotes_client_EveryBodyVotes_2_classLit.typeName + ': No closed polls found'));
   $clinit_Log();
@@ -17582,7 +17584,7 @@ function $getPollResultPanel(this$static){
   for (pollOption$iterator = new AbstractList$IteratorImpl_0(this$static.poll.pollOptions); pollOption$iterator.i < pollOption$iterator.this$0_0.size_0();) {
     pollOption = dynamicCast($next_4(pollOption$iterator), Q$EBVPollOptionDao);
     i = dt.addRow();
-    $setValue_5(dt, i, 0, pollOption.option + ': ' + pollOption.votes + ' voto(s)');
+    $setValue_5(dt, i, 0, pollOption.option + ': ' + pollOption.votes + ' votes');
     $setValue_4(dt, i, 1, pollOption.votes);
   }
   ca = {};
@@ -17595,7 +17597,8 @@ function $getPollResultPanel(this$static){
   options.fontSize = 23;
   options.is3D = true;
   options.chartArea = ca;
-  options.fontName = "'Arial', sans-serif";
+  options['forceIFrame'] = 'false';
+  options.fontName = "'Nunito', sans-serif";
   options.title = '';
   pie = new PieChart_0(dt, options);
   p = new SimplePanel_0;
@@ -17608,7 +17611,7 @@ function $getPollResultPanel(this$static){
 function PollResultsScreen_0(poll){
   var attachRecord0, attachRecord1, attachRecord2, domId0, domId0Element, domId1, domId1Element, domId2, domId2Element, domId3, domId3Element, domId4, domId4Element, f_HTMLPanel1, f_HTMLPanel3, f_HTMLPanel4, f_SimplePanel2, labelCloseTime, labelQuestion, sb, sb_0, sb_1;
   this.poll = poll;
-  $initWidget(this, ($clinit_PollResultsScreen_PollResultsScreenUiBinderImpl_GenBundle_default_InlineClientBundleGenerator$styleInitializer() , domId0 = $createUniqueId($doc) , f_SimplePanel2 = $getPollResultPanel(this) , domId1 = $createUniqueId($doc) , domId2 = $createUniqueId($doc) , labelQuestion = new InlineLabel_0 , f_HTMLPanel3 = new HTMLPanel_0((sb = new StringBuilder_0 , sb.impl.string += "<span id='" , $append_5(sb, htmlEscape(domId2)) , sb.impl.string += "'><\/span>" , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb.impl.string)).html) , domId3 = $createUniqueId($doc) , domId4 = $createUniqueId($doc) , labelCloseTime = new Label_0 , f_HTMLPanel4 = new HTMLPanel_0((sb_0 = new StringBuilder_0 , sb_0.impl.string += "<span id='" , $append_5(sb_0, htmlEscape(domId4)) , sb_0.impl.string += "'><\/span>" , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb_0.impl.string)).html) , f_HTMLPanel1 = new HTMLPanel_0((sb_1 = new StringBuilder_0 , sb_1.impl.string += "<span id='" , $append_5(sb_1, htmlEscape(domId0)) , sb_1.impl.string += "'><\/span> <span id='" , $append_5(sb_1, htmlEscape(domId1)) , sb_1.impl.string += "'><\/span>  <span id='" , $append_5(sb_1, htmlEscape(domId3)) , sb_1.impl.string += "'><\/span>" , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb_1.impl.string)).html) , f_SimplePanel2.getStyleElement()['className'] = 'GKLEHO4CIJ' , $setTextOrHtml(labelQuestion.directionalTextHelper, 'sdfk slld', false) , labelQuestion.element['className'] = 'GKLEHO4CJJ' , f_HTMLPanel3.element['className'] = 'GKLEHO4CKJ' , $setTextOrHtml(labelCloseTime.directionalTextHelper, 'Voting closed', false) , labelCloseTime.element['className'] = 'GKLEHO4CHJ' , f_HTMLPanel4.element['className'] = 'GKLEHO4CFJ' , attachRecord0 = attachToDom(f_HTMLPanel1.element) , domId0Element = $getElementById($doc, domId0) , attachRecord1 = attachToDom(f_HTMLPanel3.element) , domId2Element = $getElementById($doc, domId2) , attachRecord1.origParent?$insertBefore(attachRecord1.origParent, attachRecord1.element, attachRecord1.origSibling):orphan(attachRecord1.element) , $addAndReplaceElement(f_HTMLPanel3, labelQuestion, domId2Element) , domId1Element = $getElementById($doc, domId1) , attachRecord2 = attachToDom(f_HTMLPanel4.element) , domId4Element = $getElementById($doc, domId4) , attachRecord2.origParent?$insertBefore(attachRecord2.origParent, attachRecord2.element, attachRecord2.origSibling):orphan(attachRecord2.element) , $addAndReplaceElement(f_HTMLPanel4, labelCloseTime, domId4Element) , domId3Element = $getElementById($doc, domId3) , attachRecord0.origParent?$insertBefore(attachRecord0.origParent, attachRecord0.element, attachRecord0.origSibling):orphan(attachRecord0.element) , $addAndReplaceElement(f_HTMLPanel1, f_SimplePanel2, domId0Element) , $addAndReplaceElement(f_HTMLPanel1, f_HTMLPanel3, domId1Element) , $addAndReplaceElement(f_HTMLPanel1, f_HTMLPanel4, domId3Element) , this.labelQuestion = labelQuestion , $ensureInjected_2(style_3) , f_HTMLPanel1));
+  $initWidget(this, ($clinit_PollResultsScreen_PollResultsScreenUiBinderImpl_GenBundle_default_InlineClientBundleGenerator$styleInitializer() , domId0 = $createUniqueId($doc) , f_SimplePanel2 = $getPollResultPanel(this) , domId1 = $createUniqueId($doc) , domId2 = $createUniqueId($doc) , labelQuestion = new InlineLabel_0 , f_HTMLPanel3 = new HTMLPanel_0((sb = new StringBuilder_0 , sb.impl.string += "<span id='" , $append_5(sb, htmlEscape(domId2)) , sb.impl.string += "'><\/span>" , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb.impl.string)).html) , domId3 = $createUniqueId($doc) , domId4 = $createUniqueId($doc) , labelCloseTime = new Label_0 , f_HTMLPanel4 = new HTMLPanel_0((sb_0 = new StringBuilder_0 , sb_0.impl.string += "<span id='" , $append_5(sb_0, htmlEscape(domId4)) , sb_0.impl.string += "'><\/span>" , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb_0.impl.string)).html) , f_HTMLPanel1 = new HTMLPanel_0((sb_1 = new StringBuilder_0 , sb_1.impl.string += "<span id='" , $append_5(sb_1, htmlEscape(domId0)) , sb_1.impl.string += "'><\/span> <span id='" , $append_5(sb_1, htmlEscape(domId1)) , sb_1.impl.string += "'><\/span>  <span id='" , $append_5(sb_1, htmlEscape(domId3)) , sb_1.impl.string += "'><\/span>" , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb_1.impl.string)).html) , f_SimplePanel2.getStyleElement()['className'] = 'GKLEHO4CIJ' , labelQuestion.element['className'] = 'GKLEHO4CJJ' , f_HTMLPanel3.element['className'] = 'GKLEHO4CKJ' , $setTextOrHtml(labelCloseTime.directionalTextHelper, 'Voting closed', false) , labelCloseTime.element['className'] = 'GKLEHO4CHJ' , f_HTMLPanel4.element['className'] = 'GKLEHO4CFJ' , attachRecord0 = attachToDom(f_HTMLPanel1.element) , domId0Element = $getElementById($doc, domId0) , attachRecord1 = attachToDom(f_HTMLPanel3.element) , domId2Element = $getElementById($doc, domId2) , attachRecord1.origParent?$insertBefore(attachRecord1.origParent, attachRecord1.element, attachRecord1.origSibling):orphan(attachRecord1.element) , $addAndReplaceElement(f_HTMLPanel3, labelQuestion, domId2Element) , domId1Element = $getElementById($doc, domId1) , attachRecord2 = attachToDom(f_HTMLPanel4.element) , domId4Element = $getElementById($doc, domId4) , attachRecord2.origParent?$insertBefore(attachRecord2.origParent, attachRecord2.element, attachRecord2.origSibling):orphan(attachRecord2.element) , $addAndReplaceElement(f_HTMLPanel4, labelCloseTime, domId4Element) , domId3Element = $getElementById($doc, domId3) , attachRecord0.origParent?$insertBefore(attachRecord0.origParent, attachRecord0.element, attachRecord0.origSibling):orphan(attachRecord0.element) , $addAndReplaceElement(f_HTMLPanel1, f_SimplePanel2, domId0Element) , $addAndReplaceElement(f_HTMLPanel1, f_HTMLPanel3, domId1Element) , $addAndReplaceElement(f_HTMLPanel1, f_HTMLPanel4, domId3Element) , this.labelQuestion = labelQuestion , $ensureInjected_2(style_3) , f_HTMLPanel1));
   $setText_0(this.labelQuestion, poll.pollQuestion);
 }
 
@@ -17681,7 +17684,7 @@ function PollScreen_0(poll){
   timeLeftDays = timeLeftHours / 24;
   timeLeftWeeks = timeLeftDays / 7;
   timeLeft = '';
-  timeLeftWeeks >= 1?(timeLeft = round_int(timeLeftWeeks) + ' week(s)'):timeLeftDays >= 1?(timeLeft = round_int(timeLeftDays) + ' day(s)'):timeLeftHours >= 1 && (timeLeft = round_int(timeLeftHours) + ' hour(s)');
+  timeLeftWeeks >= 1?(timeLeft = '' + round_int(timeLeftWeeks) + ' weeks'):timeLeftDays >= 1?(timeLeft = '' + round_int(timeLeftDays) + ' days'):timeLeftHours >= 1 && (timeLeft = '' + round_int(timeLeftHours) + ' hours');
   $setText_0(this.labelCloseTime, timeLeft);
 }
 
@@ -17741,7 +17744,7 @@ function $createAndBindUi_1(owner){
   labelQuestion.element['className'] = 'GKLEHO4CPJ';
   f_HTMLPanel2.element['className'] = 'GKLEHO4CAK';
   f_HTMLPanel3.element['className'] = 'GKLEHO4CBK';
-  $setTextOrHtml(f_Label6.directionalTextHelper, 'Vote Closing in about', false);
+  $setTextOrHtml(f_Label6.directionalTextHelper, 'Closing in', false);
   f_Label6.element['className'] = 'GKLEHO4CMJ';
   $setTextOrHtml(labelCloseTime.directionalTextHelper, '1 day', false);
   labelCloseTime.element['className'] = 'GKLEHO4CNJ';
@@ -17814,12 +17817,12 @@ function $setPollQuestion(this$static, pollQuestion){
   this$static.pollQuestion = pollQuestion;
 }
 
---></script>
-<script><!--
 function $setShowAfter_0(this$static, showAfter){
   this$static.showAfter = showAfter;
 }
 
+--></script>
+<script><!--
 function $setShowUntil_0(this$static, showUntil){
   this$static.showUntil = showUntil;
 }

@@ -13,7 +13,10 @@
 	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
 	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
 
+
 	<!-- Other module inherits -->
+	
+	<inherits name="com.google.gwt.i18n.I18N"/>
 	<inherits name="org.purewidgets.PuReWidgets" />
 	<inherits name='com.google.gwt.visualization.Visualization'/>
 
@@ -35,6 +38,7 @@
 	<entry-point
 		class='org.jorgecardoso.purewidgets.demo.everybodyvotes.client.EveryBodyVotes' />
 		
+	<extend-property name="locale" values="pt"/>
 
  	<set-property name="user.agent" value="safari"/>
 	<!-- Specify the paths for translatable code -->

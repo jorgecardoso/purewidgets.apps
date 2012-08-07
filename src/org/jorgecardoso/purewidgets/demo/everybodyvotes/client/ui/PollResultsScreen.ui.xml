@@ -1,6 +1,9 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+		ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+    ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+    ui:generateLocales="default">
 	<ui:style>
 		.pieChart {
 			
@@ -56,12 +59,12 @@
 		<g:SimplePanel styleName="{style.pieChart}"/>
 		
 	    <g:HTMLPanel styleName="{style.pollQuestionContainer}">
-	    	<g:InlineLabel ui:field="labelQuestion" styleName="{style.pollQuestion}">sdfk slld </g:InlineLabel>
+	    	<g:InlineLabel ui:field="labelQuestion" styleName="{style.pollQuestion}"> </g:InlineLabel>
 	    </g:HTMLPanel> 
 	    		
 		<g:HTMLPanel styleName="{style.closetime}">
 		    
-		    <g:Label ui:field="labelCloseTime" styleName="{style.closetimetime}">Voting closed</g:Label>
+		    <g:Label ui:field="labelCloseTime" styleName="{style.closetimetime}"><ui:msg description='Voting closed'>Voting closed</ui:msg></g:Label>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 </ui:UiBinder> 

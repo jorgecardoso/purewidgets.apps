@@ -30,6 +30,8 @@ public class PollScreen extends Composite  implements PollScreenInterface {
 	interface PollScreenUiBinder extends UiBinder<Widget, PollScreen> {
 	}
 	
+	PollScreenMessages msgs = GWT.create(PollScreenMessages.class);
+			
 	@UiField
 	InlineLabel labelQuestion;
 	
@@ -53,11 +55,11 @@ public class PollScreen extends Composite  implements PollScreenInterface {
 		
 		String timeLeft = "";
 		if ( timeLeftWeeks >= 1 ) {
-			timeLeft =  ((int)timeLeftWeeks) + " week(s)"; 
+			timeLeft =  msgs.closingPeriodWeek( ((int)timeLeftWeeks) ); 
 		} else if ( timeLeftDays >= 1 ){
-			timeLeft =  ((int)timeLeftDays) + " day(s)";
+			timeLeft =  msgs.closingPeriodDay( ((int)timeLeftDays) );
 		} else if ( timeLeftHours >= 1) {
-			timeLeft = ((int)timeLeftHours) + " hour(s)";
+			timeLeft = msgs.closingPeriodHour( ((int)timeLeftHours) );
 		}
 		
 		this.labelCloseTime.setText(timeLeft);

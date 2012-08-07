@@ -181,9 +181,21 @@ function everybodyvotes(){
     }
   }
 
+  function __gwt_isKnownPropertyValue(propName, propValue){
+    return propValue in values[propName];
+  }
+
   function __gwt_getMetaProperty(name_0){
     var value = metaProps[name_0];
     return value == null?null:value;
+  }
+
+  function unflattenKeylistIntoAnswers(propValArray, value){
+    var answer = answers;
+    for (var i = 0, n = propValArray.length - 1; i < n; ++i) {
+      answer = answer[propValArray[i]] || (answer[propValArray[i]] = []);
+    }
+    answer[propValArray[n]] = value;
   }
 
   function computePropValue(propName){
@@ -216,6 +228,48 @@ function everybodyvotes(){
     }
   }
 
+  providers['locale'] = function(){
+    var locale = null;
+    var rtlocale = 'default';
+    try {
+      if (!locale) {
+        var queryParam = location.search;
+        var qpStart = queryParam.indexOf('locale=');
+        if (qpStart >= 0) {
+          var value = queryParam.substring(qpStart + 7);
+          var end = queryParam.indexOf('&', qpStart);
+          if (end < 0) {
+            end = queryParam.length;
+          }
+          locale = queryParam.substring(qpStart + 7, end);
+        }
+      }
+      if (!locale) {
+        locale = __gwt_getMetaProperty('locale');
+      }
+      if (!locale) {
+        locale = $wnd_0['__gwt_Locale'];
+      }
+      if (locale) {
+        rtlocale = locale;
+      }
+      while (locale && !__gwt_isKnownPropertyValue('locale', locale)) {
+        var lastIndex = locale.lastIndexOf('_');
+        if (lastIndex < 0) {
+          locale = null;
+          break;
+        }
+        locale = locale.substring(0, lastIndex);
+      }
+    }
+     catch (e) {
+      alert('Unexpected exception in locale detection, using default: ' + e);
+    }
+    $wnd_0['__gwt_Locale'] = rtlocale;
+    return locale || 'default';
+  }
+  ;
+  values['locale'] = {'default':0, pt:1};
   everybodyvotes.onScriptLoad = function(){
     if (frameInjected) {
       loadDone = true;
@@ -244,7 +298,9 @@ function everybodyvotes(){
   $stats && $stats({moduleName:'everybodyvotes', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'selectingPermutation'});
   if (!isHostedMode()) {
     try {
-      strongName = 'B22532452D76535FEE2957D8F2797D79';
+      unflattenKeylistIntoAnswers(['default'], '87B1DD1CF5D4E1B3523B35C06749A458');
+      unflattenKeylistIntoAnswers(['pt'], 'CC1D9E25C935D871E08FE8AEFCB828D2');
+      strongName = answers[computePropValue('locale')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {
         softPermutationId = Number(strongName.substring(idx + 1));

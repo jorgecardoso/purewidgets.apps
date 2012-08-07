@@ -6,7 +6,7 @@
   <property name="appid.test" value = "pw-apps-test" />
   <property name="appid.prod" value = "pw-apps" />
   
-  
+
   <!-- Arguments to gwtc and devmode targets -->
   <property name="gwt.args" value="" />
 
@@ -66,6 +66,7 @@
       <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
       <arg line="-style PRETTY"/>
       <arg line="-logLevel INFO"/>
+      <arg line="-extra extra"/>
       <arg line="${gwt.args}"/>
       <arg line="${modules}" />
 
@@ -110,13 +111,14 @@
 			/>
     </target>
     
+  
+  
   <macrodef name="appcfg-update-withcredentials">
    <sequential>    
     <appcfg action="update" war="war" >
     <args>
-        <arg value="--email jorgediablu@gmail.com"/>
-        <arg value="--passin"/>
-        <arg value=" &lt;  ../.appengine-credentials"/>
+        <arg value="--email=jorgediablu@gmail.com"/>
+
       </args>
     </appcfg>
   </sequential>    

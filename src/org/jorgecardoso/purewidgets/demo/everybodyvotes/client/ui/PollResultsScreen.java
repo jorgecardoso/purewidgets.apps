@@ -31,6 +31,8 @@ public class PollResultsScreen extends Composite implements PollScreenInterface 
 	interface PollResultsScreenUiBinder extends UiBinder<Widget, PollResultsScreen> {
 	}
 
+	PollResultsScreenMessages msgs = GWT.create(PollResultsScreenMessages.class);
+	
 	@UiField
 	InlineLabel labelQuestion;
 
@@ -51,7 +53,7 @@ public class PollResultsScreen extends Composite implements PollScreenInterface 
 		dt.addColumn(ColumnType.NUMBER, "Votes"); 
 		for ( EBVPollOptionDao pollOption : this.poll.getPollOptions() ) {
 			int i = dt.addRow();
-			dt.setValue(i, 0, pollOption.getOption() + ": " + pollOption.getVotes()+" voto(s)");
+			dt.setValue(i, 0, pollOption.getOption() + ": " + msgs.votes(pollOption.getVotes()));
 			dt.setValue(i, 1, pollOption.getVotes());
 		}
 		
