@@ -72,10 +72,9 @@ public class PollResultsScreen extends Composite implements PollScreenInterface 
 	    options.set3D(true);
 	    
 	    options.setChartArea(ca);
+	    options.set("forceIFrame", "false");
+	    options.setFontName("'Nunito', sans-serif");
 	    
-	    options.setFontName("'Arial', sans-serif");
-	    
-
 	    options.setTitle("");//"Results for: " + poll.getPollQuestion());
 	    
 

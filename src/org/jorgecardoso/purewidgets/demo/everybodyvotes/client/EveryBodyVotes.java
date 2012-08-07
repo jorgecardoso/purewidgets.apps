@@ -167,7 +167,7 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 		/*
 		 * Load the Google visualization API and then the PublicDisplayApplication
 		 */
-		VisualizationUtils.loadVisualizationApi(new Runnable() {
+		VisualizationUtils.loadVisualizationApi("1.1", new Runnable() {
 			@Override
 			public void run() {
 				PDApplication.load(EveryBodyVotes.this, "EveryBodyVotes");
