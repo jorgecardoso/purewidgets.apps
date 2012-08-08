@@ -52,6 +52,8 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 	private static final String LS_CURRENT_POLL_INDEX = "currentPollIndex";
 	
 	private static final int POLL_DISPLAY_INTERVAL = 15000; 
+	
+	private static final float SUGGEST_PROBABILITY = 0.2f;
 	//private static final int POLL_RESULT_DISPLAY_INTERVAL = 15000; 
 	
 	
@@ -205,24 +207,11 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 		this.localStorage.setInt(LS_CURRENT_POLL_INDEX, this.currentPollIndex);
 		
 		EBVPollDao nextPoll = this.polls.get(this.currentPollIndex);
-		float timeLeftHours = ( nextPoll.getClosesOn() - System.currentTimeMillis() )/(1000*60*60); //hours
-		float timeLeftDays = timeLeftHours/24;
-		float timeLeftWeeks = timeLeftDays/7;
-		
-//		String timeLeft = "";
-//		if ( timeLeftWeeks >= 1 ) {
-//			timeLeft = "This poll closes in about "  + ((int)timeLeftWeeks) + "week(s)."; 
-//		} else if ( timeLeftDays >= 1 ){
-//			timeLeft = "This poll closes in about "  + ((int)timeLeftDays) + "day(s).";
-//		} else if ( timeLeftHours >= 1) {
-//			timeLeft = "This poll closes in about "  + ((int)timeLeftHours) + "hour(s).";
-//		}
+
+
 		this.mainScreen.show( nextPoll ); //, nextPoll.getClosesOn() >= System.currentTimeMillis(), timeLeft );
 
-		
-		this.startRegularTimer();
-		
-		
+
 	}
 	
 	
@@ -311,6 +300,7 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 			//this.slidingPanel.setWidget(this.slidingPanel.getWidgets().get(1));
 			//this.slidingPanel.setWidget(this.slidingPanel.getWidgets().get(0));
 			this.advancePoll();
+			startRegularTimer();
 		}
 	}
 	
@@ -334,12 +324,14 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 //	}
 	
 	private void onTimerElapsed() {
-//		if ( this.showingPollResult ) {
-//			this.startRegularTimer((int)(POLL_DISPLAY_INTERVAL- (this.timerResultStart-this.timerRegularStart)) );
-//			this.showPoll(this.polls.get(this.currentPollIndex));
-//		} else {
+		Log.debug(this, "Timer elapsed");
+		if ( Math.random() < SUGGEST_PROBABILITY ) {
+			this.mainScreen.showSuggestScreen();
+		} else {
 			this.advancePoll();
-//		}
+		}
+		this.startRegularTimer();
+
 		
 	}
 	

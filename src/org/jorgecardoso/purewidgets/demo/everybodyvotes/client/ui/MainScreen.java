@@ -24,13 +24,18 @@ public class MainScreen extends Composite {
 	
 	@UiField
 	SlidingPanel slidingPanel;
+	SuggestScreen suggestScreen = new SuggestScreen();
 	
 	public MainScreen() {
 		initWidget(uiBinder.createAndBindUi(this));
 		this.pollScreens = new ArrayList<PollScreenInterface>();
 	}
 
+		public void showSuggestScreen() {
+			this.slidingPanel.setWidget(this.suggestScreen);
+		}
 	public void show(EBVPollDao poll) {
+		
 		PollScreenInterface pollScreen = this.get(poll);
 		
 		if ( null == pollScreen ) {
