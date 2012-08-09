@@ -271,6 +271,10 @@ public class PublicYoutubePlayer implements PDApplicationLifeCycle, EntryPoint, 
 		
 		if ( this.resetParameter ) {
 			/*
+			 * Clear datastorage
+			 */
+			this.pdApplication.getLocalStorage().clear();
+			/*
 			 * clear remote widgets
 			 */
 			Log.warn(this,"Reset parameter set to true. Deleting all widgets on server!");
