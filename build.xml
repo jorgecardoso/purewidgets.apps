@@ -3,6 +3,7 @@
     
   <property name="module.publicyoutubeplayer" value = "org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.PublicYoutubePlayer" />
   <property name="module.everybodyvotes" value = "org.jorgecardoso.purewidgets.demo.everybodyvotes.EveryBodyVotes" />
+  <property name="module.instructions" value = "org.jorgecardoso.purewidgets.demo.instructions.Instructions" />
   <property name="appid.test" value = "pw-apps-test" />
   <property name="appid.prod" value = "pw-apps" />
   
@@ -75,7 +76,7 @@
   
   <target name="gwtc-all" depends="javac" description="GWT compile to JavaScript (production mode)">
     <antcall target="gwtc">
-      <param name="modules" value="${module.publicyoutubeplayer} ${module.everybodyvotes}"/>
+      <param name="modules" value="${module.publicyoutubeplayer} ${module.everybodyvotes} ${module.instructions}"/>
     </antcall>
   </target>
   
@@ -91,6 +92,12 @@
     </antcall>
   </target>
   
+    <target name="gwtc-instructions" depends="javac" description="GWT compile to JavaScript (production mode)">
+     <antcall target="gwtc">
+      <param name="modules" value="${module.instructions}"/>
+    </antcall>
+  </target>
+      
   <target name="datanucleusenhance"
       description="Performs JDO enhancement on compiled data classes.">
     <enhance_war war="war" />
@@ -135,6 +142,11 @@
     <appcfg-update-withcredentials />
   </target>
   
+   <target name="deploy-instructions-test" depends="setappid-test,gwtc-instructions,datanucleusenhance"
+      description="Uploads the application to App Engine.">
+    <appcfg-update-withcredentials />
+  </target>   
+  
  <target name="deploy-all-test" depends="setappid-test,gwtc-all,datanucleusenhance"
       description="Uploads the application to App Engine.">
     <appcfg-update-withcredentials />
@@ -147,6 +159,12 @@
   
     
  <target name="deploy-everybodyvotes-prod" depends="setappid-prod,gwtc-everybodyvotes,datanucleusenhance"
+      description="Uploads the application to App Engine.">
+ 	<appcfg-update-withcredentials />
+
+ </target>
+ 
+  <target name="deploy-instructions-prod" depends="setappid-prod,gwtc-instructions,datanucleusenhance"
       description="Uploads the application to App Engine.">
  	<appcfg-update-withcredentials />
 
