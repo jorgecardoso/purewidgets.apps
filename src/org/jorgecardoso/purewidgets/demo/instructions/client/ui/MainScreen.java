@@ -1,11 +1,14 @@
 package org.jorgecardoso.purewidgets.demo.instructions.client.ui;
 
+import org.purewidgets.shared.im.Place;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Node;
 import com.google.gwt.dom.client.NodeList;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
@@ -25,15 +28,47 @@ public class MainScreen extends Composite  {
 	@UiField 
 	DeckPanel deckPanel;
 
-	public MainScreen() {
+	Place place;
+	public MainScreen(Place place) {
+		this.place = place;
 		initWidget(uiBinder.createAndBindUi(this));
 		deckPanel.setAnimationEnabled(true);
 	}
 
+	@UiFactory
+	public EmailButtonScreen createEmailButtonScreen() {
+		return new EmailButtonScreen(this.place);
+	}
+	
+	@UiFactory
+	public EmailTextScreen createEmailTextScreen() {
+		return new EmailTextScreen(this.place);
+	}	
+
+	@UiFactory
+	public SMSTextScreen createSMSTextScreen() {
+		return new SMSTextScreen(this.place);
+	}		
+	
+	@UiFactory
+	public SMSButtonScreen createSMSButtonScreen() {
+		return new SMSButtonScreen(this.place);
+	}	
+
+	@UiFactory
+	public WebScreen createWebScreen() {
+		return new WebScreen(this.place);
+	}		
+
+	@UiFactory
+	public QrCodeScreen createQrCodeScreen() {
+		return new QrCodeScreen(this.place);
+	}	
+	
 	public void showRandom() {
 		int total = deckPanel.getWidgetCount();
 		int index = (int)(Math.random()*total);
-		this.deckPanel.showWidget(1);
+		this.deckPanel.showWidget(index);
 	}
 
 

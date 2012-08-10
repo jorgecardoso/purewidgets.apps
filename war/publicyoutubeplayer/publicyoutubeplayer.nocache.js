@@ -298,8 +298,8 @@ function publicyoutubeplayer(){
   $stats && $stats({moduleName:'publicyoutubeplayer', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'selectingPermutation'});
   if (!isHostedMode()) {
     try {
-      unflattenKeylistIntoAnswers(['default'], '0021D383754605079D81B6CC44EAAD4F');
-      unflattenKeylistIntoAnswers(['pt'], '591DB75AF834D47D7D8215C573EB4A1F');
+      unflattenKeylistIntoAnswers(['pt'], '0BD99BB241B9AF267CC736AC5DDE2912');
+      unflattenKeylistIntoAnswers(['default'], '2715A96C5D089E74E32569649A2BD504');
       strongName = answers[computePropValue('locale')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {

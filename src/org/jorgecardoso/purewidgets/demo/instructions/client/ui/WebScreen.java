@@ -2,6 +2,7 @@ package org.jorgecardoso.purewidgets.demo.instructions.client.ui;
 
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.ui.PollResultsScreenMessages;
 import org.jorgecardoso.purewidgets.demo.instructions.client.ui.resources.Resources;
+import org.purewidgets.shared.im.Place;
 import org.purewidgets.shared.logging.Log;
 
 
@@ -33,7 +34,7 @@ public class WebScreen extends Composite  {
 	@UiField
 	InlineHTML uiInlineHTML;
 	
-	public WebScreen() {
+	public WebScreen(Place place) {
 		initWidget(uiBinder.createAndBindUi(this));
 		
 		// Using a TextResource
@@ -46,7 +47,7 @@ public class WebScreen extends Composite  {
 		
 		e = MainScreen.getElemById(this.getElement(), "subtitle");
 		if ( null != e) {
-			e.setInnerText(msgs.webAddress("http://..."));
+			e.setInnerText(msgs.webAddressTitle(place.getPlaceInteractionUrl()));
 		}
 	}
 

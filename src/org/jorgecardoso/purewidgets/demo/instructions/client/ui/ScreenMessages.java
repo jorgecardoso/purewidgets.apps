@@ -8,16 +8,19 @@ public interface ScreenMessages extends Messages{
 	String title();
 	
 	@DefaultMessage("Web: {0}")
-	String webAddress(String address);
+	String webAddressTitle(String address);
 	
 	@DefaultMessage("SMS: {0}")
-	String smsAddress(String address);	
+	String smsAddressTitle(String address);	
 	
-	@DefaultMessage("Text me")
-	String smsButtonLabel();	
+	@DefaultMessage("Texxt me")
+	String textLabel();
+	
+	@DefaultMessage("Click me")
+	String buttonLabel();	
 	
 	@DefaultMessage("3ax")
-	String smsButtonReferenceCode();
+	String buttonReferenceCode();
 	
 	@DefaultMessage("97..")
 	String smsPhoneNumber();	
@@ -26,5 +29,16 @@ public interface ScreenMessages extends Messages{
 	String smsText1(String place);		
 	
 	@DefaultMessage("xpto")
-	String smsText2();		
+	String smsText2();	
+	
+	
+	@DefaultMessage("Email: {0}")
+	String emailTitle(String emailAddres);		
+	
+	@DefaultMessage("{0}.ref")
+	String emailSubject(String placeReferenceCode);	
+	
+	
+	@DefaultMessage("QR Code")
+	String qrCodeTitle();		
 }

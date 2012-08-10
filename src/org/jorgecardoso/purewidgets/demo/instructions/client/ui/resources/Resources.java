@@ -11,5 +11,17 @@ public interface Resources extends ClientBundle {
 	  TextResource webSvg();
 	  
 	  @Source("smstext.svg")
-	  TextResource smsTextSvg();	  
+	  TextResource smsTextSvg();
+	  
+	  @Source("smsbutton.svg")
+	  TextResource smsButtonSvg();
+	  
+	  @Source("emailtext.svg")
+	  TextResource emailTextSvg();
+	  
+	  @Source("emailbutton.svg")
+	  TextResource emailButtonSvg();
+	  
+	  @Source("qrcode.svg")
+	  TextResource qrCodeSvg();	  
 }

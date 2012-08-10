@@ -2,6 +2,7 @@ package org.jorgecardoso.purewidgets.demo.instructions.client.ui;
 
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.ui.PollResultsScreenMessages;
 import org.jorgecardoso.purewidgets.demo.instructions.client.ui.resources.Resources;
+import org.purewidgets.shared.im.Place;
 import org.purewidgets.shared.logging.Log;
 
 
@@ -33,7 +34,7 @@ public class SMSTextScreen extends Composite  {
 	@UiField
 	InlineHTML uiInlineHTML;
 	
-	public SMSTextScreen() {
+	public SMSTextScreen(Place place) {
 		initWidget(uiBinder.createAndBindUi(this));
 		
 		// Using a TextResource
@@ -46,27 +47,27 @@ public class SMSTextScreen extends Composite  {
 		
 		e = MainScreen.getElemById(this.getElement(), "subtitle");
 		if ( null != e) {
-			e.setInnerText(msgs.smsAddress("..."));
+			e.setInnerText(msgs.smsAddressTitle(place.getPlacePhoneNumber()));
 		}
 		
 		e = MainScreen.getElemById(this.getElement(), "buttonLabel");
 		if ( null != e) {
-			e.setInnerText(msgs.smsButtonLabel());
+			e.setInnerText(msgs.textLabel());
 		}
 		
 		e = MainScreen.getElemById(this.getElement(), "buttonReference");
 		if ( null != e) {
-			e.setInnerText(msgs.smsButtonReferenceCode());
+			e.setInnerText(msgs.buttonReferenceCode());
 		}	
 
 		e = MainScreen.getElemById(this.getElement(), "phoneNumber");
 		if ( null != e) {
-			e.setInnerText(msgs.smsPhoneNumber());
+			e.setInnerText(place.getPlacePhoneNumber());
 		}		
 
 		e = MainScreen.getElemById(this.getElement(), "smsText1");
 		if ( null != e) {
-			e.setInnerText(msgs.smsText1("artes"));
+			e.setInnerText(msgs.smsText1(place.getPlaceReferenceCode()));
 		}			
 		e = MainScreen.getElemById(this.getElement(), "smsText2");
 		if ( null != e) {
