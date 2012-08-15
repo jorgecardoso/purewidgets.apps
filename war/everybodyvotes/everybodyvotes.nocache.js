@@ -298,8 +298,8 @@ function everybodyvotes(){
   $stats && $stats({moduleName:'everybodyvotes', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'selectingPermutation'});
   if (!isHostedMode()) {
     try {
-      unflattenKeylistIntoAnswers(['default'], '81540C3CBBE00DCF4965E64C3CC5CE0D');
-      unflattenKeylistIntoAnswers(['pt'], 'E405A2175006F4AF865F447F1224D02A');
+      unflattenKeylistIntoAnswers(['default'], '03E159572D53B5477AE38619BEAFE20A');
+      unflattenKeylistIntoAnswers(['pt'], '67AAA30BA0E24E314C49BD1A2E15A028');
       strongName = answers[computePropValue('locale')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {

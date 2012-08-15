@@ -15,6 +15,13 @@
 		width:100%;
 		height:100%;
   	}
+	.greenok {
+		position: absolute;
+		width: 150px;
+		left: 50%;
+		bottom: 10%;
+		margin-left: -75px;
+	}
 
 	.textbox {
 		position: absolute;
@@ -22,14 +29,12 @@
 		left: 20%;
 		right: 20%;
 		bottom: 40%;
-		
-		
 	}
 	.pwTextBoxTextbox {
 		
 		background-color: white;
 		color: white;
-		border: 10px solid red;
+		border: 10px solid #7ac144;
 		border-radius: 15px;
 		box-shadow: 1px 1px 3px 3px #AAA;
 	}
@@ -69,6 +74,6 @@
 
 			<pw:PdTextBox styleName="{style.textbox}"/>
 
-
+			<img class="{style.greenok}" src="greenok.png"/>
 	</g:HTMLPanel>
 </ui:UiBinder> 

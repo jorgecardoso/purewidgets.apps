@@ -51,7 +51,7 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 	
 	private static final String LS_CURRENT_POLL_INDEX = "currentPollIndex";
 	
-	private static final int POLL_DISPLAY_INTERVAL = 15000; 
+	private static final int POLL_DISPLAY_INTERVAL = 1500000; 
 	
 	private static final float SUGGEST_PROBABILITY = 0.2f;
 	//private static final int POLL_RESULT_DISPLAY_INTERVAL = 15000; 

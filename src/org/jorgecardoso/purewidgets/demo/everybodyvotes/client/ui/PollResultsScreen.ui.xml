@@ -31,22 +31,20 @@
   	}
 .closetime {
 		position: absolute;
-		bottom: 10%;
+		bottom: 15%;
 		left: 75%;
 		width:20%;
 		text-align:center;
 	}
-	.closetimelabel {
-		font-size: 30pt;
-		text-transform: uppercase;
-		color:red;
-		font-family: 'Nunito', sans-serif;
-		
-	}
+.redcross {
+	margin-bottom:30px;
+	width: 100px;
+}
+
 	.closetimetime {
 		font-family: 'Nunito', sans-serif;
 		font-size: 34pt;
-		background-color: red;
+		background-color: #ed1c24;
 		color: white;
 		border: 10px solid white;
 		border-radius: 15px;
@@ -63,8 +61,8 @@
 	    </g:HTMLPanel> 
 	    		
 		<g:HTMLPanel styleName="{style.closetime}">
-		    
-		    <g:Label ui:field="labelCloseTime" styleName="{style.closetimetime}"><ui:msg description='Voting closed'>Voting closed</ui:msg></g:Label>
+		    <img src="redcross.png" class="{style.redcross}"/>
+		    <g:Label ui:field="labelCloseTime" styleName="{style.closetimetime}"><ui:msg description='Voting closed'>Closed</ui:msg></g:Label>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 </ui:UiBinder> 

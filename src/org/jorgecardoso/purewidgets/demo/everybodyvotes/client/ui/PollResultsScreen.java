@@ -20,6 +20,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.visualization.client.ChartArea;
 import com.google.gwt.visualization.client.DataTable;
 import com.google.gwt.visualization.client.AbstractDataTable.ColumnType;
+import com.google.gwt.visualization.client.LegendPosition;
 import com.google.gwt.visualization.client.visualizations.corechart.AxisOptions;
 import com.google.gwt.visualization.client.visualizations.corechart.PieChart;
 import com.google.gwt.visualization.client.visualizations.corechart.TextStyle;
@@ -53,14 +54,18 @@ public class PollResultsScreen extends Composite implements PollScreenInterface 
 		dt.addColumn(ColumnType.NUMBER, "Votes"); 
 		for ( EBVPollOptionDao pollOption : this.poll.getPollOptions() ) {
 			int i = dt.addRow();
-			dt.setValue(i, 0, pollOption.getOption() + ": " + msgs.votes(pollOption.getVotes()));
+			String label = pollOption.getOption();
+//			if ( label.length() > 10 ) {
+//				label = label.substring(0, 10);
+//			}
+			dt.setValue(i, 0,  label);//+ ": " + msgs.votes(pollOption.getVotes()));
 			dt.setValue(i, 1, pollOption.getVotes());
 		}
 		
 	    ChartArea ca = ChartArea.create();
-	    ca.setTop("20%");
-	    ca.setLeft("30%");
-	    ca.setWidth("70%");
+	    ca.setTop("15%");
+	    ca.setLeft("0%");
+	    ca.setWidth("100%");
 	    ca.setHeight("70%");
 	    
 	    
@@ -69,18 +74,22 @@ public class PollResultsScreen extends Composite implements PollScreenInterface 
 		
 		options.setSliceVisibilityThreshold(0);
 		
-	    options.setFontSize(23);
+	    options.setFontSize(32);
 	    
-	    options.set3D(true);
+	    //options.set3D(true);
 	    
 	    options.setChartArea(ca);
 	    options.set("forceIFrame", "false");
 	    options.setFontName("'Nunito', sans-serif");
-	    
+	    options.setPieSliceText("label");
+	    TextStyle ts = TextStyle.create();
+	    ts.setFontSize(30);
+	    options.setPieSliceTextStyle(ts);
 	    options.setTitle("");//"Results for: " + poll.getPollQuestion());
-	    
-
-	    AxisOptions ao = AxisOptions.create();
+	    options.set("tooltip.trigger", "none");
+	    options.setColors("#0000ff", "#41b324", "#ff370d", "#ff1abc", "#fff626", "#0dff0d"); 
+	    options.setLegend(LegendPosition.BOTTOM);
+	    //AxisOptions ao = AxisOptions.create();
 //	    ao.setTextPosition("in");
 //	    options.setVAxisOptions(ao);
 //	    
@@ -91,9 +100,7 @@ public class PollResultsScreen extends Composite implements PollScreenInterface 
 
 		PieChart pie = new PieChart(dt, options);
 		
-		
-		//pie.setWidth("500");
-		//pie.setHeight("400");
+
 		
 		SimplePanel p = new SimplePanel();
 		
