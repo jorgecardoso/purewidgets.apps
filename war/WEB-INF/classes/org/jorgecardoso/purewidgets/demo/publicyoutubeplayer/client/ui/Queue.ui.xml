@@ -9,12 +9,13 @@
 @external gwt-Label, gwt-PopupPanel;
 
 .queue {
-	background: rgb(255, 217, 217);
+	background: #fff;
 	float:right;
 	width: 100%;
 	height: 100%;
 	border-radius:20px;
 	border: 1px solid black;
+	box-shadow: 2px 2px 1px 1px #ccc;
 }
 .queue h2 {
 	margin-top: 0px;
@@ -22,10 +23,11 @@
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 3em;
+	color: #fff;
 	text-align:center;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-	background-color:red;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color: #ed1c24;
 }
 
 
@@ -38,8 +40,8 @@ border-top-right-radius: 20px;
 }
 
 .gwt-PopupPanel {
-	background:transparent;
-	border:none;
+	background: transparent;
+	border: none;
 }
 </ui:style>
 		

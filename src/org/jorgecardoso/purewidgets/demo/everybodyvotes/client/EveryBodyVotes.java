@@ -17,6 +17,7 @@ import org.purewidgets.shared.events.ActionListener;
 import org.purewidgets.shared.logging.Log;
 
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.admin.Admin;
+import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.admin.Administrator;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.service.PollService;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.service.PollServiceAsync;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.ui.MainScreen;
@@ -51,9 +52,9 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 	
 	private static final String LS_CURRENT_POLL_INDEX = "currentPollIndex";
 	
-	private static final int POLL_DISPLAY_INTERVAL = 1500000; 
+	private int pollDisplayInterval = 15000; 
 	
-	private static final float SUGGEST_PROBABILITY = 0.2f;
+	private float suggestProbability = 0.2f;
 	//private static final int POLL_RESULT_DISPLAY_INTERVAL = 15000; 
 	
 	
@@ -109,12 +110,18 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 		
 		String page = Window.Location.getPath();
 		if ( page.contains("admin.html") ) {
-			new Admin().run();
+			//new Admin().run();
+			new Administrator(application);
 			return;
-		} 
+		} else if ( page.contains("polls.html") ) {
+			new Admin().run();
+			
+			return;
+		}
 		
 				
-		
+		this.pollDisplayInterval = application.getParameterInt(Administrator.PARAM_NAME_SCREEN_INTERVAL, 15)*1000;
+		this.suggestProbability = application.getParameterFloat(Administrator.PARAM_NAME_SUGGEST_PROBABILITY, 0.2f);
 		/*
 		 * Get the index of the last poll displayed
 		 */
@@ -323,11 +330,14 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 //		}
 //	}
 	
+	boolean lastSuggest = false;
 	private void onTimerElapsed() {
 		Log.debug(this, "Timer elapsed");
-		if ( Math.random() < SUGGEST_PROBABILITY ) {
+		if (!lastSuggest && Math.random() < suggestProbability ) {
 			this.mainScreen.showSuggestScreen();
+			lastSuggest = true;
 		} else {
+			lastSuggest = false;
 			this.advancePoll();
 		}
 		this.startRegularTimer();
@@ -337,7 +347,7 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 	
 	
 	private void startRegularTimer() {
-		this.startRegularTimer(POLL_DISPLAY_INTERVAL);
+		this.startRegularTimer(pollDisplayInterval);
 	}
 	
 //	private void showClosedPoll(EBVPollDao poll) {

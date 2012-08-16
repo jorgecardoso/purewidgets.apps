@@ -2,7 +2,7 @@
 Types potentially sent from browser:
 ====================================
 
-Reachable types computed on: Wed Aug 15 21:08:29 WEST 2012
+Reachable types computed on: Thu Aug 16 18:39:49 WEST 2012
 E
    Serialization status
       Not serializable
@@ -62,8 +62,8 @@ boolean
    Serialization status
       Not serializable
    Path
-      'boolean' is reachable from field 'desc' of type 'org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator'
-      'org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator' is reachable as a subtype of type 'interface java.util.Comparator<? super K>'
+      'boolean' is reachable from field 'desc' of type 'org.purewidgets.shared.widgets.TagCloud.AlphaTagComparator'
+      'org.purewidgets.shared.widgets.TagCloud.AlphaTagComparator' is reachable as a subtype of type 'interface java.util.Comparator<? super K>'
       'java.util.Comparator<? super K>' is reachable from field 'cmp' of type 'java.util.TreeMap<K, V>'
       'java.util.TreeMap<E, java.lang.Boolean>' is reachable as a subtype of type 'interface java.util.SortedMap<E, java.lang.Boolean>'
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
@@ -299,7 +299,8 @@ java.lang.IllegalArgumentException
    Serialization status
       Instantiable
    Path
-      'java.lang.IllegalArgumentException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'java.lang.IllegalArgumentException' is reachable as a supertype of type 'class java.lang.NumberFormatException'
+      'java.lang.NumberFormatException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -443,8 +444,8 @@ java.security.GeneralSecurityException
    Serialization status
       Instantiable
    Path
-      'java.security.GeneralSecurityException' is reachable as a supertype of type 'class java.security.DigestException'
-      'java.security.DigestException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'java.security.GeneralSecurityException' is reachable as a supertype of type 'class java.security.NoSuchAlgorithmException'
+      'java.security.NoSuchAlgorithmException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -651,8 +652,8 @@ javax.validation.ValidationException
    Serialization status
       Instantiable
    Path
-      'javax.validation.ValidationException' is reachable as a supertype of type 'class javax.validation.ConstraintDeclarationException'
-      'javax.validation.ConstraintDeclarationException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'javax.validation.ValidationException' is reachable as a supertype of type 'class javax.validation.ConstraintViolationException'
+      'javax.validation.ConstraintViolationException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -708,7 +709,7 @@ org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator
 Types potentially sent from server:
 ===================================
 
-Reachable types computed on: Wed Aug 15 21:08:29 WEST 2012
+Reachable types computed on: Thu Aug 16 18:39:49 WEST 2012
 com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException
    Serialization status
       Instantiable
