@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.EveryBodyVotes;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao;
+
 import org.purewidgets.client.widgets.PdListBox;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
+import org.purewidgets.shared.logging.Log;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -49,10 +51,13 @@ public class PollScreen extends Composite  implements PollScreenInterface {
 	}
 	
 	private void displayTimeLeft() {
-		float timeLeftHours = ( poll.getClosesOn() - System.currentTimeMillis() )/(1000*60*60); //hours
+		float timeLeftMinutes = ( poll.getClosesOn() - System.currentTimeMillis() )/(1000*60); //minutes
+		float timeLeftHours = timeLeftMinutes/60;
 		float timeLeftDays = timeLeftHours/24;
 		float timeLeftWeeks = timeLeftDays/7;
 		
+		
+		Log.debug(this, "Timeleft: " + timeLeftMinutes + " minutes,  "+ timeLeftHours + " hours");
 		String timeLeft = "";
 		if ( timeLeftWeeks >= 1 ) {
 			timeLeft =  msgs.closingPeriodWeek( ((int)timeLeftWeeks) ); 
@@ -60,6 +65,8 @@ public class PollScreen extends Composite  implements PollScreenInterface {
 			timeLeft =  msgs.closingPeriodDay( ((int)timeLeftDays) );
 		} else if ( timeLeftHours >= 1) {
 			timeLeft = msgs.closingPeriodHour( ((int)timeLeftHours) );
+		} else {
+			timeLeft = msgs.closingPeriodMinute( ((int)timeLeftMinutes) );
 		}
 		
 		this.labelCloseTime.setText(timeLeft);

@@ -18,5 +18,10 @@ public interface PollScreenMessages extends Messages {
 	@DefaultMessage("{0,number} weeks")
 	@AlternateMessage({"one", "1 week"})
 	String closingPeriodWeek(@PluralCount int value);
+
+
+	@DefaultMessage("{0,number} minutes")
+	@AlternateMessage({"one", "1 minute"})
+	String closingPeriodMinute(@PluralCount int value);
 }
 	 
