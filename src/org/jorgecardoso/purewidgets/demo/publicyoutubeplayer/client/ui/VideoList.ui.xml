@@ -13,7 +13,7 @@
 }
 
 .title {
-	background-image: literal("-webkit-linear-gradient(top left, #FFFFFF 0%, #1CA312 100%)");
+	background-image: literal("-webkit-linear-gradient(top left, #FFFFFF 0%, #1CA312 150%)");
 	font-size: 42pt;
 	margin-left:auto;
 	margin-right:auto;

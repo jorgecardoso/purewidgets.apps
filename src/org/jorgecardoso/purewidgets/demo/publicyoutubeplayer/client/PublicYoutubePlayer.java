@@ -2,34 +2,27 @@ package org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.ui.VideoActionListener;
 import org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.ui.VideoScreen;
-import org.purewidgets.client.storage.LocalStorage;
 import org.purewidgets.client.widgets.youtube.EmbeddedPlayer;
 import org.purewidgets.client.widgets.youtube.PlayerError;
 import org.purewidgets.client.widgets.youtube.PlayerListener;
 import org.purewidgets.client.widgets.youtube.PlayerState;
-import org.purewidgets.client.widgets.youtube.VideoFeed;
 import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.application.PDApplicationLifeCycle;
 import org.purewidgets.client.feedback.FeedbackSequencer;
 
 
-import org.purewidgets.client.widgets.PdWidget;
 import org.purewidgets.client.widgets.youtube.Video;
 
 import org.purewidgets.shared.events.ActionEvent;
-import org.purewidgets.shared.events.ActionListener;
 import org.purewidgets.shared.widgets.TagCloud;
 
 
@@ -222,6 +215,8 @@ public class PublicYoutubePlayer implements PDApplicationLifeCycle, EntryPoint, 
 			(new Admin()).run(app);
 			return;
 		}
+		
+		Resources.INSTANCE.css().ensureInjected();
 		//Logger.getLogger("PuReWidgets").setLevel(Level.OFF);
 		//org.purewidgets.shared.logging.Log.setLevel(Level.WARNING);
 		

@@ -81,6 +81,7 @@ public class PollScreen extends Composite  implements PollScreenInterface {
 			}
 			
 			PdListBox tb = new PdListBox("poll " + this.poll.getPollId(), this.poll.getPollQuestion(), l);
+			tb.setUserSharedInfoInputFeedbackPattern("%WL%: %WOS%");
 			tb.setShortDescription("Vote");
 			tb.setLongDescription(poll.getPollQuestion() );
 			tb.addActionListener(new ActionListener() {

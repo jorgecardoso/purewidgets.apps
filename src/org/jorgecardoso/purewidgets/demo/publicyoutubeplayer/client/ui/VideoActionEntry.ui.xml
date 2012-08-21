@@ -67,7 +67,7 @@
 	width: 100%;
 	height: 50px;
 	font-family: 'Nunito', sans-serif;
-	background-image: literal("-webkit-linear-gradient(top, #FFFFFF 0%, #1CA312 130%)");
+	background-image: literal("-webkit-linear-gradient(top, #FFFFFF 0%, #1CA312 150%)");
 }
 
 </ui:style>
