@@ -1,5 +1,7 @@
 package org.jorgecardoso.purewidgets.demo.instructions.client.ui;
 
+import org.jorgecardoso.purewidgets.demo.instructions.client.Instructions;
+import org.jorgecardoso.purewidgets.demo.instructions.client.Log;
 import org.purewidgets.shared.im.Place;
 
 import com.google.gwt.core.client.GWT;
@@ -29,6 +31,9 @@ public class MainScreen extends Composite  {
 	DeckPanel deckPanel;
 
 	Place place;
+	
+	int index; // of last displayed screen
+	
 	public MainScreen(Place place) {
 		this.place = place;
 		initWidget(uiBinder.createAndBindUi(this));
@@ -67,10 +72,19 @@ public class MainScreen extends Composite  {
 	
 	public void showRandom() {
 		int total = deckPanel.getWidgetCount();
-		int index = (int)(Math.random()*total);
+		index = (int)(Math.random()*total);
+		Log.debug(this, "Showing screen number " + index);
 		this.deckPanel.showWidget(index);
 	}
 
+	public void showNext() {
+		index++;
+		if ( index >= deckPanel.getWidgetCount() ) {
+			index = 0;
+		}
+		Log.debug(this, "Showing screen number " + index);
+		this.deckPanel.showWidget(index);
+	}
 
 	
 	public static Element getElemById(Element parent, String id) {
