@@ -2,7 +2,7 @@
 Types potentially sent from browser:
 ====================================
 
-Reachable types computed on: Tue Aug 21 21:44:05 WEST 2012
+Reachable types computed on: Tue Aug 21 22:17:45 WEST 2012
 E
    Serialization status
       Not serializable
@@ -74,7 +74,7 @@ java.util.ArrayList<java.lang.String>
 Types potentially sent from server:
 ===================================
 
-Reachable types computed on: Tue Aug 21 21:44:05 WEST 2012
+Reachable types computed on: Tue Aug 21 22:17:45 WEST 2012
 K
    Serialization status
       Not serializable
@@ -96,8 +96,15 @@ K
       Not serializable
    Path
       'K' is reachable from field 'exposeKey' of type 'java.util.HashMap<K, V>'
-      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a supertype of type 'class java.util.LinkedHashMap<java.lang.String, java.lang.String>'
-      'java.util.LinkedHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
+      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
+      Started from 'java.util.Map<java.lang.String, java.lang.String>'
+
+V
+   Serialization status
+      Not serializable
+   Path
+      'V' is reachable from field 'exposeValue' of type 'java.util.HashMap<K, V>'
+      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'
 
 V
@@ -106,15 +113,6 @@ V
    Path
       'V' is reachable from field 'exposeValue' of type 'java.util.IdentityHashMap<K, V>'
       'java.util.IdentityHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
-      Started from 'java.util.Map<java.lang.String, java.lang.String>'
-
-V
-   Serialization status
-      Not serializable
-   Path
-      'V' is reachable from field 'exposeValue' of type 'java.util.HashMap<K, V>'
-      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a supertype of type 'class java.util.LinkedHashMap<java.lang.String, java.lang.String>'
-      'java.util.LinkedHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'
 
 V
@@ -213,8 +211,7 @@ java.util.HashMap<java.lang.String, java.lang.String>
    Serialization status
       Instantiable
    Path
-      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a supertype of type 'class java.util.LinkedHashMap<java.lang.String, java.lang.String>'
-      'java.util.LinkedHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
+      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'
 
 java.util.IdentityHashMap<java.lang.String, java.lang.String>

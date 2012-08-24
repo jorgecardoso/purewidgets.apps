@@ -4,6 +4,8 @@
 package org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.ui;
 
 import org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Log;
+import org.purewidgets.client.feedback.InputFeedback;
+import org.purewidgets.client.feedback.MessagePattern;
 import org.purewidgets.client.widgets.PdButton;
 import org.purewidgets.client.widgets.PdDownload;
 import org.purewidgets.client.widgets.youtube.Video;
@@ -118,6 +120,7 @@ public class VideoActionEntry extends Composite {
 	private PdButton createButton(String videoId, final String label) {
 		PdButton btn = new PdButton(this.encodeLabel(label)+"-"+videoId, label);
 		
+		btn.setUserSharedInfoInputFeedbackPattern(MessagePattern.PATTERN_WIDGET_SHORT_DESCRIPTION + ": " + MessagePattern.PATTERN_WIDGET_LONG_DESCRIPTION+"(10)");
 		btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
 		btn.addActionListener(new ActionListener() {
 

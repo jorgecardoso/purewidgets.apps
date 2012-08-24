@@ -276,6 +276,7 @@ public class PublicYoutubePlayer implements PDApplicationLifeCycle, EntryPoint, 
 			this.pdApplication.getInteractionManager().deleteAllWidgets(this.pdApplication.getPlaceId(), this.pdApplication.getApplicationId(), this.pdApplication.getApplicationId(), null);
 		}
 		
+		
 		screen = new VideoScreen();
 		DOM.removeChild(RootPanel.getBodyElement(), DOM.getElementById("loading"));
 		RootPanel.get().add(screen);
