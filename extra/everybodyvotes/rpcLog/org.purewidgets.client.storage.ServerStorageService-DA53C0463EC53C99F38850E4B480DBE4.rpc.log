@@ -2,7 +2,7 @@
 Types potentially sent from browser:
 ====================================
 
-Reachable types computed on: Tue Aug 21 22:17:45 WEST 2012
+Reachable types computed on: Sat Aug 25 12:28:14 WEST 2012
 E
    Serialization status
       Not serializable
@@ -74,7 +74,15 @@ java.util.ArrayList<java.lang.String>
 Types potentially sent from server:
 ===================================
 
-Reachable types computed on: Tue Aug 21 22:17:45 WEST 2012
+Reachable types computed on: Sat Aug 25 12:28:14 WEST 2012
+K
+   Serialization status
+      Not serializable
+   Path
+      'K' is reachable from field 'exposeKey' of type 'java.util.HashMap<K, V>'
+      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
+      Started from 'java.util.Map<java.lang.String, java.lang.String>'
+
 K
    Serialization status
       Not serializable
@@ -89,14 +97,6 @@ K
    Path
       'K' is reachable from field 'exposeKey' of type 'java.util.IdentityHashMap<K, V>'
       'java.util.IdentityHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
-      Started from 'java.util.Map<java.lang.String, java.lang.String>'
-
-K
-   Serialization status
-      Not serializable
-   Path
-      'K' is reachable from field 'exposeKey' of type 'java.util.HashMap<K, V>'
-      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'
 
 V
@@ -127,8 +127,8 @@ boolean
    Serialization status
       Not serializable
    Path
-      'boolean' is reachable from field 'desc' of type 'org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator'
-      'org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator' is reachable as a subtype of type 'interface java.util.Comparator<? super K>'
+      'boolean' is reachable from field 'desc' of type 'org.purewidgets.shared.widgets.TagCloud.AlphaTagComparator'
+      'org.purewidgets.shared.widgets.TagCloud.AlphaTagComparator' is reachable as a subtype of type 'interface java.util.Comparator<? super K>'
       'java.util.Comparator<? super K>' is reachable from field 'cmp' of type 'java.util.TreeMap<K, V>'
       'java.util.TreeMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'

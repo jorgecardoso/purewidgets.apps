@@ -6,6 +6,8 @@ package org.jorgecardoso.purewidgets.demo.everybodyvotes.client;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.application.PDApplicationLifeCycle;
@@ -173,6 +175,9 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 	
 	@Override
 	public void onModuleLoad() {
+		Logger.getLogger("").setLevel(Level.ALL);
+		Logger.getLogger("PuReWidgets").setLevel(Level.ALL);
+		Log.get().setLevel(Level.ALL);
 		/*
 		 * Load the Google visualization API and then the PublicDisplayApplication
 		 */

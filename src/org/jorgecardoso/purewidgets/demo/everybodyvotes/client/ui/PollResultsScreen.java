@@ -64,8 +64,8 @@ public class PollResultsScreen extends Composite implements PollScreenInterface 
 		
 	    ChartArea ca = ChartArea.create();
 	    ca.setTop("15%");
-	    ca.setLeft("0%");
-	    ca.setWidth("100%");
+	    ca.setLeft("15%");
+	    ca.setWidth("70%");
 	    ca.setHeight("70%");
 	    
 	    
