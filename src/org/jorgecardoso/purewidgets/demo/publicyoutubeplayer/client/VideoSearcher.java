@@ -147,7 +147,8 @@ public class VideoSearcher {
 		 * return empty sets... but this way we don't need to know how many results there are
 		 * beforehand.
 		 */
-		int startIndex = (int)(Math.random()*10);
+		int startIndex = (int)(Math.random()*10)+1;
+		
 		
 		/*
 		 * Calculate the duration parameter, according to the maxvideoduration parameter.
