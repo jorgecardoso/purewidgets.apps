@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+
+/************************ CumulativeInputFeedbackPanel */
+
+.pwCumulativeInputFeedbackPanel {
+	
+	background: rgba(255, 255, 255, 0.9);
+	border: 3px solid black;
+	border-radius: 5px;
+}
+
+.pwCumulativeInputFeedbackPanel .title {
+	font-family: 'Nunito', sans-serif;
+	font-size: 3.1em;
+	text-align: center;
+	background: rgb(200, 200, 200);
+	padding:2px 5px 2px 5px;
+}
+
+
+.pwCumulativeInputFeedbackPanel .accepted {
+	background-size:40px 40px;
+	color: black;
+	font-family: 'Nunito', sans-serif;
+	font-size:3em;
+	word-wrap:normal;
+
+		padding:2px 5px 2px 45px;
+}
+
+.pwCumulativeInputFeedbackPanel .notaccepted {
+		background-size:40px 40px;
+	color: black;
+	font-family: 'Nunito', sans-serif;
+	font-size:3em;
+	word-wrap:normal;
+
+		padding:2px 5px 2px 45px;
+}
+ 

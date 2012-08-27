@@ -27,6 +27,7 @@ import org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao;
 
 
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.DOM;
@@ -120,7 +121,7 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 			
 			return;
 		}
-		
+		Resources.INSTANCE.css().ensureInjected();
 				
 		this.pollDisplayInterval = application.getParameterInt(Administrator.PARAM_NAME_SCREEN_INTERVAL, 15)*1000;
 		this.suggestProbability = application.getParameterFloat(Administrator.PARAM_NAME_SUGGEST_PROBABILITY, 0.2f);
