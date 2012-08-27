@@ -89,6 +89,9 @@ public class Queue extends PopupPanel {
 			return null;
 		}
 		Video video = this.videoQueue.remove(0);
+		if ( this.videoQueue.size() == 0  ) {
+			this.hide();
+		}
 		this.createGuiQueue();
 		this.saveQueueToLocalStorage();
 		return video;

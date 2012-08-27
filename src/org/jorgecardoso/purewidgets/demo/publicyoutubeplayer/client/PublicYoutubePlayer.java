@@ -382,11 +382,11 @@ public class PublicYoutubePlayer implements PDApplicationLifeCycle, EntryPoint, 
 			//Video video = this.allPlayedVideos.get(videoId);
 			
 		if ( null != video ) {
-			if ( action.equalsIgnoreCase("like") ) {
+			if ( action.equalsIgnoreCase("d like") ) {
 				Log.debug(this, e.getNickname() + " liked video " + video.getId() );
 				
 				this.updateTagCloud( video );
-			} else if ( action.equalsIgnoreCase("play") ) {
+			} else if ( action.equalsIgnoreCase("c play") ) {
 				Log.debug(this, e.getNickname() + " wants to play " + video.getId());
 				
 				this.screen.queue.addQueueEntry(video);
