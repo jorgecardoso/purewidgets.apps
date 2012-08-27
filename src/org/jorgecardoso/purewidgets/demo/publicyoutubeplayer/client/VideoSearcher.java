@@ -298,6 +298,11 @@ public class VideoSearcher {
 		 */
 		this.saveToLocalStorage();
 		
+		
+		/*
+		 * If we still don't have enough videos, schedule a search for more
+		 */
+		Log.debug(this, "Scheduling search for more videos.");
 		if ( MINIMUM_VIDEO_COUNT > this.videoList.size() ) {
 			this.timer = new Timer() {
 
