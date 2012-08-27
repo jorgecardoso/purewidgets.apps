@@ -12,7 +12,9 @@ import org.purewidgets.client.widgets.youtube.Video;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
 
+import com.gargoylesoftware.htmlunit.html.Util;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.i18n.client.NumberFormat;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -61,7 +63,7 @@ public class VideoActionEntry extends Composite {
 	private VideoActionListener videoEventListener;
 	private String actionId;
 	
-
+	private Integer lastVideoOrderTag;
 		
 	public VideoActionEntry(Video video, String actionLabel, String actionId, boolean createDownloadButton, boolean createReportButton) {
 		initWidget(uiBinder.createAndBindUi(this));
@@ -73,6 +75,20 @@ public class VideoActionEntry extends Composite {
 		uiLabelUser.setText( video.getAuthor() );
 		
 		image.setUrl( video.getThumbnail() );
+		
+		lastVideoOrderTag = org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Util.getPdApplication().getLocalStorage().getInteger("lastVideoOrderTag");
+		if ( null != lastVideoOrderTag) {
+			lastVideoOrderTag++;
+			if ( lastVideoOrderTag > 100 ) {
+				lastVideoOrderTag = 0;
+			}
+			
+			
+		} else {
+			lastVideoOrderTag = 0;
+		}
+		org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Util.getPdApplication().getLocalStorage().setInt("lastVideoOrderTag", lastVideoOrderTag);
+
 		
 		likeGuiButton = createButton(video.getId(), actionLabel);
 		
@@ -86,8 +102,7 @@ public class VideoActionEntry extends Composite {
 		if ( createReportButton ) {
 			reportButton = this.createReportButton(video);
 		}
-		
-	}
+	    	}
 	
 	public void highlight(boolean h) {
 		if ( h ) { 
@@ -118,7 +133,7 @@ public class VideoActionEntry extends Composite {
 	 * 
 	 */
 	private PdButton createButton(String videoId, final String label) {
-		PdButton btn = new PdButton(this.encodeLabel(label)+"-"+videoId, label);
+		PdButton btn = new PdButton(this.actionId + " "+ NumberFormat.getFormat("000").format(lastVideoOrderTag.intValue()) + " " + videoId, label);
 		
 		btn.setUserSharedInfoInputFeedbackPattern(MessagePattern.PATTERN_WIDGET_SHORT_DESCRIPTION + ": " + MessagePattern.PATTERN_WIDGET_LONG_DESCRIPTION+"(10)");
 		btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
@@ -142,7 +157,7 @@ public class VideoActionEntry extends Composite {
 	 * 
 	 */
 	private PdButton createReportButton(Video video) {
-		PdButton btn = new PdButton(this.encodeLabel("Report")+"-"+video.getId(), constants.reportAsInnapropriate());
+		PdButton btn = new PdButton("a Report " + NumberFormat.getFormat("000").format(lastVideoOrderTag.intValue()) + " " +video.getId(), constants.reportAsInnapropriate());
 		btn.setLongDescription(video.getTitle());
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		//btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
@@ -164,7 +179,7 @@ public class VideoActionEntry extends Composite {
 	 * 
 	 */
 	private PdDownload createDownloadButton(Video video) {
-		PdDownload btn = new PdDownload(this.encodeLabel("Download")+"-"+video.getId(), constants.getLink(), video.getDefaultPlayer());
+		PdDownload btn = new PdDownload("b Download " + NumberFormat.getFormat("000").format(lastVideoOrderTag.intValue()) + " " + video.getId(), constants.getLink(), video.getDefaultPlayer());
 		btn.setLongDescription(video.getTitle());
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		//btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);

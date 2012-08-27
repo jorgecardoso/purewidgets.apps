@@ -97,7 +97,7 @@
 			<h1 align="center" class="{style.title}"><img src="horizontalIcon.svg"/></h1>
 			
 			<g:DeckPanel ui:field='deckPanelBottom' styleName='{style.id-globalBottomPanel}'>
-  				<p:VideoList maxEntries="6" cols="1"  rows = "3" listId="like" title="Recently played" visibleButtonLabel="Like" createDownloadButton="true" createReportButton="true" ui:field="recentlyPlayed" styleName='{style.recentlyPlayed}' >
+  				<p:VideoList maxEntries="6" cols="1"  rows = "3" listId="d like" title="Recently played" visibleButtonLabel="Like" createDownloadButton="true" createReportButton="true" ui:field="recentlyPlayed" styleName='{style.recentlyPlayed}' >
   					<ui:attribute name='visibleButtonLabel' description='Recently played button label'/>
   					<ui:attribute name='title' description='Recently played title'/>
   				</p:VideoList>     
@@ -111,7 +111,7 @@
 	
   				
 	
-			    <p:VideoList  maxEntries="6" cols="2"  rows = "3"  listId="play" title="What to play next" visibleButtonLabel="Play" createDownloadButton="false" createReportButton="false" ui:field="toPlayNext" >
+			    <p:VideoList  maxEntries="6" cols="2"  rows = "3"  listId="c play" title="What to play next" visibleButtonLabel="Play" createDownloadButton="false" createReportButton="false" ui:field="toPlayNext" >
      				<ui:attribute name='visibleButtonLabel' description='To play next button label'/>
      				<ui:attribute name='title' description='To play next title'/>
      			</p:VideoList>    
