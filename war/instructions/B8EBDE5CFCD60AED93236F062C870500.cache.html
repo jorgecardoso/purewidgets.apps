@@ -4,14 +4,14 @@ var $gwt_version = "2.4.0";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = '66C6742923E89405DCB17C8590647BED';
+var $strongName = 'B8EBDE5CFCD60AED93236F062C870500';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'instructions',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
 </script></head>
 <body>
 <script><!--
-var _, N81_longLit = {l:4194175, m:4194303, h:1048575}, P0_longLit = {l:0, m:0, h:0}, P80_longLit = {l:128, m:0, h:0}, P36ee80_longLit = {l:3600000, m:0, h:0}, P2932e00_longLit = {l:1256960, m:10, h:0}, P7fffffffffffffff_longLit = {l:4194303, m:4194303, h:524287}, Q$Object = 0, Q$String = 1, Q$AnimationScheduler$AnimationHandle = 2, Q$AnimationSchedulerImplTimer$AnimationHandleImpl = 3, Q$AnimationSchedulerImplTimer$AnimationHandleImpl_$1 = 4, Q$JavaScriptException = 5, Q$Style$Unit = 6, Q$ClickHandler = 7, Q$DomEvent$Type = 8, Q$CloseHandler = 9, Q$HasAttachHandlers = 10, Q$EventHandler = 11, Q$HasHandlers = 12, Q$RequestException = 13, Q$HasDirection$Direction = 14, Q$LongLibBase$LongEmul = 15, Q$HtmlLogFormatter = 16, Q$SafeHtml = 17, Q$EventListener = 18, Q$Timer = 19, Q$SerializationException = 20, Q$RequestCallbackAdapter$ResponseReader = 21, Q$HasVisibility = 22, Q$HasWidgets = 23, Q$IsRenderable = 24, Q$IsWidget = 25, Q$RootPanel = 26, Q$UIObject = 27, Q$ValueBoxBase$TextAlignment = 28, Q$Widget = 29, Q$SimpleEventBus$Command = 30, Q$UmbrellaException = 31, Q$Serializable = 32, Q$Boolean = 33, Q$Byte = 34, Q$CharSequence = 35, Q$Character = 36, Q$Comparable = 37, Q$Double = 38, Q$Enum = 39, Q$Exception = 40, Q$Float = 41, Q$Integer = 42, Q$Long = 43, Q$Number = 44, Q$NumberFormatException = 45, Q$RuntimeException = 46, Q$Short = 47, Q$StackTraceElement = 48, Q$Throwable = 49, Q$Throwable_$1 = 50, Q$ArrayList = 51, Q$Comparator = 52, Q$Date = 53, Q$LinkedHashMap$ChainEntry = 54, Q$List = 55, Q$Map = 56, Q$Map$Entry = 57, Q$Set = 58, Q$TreeMap$Node = 59, Q$TreeMap$SubMapType = 60, Q$Handler = 61, Q$Logger = 62, Q$ApplicationParameter = 63, Q$WidgetInputEvent = 64, Q$Application = 65, Q$Place = 66, Q$Widget_0 = 67, Q$WidgetInput = 68, Q$WidgetOption = 69;
+var _, N81_longLit = {l:4194175, m:4194303, h:1048575}, P0_longLit = {l:0, m:0, h:0}, P80_longLit = {l:128, m:0, h:0}, P36ee80_longLit = {l:3600000, m:0, h:0}, P2932e00_longLit = {l:1256960, m:10, h:0}, P7fffffffffffffff_longLit = {l:4194303, m:4194303, h:524287}, Q$Object = 0, Q$String = 1, Q$AnimationScheduler$AnimationHandle = 2, Q$AnimationSchedulerImplTimer$AnimationHandleImpl = 3, Q$AnimationSchedulerImplTimer$AnimationHandleImpl_$1 = 4, Q$JavaScriptException = 5, Q$Style$Unit = 6, Q$ClickHandler = 7, Q$DomEvent$Type = 8, Q$CloseHandler = 9, Q$HasAttachHandlers = 10, Q$EventHandler = 11, Q$HasHandlers = 12, Q$RequestException = 13, Q$HasDirection$Direction = 14, Q$LongLibBase$LongEmul = 15, Q$HtmlLogFormatter = 16, Q$SafeHtml = 17, Q$EventListener = 18, Q$Timer = 19, Q$SerializationException = 20, Q$RequestCallbackAdapter$ResponseReader = 21, Q$HasVisibility = 22, Q$HasWidgets = 23, Q$IsRenderable = 24, Q$IsWidget = 25, Q$RootPanel = 26, Q$UIObject = 27, Q$ValueBoxBase$TextAlignment = 28, Q$Widget = 29, Q$SimpleEventBus$Command = 30, Q$UmbrellaException = 31, Q$Serializable = 32, Q$Boolean = 33, Q$Byte = 34, Q$CharSequence = 35, Q$Character = 36, Q$Comparable = 37, Q$Double = 38, Q$Enum = 39, Q$Exception = 40, Q$Float = 41, Q$Integer = 42, Q$Long = 43, Q$Number = 44, Q$NumberFormatException = 45, Q$RuntimeException = 46, Q$Short = 47, Q$StackTraceElement = 48, Q$Throwable = 49, Q$Throwable_$1 = 50, Q$ArrayList = 51, Q$Comparator = 52, Q$Date = 53, Q$LinkedHashMap$ChainEntry = 54, Q$List = 55, Q$Map = 56, Q$Map$Entry = 57, Q$Set = 58, Q$TreeMap$Node = 59, Q$TreeMap$SubMapType = 60, Q$Handler = 61, Q$Logger = 62, Q$ApplicationParameter = 63, Q$WidgetInputEvent = 64, Q$Application = 65, Q$Place = 66, Q$Widget_0 = 67, Q$WidgetInput = 68, Q$WidgetOption = 69, Q$WidgetParameter = 70;
 function makeCastMap(a){
   var result = {};
   for (var i = 0, c = a.length; i < c; ++i) {
@@ -10812,7 +10812,7 @@ function $getWidgetParameters(this$static){
   parameters = new ArrayList_0;
   if (parametersJs) {
     for (i = 0; i < parametersJs.length; ++i) {
-      $add_3(parameters, new WidgetParameter_0((parametersJs[i].name , parametersJs[i].value)));
+      $add_3(parameters, new WidgetParameter_0(parametersJs[i].name, parametersJs[i].value));
     }
   }
   return parameters;
@@ -11166,7 +11166,22 @@ _.getClass$ = function getClass_278(){
 ;
 _.interactionServerUrl = null;
 function $compareTo_9(this$static, other){
-  return compareTo_8(this$static.widgetId_0, other.widgetId_0);
+  var otherSort, thisSort, wp, wp$iterator;
+  thisSort = null;
+  if (this$static.widgetParameters_0.size > 0) {
+    for (wp$iterator = new AbstractList$IteratorImpl_0(this$static.widgetParameters_0); wp$iterator.i < wp$iterator.this$0_0.size_0();) {
+      wp = dynamicCast($next_0(wp$iterator), Q$WidgetParameter);
+      $equals(wp.name_0, 'purewidgets-sortorder') && (thisSort = wp.value_0);
+    }
+  }
+  otherSort = null;
+  if (other.widgetParameters_0.size > 0) {
+    for (wp$iterator = new AbstractList$IteratorImpl_0(other.widgetParameters_0); wp$iterator.i < wp$iterator.this$0_0.size_0();) {
+      wp = dynamicCast($next_0(wp$iterator), Q$WidgetParameter);
+      $equals(wp.name_0, 'purewidgets-sortorder') && (otherSort = wp.value_0);
+    }
+  }
+  return thisSort == null && otherSort == null?compareTo_8(this$static.widgetId_0, other.widgetId_0):thisSort != null && otherSort != null?compareTo_8(thisSort, otherSort):thisSort != null?-1:1;
 }
 
 function $fireActionEvent(this$static){
@@ -11204,14 +11219,14 @@ function $setWidgetId(this$static, id){
   }
 }
 
-function Widget_1(widgetId, options){
+function Widget_1(widgetId, options, parameters){
   var wo;
   this.widgetOptions_0 = new ArrayList_0;
   this.actionListeners = new ArrayList_0;
   this.actionListeners = new ArrayList_0;
   this.widgetOptions_0 = new ArrayList_0;
   new ArrayList_0;
-  new ArrayList_0;
+  this.widgetParameters_0 = new ArrayList_0;
   $setWidgetId(this, widgetId);
   if (!options) {
     wo = new WidgetOption_0(widgetId);
@@ -11220,6 +11235,7 @@ function Widget_1(widgetId, options){
    else {
     this.widgetOptions_0 = options;
   }
+  !!parameters && (this.widgetParameters_0 = parameters);
 }
 
 function Widget_0(){
@@ -11236,6 +11252,7 @@ _.getClass$ = function getClass_279(){
 ;
 _.castableTypeMap$ = makeCastMap([Q$Comparable, Q$Widget_0]);
 _.widgetId_0 = null;
+_.widgetParameters_0 = null;
 function $setTimeStamp_0(this$static, timeStamp){
   this$static.timeStamp_0 = timeStamp;
 }
@@ -11318,7 +11335,9 @@ _.hashCode$ = function hashCode_21(){
 ;
 _.castableTypeMap$ = makeCastMap([Q$WidgetOption]);
 _.widgetOptionId_0 = null;
-function WidgetParameter_0(){
+function WidgetParameter_0(name_0, value){
+  this.name_0 = name_0;
+  this.value_0 = value;
 }
 
 function WidgetParameter(){
@@ -11329,6 +11348,9 @@ _.getClass$ = function getClass_282(){
   return Lorg_purewidgets_shared_im_WidgetParameter_2_classLit;
 }
 ;
+_.castableTypeMap$ = makeCastMap([Q$WidgetParameter]);
+_.name_0 = null;
+_.value_0 = null;
 function $clinit_Log_0(){
   $clinit_Log_0 = nullMethod;
   logger_1 = ($clinit_Logger() , $getLoggerHelper('PuReWidgets'));
@@ -11368,6 +11390,8 @@ function info(msg){
   $log_1(logger_1, ($clinit_Level() , INFO_0), msg);
 }
 
+--></script>
+<script><!--
 function logStackTrace(e){
   $clinit_Log_0();
   var s, s$array, s$index, s$max, sb;
@@ -11414,8 +11438,6 @@ _.getClass$ = function getClass_283(){
   return Lorg_purewidgets_shared_widgets_TagCloud$AlphaTagComparator_2_classLit;
 }
 ;
---></script>
-<script><!--
 _.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparator]);
 _.desc = false;
 function $compare_3(this$static){

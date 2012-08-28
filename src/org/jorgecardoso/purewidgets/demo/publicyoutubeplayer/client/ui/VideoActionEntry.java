@@ -3,6 +3,8 @@
  */
 package org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.ui;
 
+import java.util.ArrayList;
+
 import org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Log;
 import org.purewidgets.client.feedback.InputFeedback;
 import org.purewidgets.client.feedback.MessagePattern;
@@ -11,6 +13,7 @@ import org.purewidgets.client.widgets.PdDownload;
 import org.purewidgets.client.widgets.youtube.Video;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
+import org.purewidgets.shared.im.WidgetParameter;
 
 import com.gargoylesoftware.htmlunit.html.Util;
 import com.google.gwt.core.client.GWT;
@@ -90,10 +93,9 @@ public class VideoActionEntry extends Composite {
 		org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Util.getPdApplication().getLocalStorage().setInt("lastVideoOrderTag", lastVideoOrderTag);
 
 		
-		likeGuiButton = createButton(video.getId(), actionLabel);
+		likeGuiButton = createButton(video, actionLabel);
 		
-		likeGuiButton.setLongDescription(video.getTitle());
-		likeGuiButton.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
+
 		buttonPanel.add( likeGuiButton );
 		if ( createDownloadButton ) {
 			downloadGuiButton =  createDownloadButton(video);
@@ -102,7 +104,7 @@ public class VideoActionEntry extends Composite {
 		if ( createReportButton ) {
 			reportButton = this.createReportButton(video);
 		}
-	    	}
+    }
 	
 	public void highlight(boolean h) {
 		if ( h ) { 
@@ -129,11 +131,18 @@ public class VideoActionEntry extends Composite {
 		}
 	}
 	
+	private  ArrayList<WidgetParameter> createSortParameter(String prefix, int order) {
+		ArrayList<WidgetParameter> parameters = new ArrayList<WidgetParameter>();
+		parameters.add(new WidgetParameter(org.purewidgets.shared.im.Widget.SORT_ORDER_PARAMETER_NAME, prefix + NumberFormat.getFormat("000").format(order)));
+		return parameters;
+	}
 	/**
 	 * 
 	 */
-	private PdButton createButton(String videoId, final String label) {
-		PdButton btn = new PdButton(this.actionId + " "+ NumberFormat.getFormat("000").format(lastVideoOrderTag.intValue()) + " " + videoId, label);
+	private PdButton createButton(Video video, final String label) {
+		PdButton btn = new PdButton(this.actionId + video.getId(), label, null, video.getTitle(), createSortParameter("d", lastVideoOrderTag.intValue()));
+		
+		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		
 		btn.setUserSharedInfoInputFeedbackPattern(MessagePattern.PATTERN_WIDGET_SHORT_DESCRIPTION + ": " + MessagePattern.PATTERN_WIDGET_LONG_DESCRIPTION+"(10)");
 		btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
@@ -157,8 +166,8 @@ public class VideoActionEntry extends Composite {
 	 * 
 	 */
 	private PdButton createReportButton(Video video) {
-		PdButton btn = new PdButton("a Report " + NumberFormat.getFormat("000").format(lastVideoOrderTag.intValue()) + " " +video.getId(), constants.reportAsInnapropriate());
-		btn.setLongDescription(video.getTitle());
+		PdButton btn = new PdButton("a Report " + video.getId(), constants.reportAsInnapropriate(), null, video.getTitle(), createSortParameter("a", lastVideoOrderTag.intValue()) );
+		
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		//btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
 		btn.addActionListener(new ActionListener() {
@@ -179,8 +188,10 @@ public class VideoActionEntry extends Composite {
 	 * 
 	 */
 	private PdDownload createDownloadButton(Video video) {
-		PdDownload btn = new PdDownload("b Download " + NumberFormat.getFormat("000").format(lastVideoOrderTag.intValue()) + " " + video.getId(), constants.getLink(), video.getDefaultPlayer());
-		btn.setLongDescription(video.getTitle());
+		
+		
+		PdDownload btn = new PdDownload("b Download " + video.getId(), constants.getLink(), video.getDefaultPlayer(), null, video.getTitle(), createSortParameter("b", lastVideoOrderTag.intValue()));
+
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		//btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
 		btn.addActionListener(new ActionListener() {
