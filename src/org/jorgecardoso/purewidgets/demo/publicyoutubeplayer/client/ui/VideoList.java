@@ -15,6 +15,11 @@ import org.purewidgets.client.widgets.youtube.Video;
 import org.purewidgets.client.widgets.youtube.VideoAdapter;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.json.client.JSONNumber;
+import com.google.gwt.json.client.JSONObject;
+import com.google.gwt.json.client.JSONParser;
+import com.google.gwt.json.client.JSONString;
+import com.google.gwt.json.client.JSONValue;
 import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiConstructor;
@@ -57,7 +62,7 @@ public class VideoList extends Composite {
 	
 	private String visibleButtonLabel;
 
-	private ArrayList<Video> videos;
+	//private ArrayList<Video> videos;
 	
 	private ArrayList<VideoActionEntry> videoActionEntries;
 
@@ -77,6 +82,8 @@ public class VideoList extends Composite {
 
 	private boolean createReportButton;
 	
+	private int maxOrder = 0;
+	
 	@UiConstructor
 	public VideoList(String listId, String title, String visibleButtonLabel,  boolean createDownloadButton, boolean createReportButton, int maxEntries, int cols, int rows) {
 		Log.debugFinest(this, "Creating video list for id: " + listId);
@@ -90,22 +97,22 @@ public class VideoList extends Composite {
 		this.createDownloadButton = createDownloadButton;
 		this.createReportButton = createReportButton;
 		
-		videos = new ArrayList<Video>();
+		//videos = new ArrayList<Video>();
 		videoActionEntries = new ArrayList<VideoActionEntry>();
 		
 		this.loadFromLocalStorage();
 		
-		for (Video v : this.videos) {
-			VideoActionEntry vae = new VideoActionEntry(v, this.visibleButtonLabel, this.listId, this.createDownloadButton, this.createReportButton);
-			this.videoActionEntries.add(vae);
-		}
+//		for (Video v : this.videos) {
+//			VideoActionEntry vae = new VideoActionEntry(v, this.visibleButtonLabel, this.listId, this.createDownloadButton, this.createReportButton);
+//			this.videoActionEntries.add(vae);
+//		}
 		
 		/*
 		 * Make sure we delete extra videos... 
 		 */
-		while ( this.videos.size() > this.maxEntries ) {
-			Log.debugFinest(this, "VideoList " + this.listId + " had too many videos in localstorage. Deleting: " + this.videos.get(0).getId() );
-			this.remove( this.videos.get(0) );
+		while ( this.videoActionEntries.size() > this.maxEntries ) {
+			Log.debugFinest(this, "VideoList " + this.listId + " had too many videos in localstorage. Deleting: " + this.videoActionEntries.get(0).getVideo().getId() );
+			this.remove( this.videoActionEntries.get(0).getVideo() );
 		}
 		
 		makeGui();
@@ -120,43 +127,45 @@ public class VideoList extends Composite {
 	public Video removeOldest() {
 		Log.debugFinest(this, "Removing oldest video");
 		
-		Video removedVideo = null;
-		if ( null != this.videos && this.videos.size() > 0 ) {
-			removedVideo = this.videos.remove(0);
-			for ( VideoActionEntry videoActionEntry : this.videoActionEntries ) {
-				if ( removedVideo.getId().equals(videoActionEntry.getVideo().getId()) ) {
-					this.videoActionEntries.remove(videoActionEntry);
-					videoActionEntry.dispose();
-					break;
-				}
-			}
+		VideoActionEntry removedVideo = null;
+		if ( null != this.videoActionEntries && this.videoActionEntries.size() > 0 ) {
+			removedVideo = this.videoActionEntries.remove(0);
+			removedVideo.dispose();
+//			for ( VideoActionEntry videoActionEntry : this.videoActionEntries ) {
+//				if ( removedVideo.getId().equals(videoActionEntry.getVideo().getId()) ) {
+//					this.videoActionEntries.remove(videoActionEntry);
+//					videoActionEntry.dispose();
+//					break;
+//				}
+//			}
 		
 		}
 		
 		makeGui();
 		this.saveToLocalStorage();
-		return removedVideo;
+		return removedVideo.getVideo();
 	}
 	
 	public void remove(Video v) {
 		Log.debugFinest(this, "Removing video " + v.getId());
-		for ( Video video : this.videos ) {
-			if ( v.getId().equals(video.getId()) ) {
-				this.videos.remove(video);
+		for ( VideoActionEntry vae : this.videoActionEntries ) {
+			if ( v.getId().equals(vae.getVideo().getId()) ) {
+				this.videoActionEntries.remove(vae);
+				vae.dispose();
 				break;
 			}
 		}
 		
 		
-		for ( VideoActionEntry videoActionEntry : this.videoActionEntries ) {
-			if ( v.getId().equals(videoActionEntry.getVideo().getId()) ) {
-				
-				this.videoActionEntries.remove(videoActionEntry);
-				videoActionEntry.dispose();
-				
-				break;
-			}
-		}
+//		for ( VideoActionEntry videoActionEntry : this.videoActionEntries ) {
+//			if ( v.getId().equals(videoActionEntry.getVideo().getId()) ) {
+//				
+//				this.videoActionEntries.remove(videoActionEntry);
+//				videoActionEntry.dispose();
+//				
+//				break;
+//			}
+//		}
 		this.makeGui();
 		this.saveToLocalStorage();
 	}
@@ -167,17 +176,18 @@ public class VideoList extends Composite {
 		/*
 		 * Create the VideoActionEntry
 		 */
-		VideoActionEntry rpe = new VideoActionEntry(v, this.visibleButtonLabel, this.listId, this.createDownloadButton, this.createReportButton);
+		this.maxOrder++;
+		VideoActionEntry rpe = new VideoActionEntry(v, maxOrder, this.visibleButtonLabel, this.listId, this.createDownloadButton, this.createReportButton);
 		rpe.setVideoEventListener(this.videoEventListener);
 		
-		this.videos.add(v);
+		//this.videos.add(v);
 
 		this.videoActionEntries.add(rpe);
 		
 		
-		while ( this.videos.size() > this.maxEntries ) {
-			Log.debugFinest(this, "VideoList " + this.listId + " had too many videos in localstorage. Deleting: " + this.videos.get(0).getId() );
-			this.remove( this.videos.get(0) );
+		while ( this.videoActionEntries.size() > this.maxEntries ) {
+			Log.debugFinest(this, "VideoList " + this.listId + " had too many videos in localstorage. Deleting: " + this.videoActionEntries.get(0).getVideo().getId() );
+			this.remove( this.videoActionEntries.get(0).getVideo() );
 		}
 		this.saveToLocalStorage();
 		makeGui();
@@ -186,7 +196,7 @@ public class VideoList extends Composite {
 	}
 
 	public boolean isFull() {
-		return this.videos.size()>= this.maxEntries;
+		return this.videoActionEntries.size()>= this.maxEntries;
 	}
 
 
@@ -201,7 +211,7 @@ public class VideoList extends Composite {
 	}
 	
 	private void makeGui() {
-		Log.debugFinest(this, "Creaing gui. " + this.videos.size() + " videos in list. " + this.videoActionEntries.size() + " video entries in list.");
+		Log.debugFinest(this, "Creaing gui. " + this.videoActionEntries.size() + " video entries in list.");
 		this.uiMainPanel.clear();
 		int cols = this.cols;
 		int rows = this.rows;
@@ -263,8 +273,12 @@ public class VideoList extends Composite {
 	
 	private void saveToLocalStorage() {
 		ArrayList<String> videoSerialized = new ArrayList<String>();
-		for ( Video video : this.videos ) {
-			videoSerialized.add(VideoAdapter.fromVideo(video).toJsonString());
+		for ( VideoActionEntry vae : this.videoActionEntries ) {
+			JsonVideoEntry jsonVideo = VideoAdapter.fromVideo(vae.getVideo());
+			JSONObject jsonOrderedVideo = new JSONObject();
+			jsonOrderedVideo.put("video", new JSONString(jsonVideo.toJsonString()));
+			jsonOrderedVideo.put("order", new JSONNumber(vae.getOrder()));
+			videoSerialized.add( jsonOrderedVideo.toString() );
 		}
 		Util.getPdApplication().getLocalStorage().saveList("VideoList-"+this.listId+"-videos", videoSerialized);
 	}
@@ -272,8 +286,28 @@ public class VideoList extends Composite {
 	private void loadFromLocalStorage() {
 		ArrayList<String> videosSerialized = Util.getPdApplication().getLocalStorage().loadList("VideoList-"+this.listId+"-videos");
 		for ( String videoSerialized : videosSerialized ) {
-			JsonVideoEntry jsonVideo = JsonVideoEntry.fromJson(videoSerialized);
-			this.videos.add(VideoAdapter.fromJSONVideoEntry(jsonVideo));
+			JSONValue jsonOrderedVideoValue = JSONParser.parseStrict(videoSerialized);
+			JSONObject jsonOrderedVideo = jsonOrderedVideoValue.isObject();
+			
+			try {
+				JSONString jsonVideoString = jsonOrderedVideo.get("video").isString();
+				JSONNumber jsonOrderNumber = jsonOrderedVideo.get("order").isNumber();
+				
+				JsonVideoEntry jsonVideo = JsonVideoEntry.fromJson(jsonVideoString.stringValue());
+				Video video = VideoAdapter.fromJSONVideoEntry(jsonVideo);
+				int order = (int)jsonOrderNumber.doubleValue();
+				
+				VideoActionEntry vae = new VideoActionEntry(video, order, this.visibleButtonLabel, this.listId, this.createDownloadButton, this.createReportButton);
+				this.videoActionEntries.add(vae);
+				
+				if ( order > this.maxOrder ) {
+					this.maxOrder = order;
+				}
+				
+			} catch (NullPointerException npe) {
+				Log.warn(this, "Could not load video list from localstorage", npe);
+			}
+			
 		}
 	}
 }

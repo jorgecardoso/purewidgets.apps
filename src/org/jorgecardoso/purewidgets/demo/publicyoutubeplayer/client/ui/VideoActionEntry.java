@@ -66,31 +66,31 @@ public class VideoActionEntry extends Composite {
 	private VideoActionListener videoEventListener;
 	private String actionId;
 	
-	private Integer lastVideoOrderTag;
+	private int order;
 		
-	public VideoActionEntry(Video video, String actionLabel, String actionId, boolean createDownloadButton, boolean createReportButton) {
+	public VideoActionEntry(Video video, int order, String actionLabel, String actionId, boolean createDownloadButton, boolean createReportButton) {
 		initWidget(uiBinder.createAndBindUi(this));
 		this.actionId = actionId;
 		this.video = video;
-		
+		this.order = order;
 		title.setText( video.getTitle() );
 		
 		uiLabelUser.setText( video.getAuthor() );
 		
 		image.setUrl( video.getThumbnail() );
 		
-		lastVideoOrderTag = org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Util.getPdApplication().getLocalStorage().getInteger("lastVideoOrderTag");
-		if ( null != lastVideoOrderTag) {
-			lastVideoOrderTag++;
-			if ( lastVideoOrderTag > 100 ) {
-				lastVideoOrderTag = 0;
-			}
-			
-			
-		} else {
-			lastVideoOrderTag = 0;
-		}
-		org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Util.getPdApplication().getLocalStorage().setInt("lastVideoOrderTag", lastVideoOrderTag);
+//		lastVideoOrderTag = org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Util.getPdApplication().getLocalStorage().getInteger("lastVideoOrderTag");
+//		if ( null != lastVideoOrderTag) {
+//			lastVideoOrderTag++;
+//			if ( lastVideoOrderTag > 100 ) {
+//				lastVideoOrderTag = 0;
+//			}
+//			
+//			
+//		} else {
+//			lastVideoOrderTag = 0;
+//		}
+//		org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Util.getPdApplication().getLocalStorage().setInt("lastVideoOrderTag", lastVideoOrderTag);
 
 		
 		likeGuiButton = createButton(video, actionLabel);
@@ -140,7 +140,7 @@ public class VideoActionEntry extends Composite {
 	 * 
 	 */
 	private PdButton createButton(Video video, final String label) {
-		PdButton btn = new PdButton(this.actionId + video.getId(), label, null, video.getTitle(), createSortParameter("d", lastVideoOrderTag.intValue()));
+		PdButton btn = new PdButton(this.actionId + video.getId(), label, null, video.getTitle(), createSortParameter("d", this.order));
 		
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		
@@ -166,7 +166,7 @@ public class VideoActionEntry extends Composite {
 	 * 
 	 */
 	private PdButton createReportButton(Video video) {
-		PdButton btn = new PdButton("a Report " + video.getId(), constants.reportAsInnapropriate(), null, video.getTitle(), createSortParameter("a", lastVideoOrderTag.intValue()) );
+		PdButton btn = new PdButton("a Report " + video.getId(), constants.reportAsInnapropriate(), null, video.getTitle(), createSortParameter("a", this.order) );
 		
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		//btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
@@ -190,7 +190,7 @@ public class VideoActionEntry extends Composite {
 	private PdDownload createDownloadButton(Video video) {
 		
 		
-		PdDownload btn = new PdDownload("b Download " + video.getId(), constants.getLink(), video.getDefaultPlayer(), null, video.getTitle(), createSortParameter("b", lastVideoOrderTag.intValue()));
+		PdDownload btn = new PdDownload("b Download " + video.getId(), constants.getLink(), video.getDefaultPlayer(), null, video.getTitle(), createSortParameter("b", this.order));
 
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		//btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
@@ -233,5 +233,19 @@ public class VideoActionEntry extends Composite {
 	 */
 	public Video getVideo() {
 		return video;
+	}
+
+	/**
+	 * @return the order
+	 */
+	public int getOrder() {
+		return order;
+	}
+
+	/**
+	 * @param order the order to set
+	 */
+	public void setOrder(int order) {
+		this.order = order;
 	}
 }
