@@ -166,7 +166,7 @@ public class VideoActionEntry extends Composite {
 	 * 
 	 */
 	private PdButton createReportButton(Video video) {
-		PdButton btn = new PdButton("a Report " + video.getId(), constants.reportAsInnapropriate(), null, video.getTitle(), createSortParameter("a", this.order) );
+		PdButton btn = new PdButton("Report " + video.getId(), constants.reportAsInnapropriate(), null, video.getTitle(), createSortParameter("a", this.order) );
 		
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		//btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
@@ -190,7 +190,7 @@ public class VideoActionEntry extends Composite {
 	private PdDownload createDownloadButton(Video video) {
 		
 		
-		PdDownload btn = new PdDownload("b Download " + video.getId(), constants.getLink(), video.getDefaultPlayer(), null, video.getTitle(), createSortParameter("b", this.order));
+		PdDownload btn = new PdDownload("Download " + video.getId(), constants.getLink(), video.getDefaultPlayer(), null, video.getTitle(), createSortParameter("b", this.order));
 
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		//btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
@@ -208,10 +208,6 @@ public class VideoActionEntry extends Composite {
 		return btn;
 	}
 	
-	private String encodeLabel(String label) {
-		return label.replace(' ', '_');
-	}
-
 
 	/**
 	 * @return the videoEventListener

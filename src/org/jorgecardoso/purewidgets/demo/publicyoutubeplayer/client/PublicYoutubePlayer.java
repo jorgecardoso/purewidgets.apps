@@ -382,11 +382,11 @@ public class PublicYoutubePlayer implements PDApplicationLifeCycle, EntryPoint, 
 			//Video video = this.allPlayedVideos.get(videoId);
 			
 		if ( null != video ) {
-			if ( action.equalsIgnoreCase("d like") ) {
+			if ( action.equalsIgnoreCase("Like") ) {
 				Log.debug(this, e.getNickname() + " liked video " + video.getId() );
 				
 				this.updateTagCloud( video );
-			} else if ( action.equalsIgnoreCase("c play") ) {
+			} else if ( action.equalsIgnoreCase("Play") ) {
 				Log.debug(this, e.getNickname() + " wants to play " + video.getId());
 				
 				this.screen.queue.addQueueEntry(video);
@@ -397,7 +397,7 @@ public class PublicYoutubePlayer implements PDApplicationLifeCycle, EntryPoint, 
 					this.queueTimer.schedule(FeedbackSequencer.DEFAULT_FEEDBACK_DURATION+FeedbackSequencer.DEFAULT_FINAL_DELAY);
 				}
 				
-			} else if ( action.equalsIgnoreCase("report") ) {
+			} else if ( action.equalsIgnoreCase("Report") ) {
 				Log.debug(this, "User reported video: " + video.getId() );
 				this.videoSearcher.addToBlackList(video.getId());
 			}
