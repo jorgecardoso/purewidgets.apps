@@ -46,7 +46,7 @@
 
 .id-globalBottomPanel{
 	height: 75%;
-	width: 90%;
+	width: 95%;
 	background-color: transparent;
 	margin-left: auto;
 	margin-top: 0px;
@@ -60,7 +60,7 @@
 
 	/*background-color: #FFF;
 	height: 100%;
-	width: 75%;*/
+	width: 50%;*/
 }
 
 .tagcloudtitle {
@@ -96,7 +96,8 @@
 			
 			<g:DeckPanel ui:field='deckPanelBottom' styleName='{style.id-globalBottomPanel}'>
 			    
-  				<p:VideoList maxEntries="6" cols="1"  rows = "3" listId="Like" title="Recently played" visibleButtonLabel="Like" createDownloadButton="true" createReportButton="true" ui:field="recentlyPlayed" >
+  				<p:VideoList maxEntries="6" cols="1"  rows = "3" listId="Like" title="Recently played" visibleButtonLabel="Like" createDownloadButton="true" createReportButton="true" ui:field="recentlyPlayed"
+  				    >
   					<ui:attribute name='visibleButtonLabel' description='Recently played button label'/>
   					<ui:attribute name='title' description='Recently played title'/>
   				</p:VideoList>     

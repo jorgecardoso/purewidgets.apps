@@ -2,7 +2,7 @@
 Types potentially sent from browser:
 ====================================
 
-Reachable types computed on: Wed Sep 05 15:22:31 WEST 2012
+Reachable types computed on: Wed Sep 05 19:50:40 WEST 2012
 E
    Serialization status
       Not serializable
@@ -10,7 +10,8 @@ E
       'E' is reachable from field 'exposeElement' of type 'java.util.HashSet<E>'
       'java.util.HashSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -24,7 +25,8 @@ E
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -38,7 +40,8 @@ K
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -52,7 +55,8 @@ V
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -68,7 +72,8 @@ boolean
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -179,7 +184,8 @@ com.google.web.bindery.event.shared.UmbrellaException
    Serialization status
       Instantiable
    Path
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -193,7 +199,8 @@ int
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -202,8 +209,7 @@ java.io.IOException
    Serialization status
       Instantiable
    Path
-      'java.io.IOException' is reachable as a supertype of type 'class java.io.UnsupportedEncodingException'
-      'java.io.UnsupportedEncodingException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'java.io.IOException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -262,7 +268,8 @@ java.lang.Boolean
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -299,8 +306,7 @@ java.lang.IllegalArgumentException
    Serialization status
       Instantiable
    Path
-      'java.lang.IllegalArgumentException' is reachable as a supertype of type 'class java.lang.NumberFormatException'
-      'java.lang.NumberFormatException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'java.lang.IllegalArgumentException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -318,8 +324,8 @@ java.lang.IndexOutOfBoundsException
    Serialization status
       Instantiable
    Path
-      'java.lang.IndexOutOfBoundsException' is reachable as a supertype of type 'class java.lang.ArrayIndexOutOfBoundsException'
-      'java.lang.ArrayIndexOutOfBoundsException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'java.lang.IndexOutOfBoundsException' is reachable as a supertype of type 'class java.lang.StringIndexOutOfBoundsException'
+      'java.lang.StringIndexOutOfBoundsException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -445,8 +451,7 @@ java.security.GeneralSecurityException
    Serialization status
       Instantiable
    Path
-      'java.security.GeneralSecurityException' is reachable as a supertype of type 'class java.security.NoSuchAlgorithmException'
-      'java.security.NoSuchAlgorithmException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'java.security.GeneralSecurityException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -466,7 +471,8 @@ java.util.Collections.EmptySet
    Path
       'java.util.Collections.EmptySet' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -480,7 +486,8 @@ java.util.Comparator<? super K>
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -509,7 +516,8 @@ java.util.HashSet<java.lang.Throwable>
    Path
       'java.util.HashSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -520,7 +528,8 @@ java.util.LinkedHashSet<java.lang.Throwable>
    Path
       'java.util.LinkedHashSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -539,7 +548,8 @@ java.util.Set<java.lang.Throwable>
       Not serializable
    Path
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -551,7 +561,8 @@ java.util.SortedMap<E, java.lang.Boolean>
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -573,7 +584,8 @@ java.util.TreeMap<E, java.lang.Boolean>
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -584,7 +596,8 @@ java.util.TreeSet<java.lang.Throwable>
    Path
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -607,8 +620,7 @@ javax.validation.ConstraintDeclarationException
    Serialization status
       Instantiable
    Path
-      'javax.validation.ConstraintDeclarationException' is reachable as a supertype of type 'class javax.validation.UnexpectedTypeException'
-      'javax.validation.UnexpectedTypeException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'javax.validation.ConstraintDeclarationException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -653,8 +665,7 @@ javax.validation.ValidationException
    Serialization status
       Instantiable
    Path
-      'javax.validation.ValidationException' is reachable as a supertype of type 'class javax.validation.ConstraintViolationException'
-      'javax.validation.ConstraintViolationException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'javax.validation.ValidationException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -686,7 +697,8 @@ org.purewidgets.shared.widgets.TagCloud.AlphaTagComparator
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -701,7 +713,8 @@ org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
       'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
-      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a supertype of type 'class com.google.gwt.event.shared.UmbrellaException'
+      'com.google.gwt.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -710,7 +723,7 @@ org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator
 Types potentially sent from server:
 ===================================
 
-Reachable types computed on: Wed Sep 05 15:22:31 WEST 2012
+Reachable types computed on: Wed Sep 05 19:50:40 WEST 2012
 com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException
    Serialization status
       Instantiable
