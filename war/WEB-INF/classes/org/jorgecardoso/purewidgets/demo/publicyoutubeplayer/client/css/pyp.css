@@ -1,6 +1,15 @@
 @charset "UTF-8";
 
 
+html, body {
+	height: 100%;
+	margin:0;
+	overflow: hidden;
+	
+	font-family: 'Nunito', sans-serif;
+	font-size: 100%;
+}
+
 /************************ CumulativeInputFeedbackPanel */
 
 .pwCumulativeInputFeedbackPanel {
@@ -12,7 +21,7 @@
 
 .pwCumulativeInputFeedbackPanel .title {
 	font-family: 'Nunito', sans-serif;
-	font-size: 3.1em;
+	font-size: 3.1rem;
 	text-align: center;
 	background: rgb(200, 200, 200);
 	padding:2px 5px 2px 5px;
@@ -23,7 +32,7 @@
 	background-size:40px 40px;
 	color: black;
 	font-family: 'Nunito', sans-serif;
-	font-size:3em;
+	font-size:3rem;
 	word-wrap:normal;
 
 		padding:2px 5px 2px 45px;
@@ -33,7 +42,7 @@
 		background-size:40px 40px;
 	color: black;
 	font-family: 'Nunito', sans-serif;
-	font-size:3em;
+	font-size:3rem;
 	word-wrap:normal;
 
 		padding:2px 5px 2px 45px;

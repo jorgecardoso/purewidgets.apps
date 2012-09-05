@@ -32,7 +32,8 @@ public class Admin {
 								PublicYoutubePlayer.URL_PARAMETER_FEATURED_VIDEOS_PERCENTAGE,
 								PublicYoutubePlayer.URL_PARAMETER_MAX_FEATURED_VIDEOS,
 								PublicYoutubePlayer.URL_PARAMETER_RESET,
-								"videoBlackList"};
+								"videoBlackList",
+								"font-size"};
 	
 	private String DESCRIPTIONS[] = {"(seconds) The maximum video duration for played videos",
 									"(seconds) The maximum video duration for videos from featured users",
@@ -44,7 +45,8 @@ public class Admin {
 									"(float) percentage of videos from featured users to provide",
 									"(int) load at most this number of latest videos from each featured user",
 									"(true/false) Reset the tag cloud in the nex run?",
-									"List of blacklisted video ids"
+									"List of blacklisted video ids",
+									"Body font size"
 		
 	};
 	

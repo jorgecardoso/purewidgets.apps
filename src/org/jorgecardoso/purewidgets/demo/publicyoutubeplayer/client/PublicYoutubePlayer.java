@@ -261,6 +261,8 @@ public class PublicYoutubePlayer implements PDApplicationLifeCycle, EntryPoint, 
 		int maxFeaturedVideos = app.getParameterInt(URL_PARAMETER_MAX_FEATURED_VIDEOS, 10);
 		Log.info(this, "Loaded '" + URL_PARAMETER_MAX_FEATURED_VIDEOS + "' parameter with value: " + maxFeaturedVideos);
 	
+		String fontSize = app.getParameterString("font-size", "100%");
+		RootPanel.getBodyElement().getParentElement().getStyle().setProperty("fontSize", fontSize);
 		
 		app.setParameterString(URL_PARAMETER_RESET, "false");
 		

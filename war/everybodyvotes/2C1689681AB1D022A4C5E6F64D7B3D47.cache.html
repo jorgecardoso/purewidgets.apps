@@ -4,7 +4,7 @@ var $gwt_version = "2.4.0";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = '7D11F38583531367DC9CA78A0601CBD0';
+var $strongName = '2C1689681AB1D022A4C5E6F64D7B3D47';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'everybodyvotes',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
@@ -21140,6 +21140,61 @@ function setString(item, value){
   localStorage.setItem(item, value);
 }
 
+function $ageDay(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 day)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' days ago)';
+}
+
+function $ageHour(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 hour ago)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' hours ago)';
+}
+
+function $ageMinute(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 minute ago)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' minutes ago)';
+}
+
+function $ageSecond(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 second ago)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' seconds ago)';
+}
+
+function $ageWeek(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 week ago)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' weeks ago)';
+}
+
 function $addActionListener(this$static, handler){
   $add_6(this$static.actionListeners, handler);
 }
@@ -21159,6 +21214,16 @@ function $generateUserInputFeedbackMessage(this$static, inputEvent, inputFeedbac
   $setInfo(inputFeedback, $replaceParameters(this$static, this$static.userInputFeedbackPattern, inputEvent));
   $setSharedFeedbackTitle(inputFeedback, $replaceParameters(this$static, this$static.userSharedTitleInputFeedbackPattern, inputEvent));
   $setSharedFeedbackInfo(inputFeedback, $replaceParameters(this$static, this$static.userSharedInfoInputFeedbackPattern, inputEvent));
+}
+
+function $getAgeString(milli){
+  var ageDays, ageHours, ageMinutes, ageSeconds, ageWeeks;
+  ageSeconds = toDouble(div_0(milli, P3e8_longLit));
+  ageMinutes = ageSeconds / 60;
+  ageHours = ageMinutes / 60;
+  ageDays = ageHours / 24;
+  ageWeeks = ageDays / 7;
+  return ageWeeks > 1?$ageWeek(round_int(ageWeeks)):ageDays > 1?$ageDay(round_int(ageDays)):ageHours > 1?$ageHour(round_int(ageHours)):ageMinutes > 1?$ageMinute(round_int(ageMinutes)):$ageSecond(round_int(ageSeconds));
 }
 
 function $inputFeedbackStarted(this$static, feedback){
@@ -21256,14 +21321,14 @@ function $replaceParameter(this$static, inputString, parameter, replacement){
 }
 
 function $replaceParameters(this$static, inputString, inputEvent){
-  var ageString, i, ageDays, ageHours, ageMinutes, ageSeconds, ageWeeks;
+  var ageString, i;
   inputString = $replaceParameter(this$static, inputString, '%U%', inputEvent.nickname_0);
   inputString = $replaceParameter(this$static, inputString, '%WS%', this$static.widget.shortDescription_0);
   inputString = $replaceParameter(this$static, inputString, '%WL%', this$static.widget.longDescription_0);
   inputString = $replaceParameter(this$static, inputString, '%WOS%', inputEvent.widgetOption.shortDescription_0);
   inputString = $replaceParameter(this$static, inputString, '%WOL%', inputEvent.widgetOption.longDescription_0);
   inputString = $replaceParameter(this$static, inputString, '%WOR%', inputEvent.widgetOption.referenceCode_0);
-  ageString = (ageSeconds = toDouble(div_0(inputEvent.age_0, P3e8_longLit)) , ageMinutes = ageSeconds / 60 , ageHours = ageMinutes / 60 , ageDays = ageHours / 24 , ageWeeks = ageDays / 7 , ageWeeks > 1?$ageWeek(round_int(ageWeeks)):ageDays > 1?$ageDay(round_int(ageDays)):ageHours > 1?$ageHour(round_int(ageHours)):ageMinutes > 1?$ageMinute(round_int(ageMinutes)):$ageSecond(round_int(ageSeconds)));
+  ageString = $getAgeString(inputEvent.age_0);
   lt(inputEvent.age_0, Pea60_longLit) && (ageString = '');
   inputString = $replaceParameter(this$static, inputString, '%AGE%', ageString);
   $clinit_Log();
@@ -21497,6 +21562,8 @@ _.getClass$ = function getClass_444(){
   return Lorg_purewidgets_client_widgets_PdTextBox_2_classLit;
 }
 ;
+--></script>
+<script><!--
 _.handleInput = function handleInput_1(ie){
   var ae, feedback;
   feedback = new InputFeedback_0;
@@ -21549,8 +21616,6 @@ _.run = function run_15(){
 _.castableTypeMap$ = makeCastMap([Q$Timer]);
 _.this$0 = null;
 var style_8 = null;
---></script>
-<script><!--
 function $ensureInjected_9(this$static){
   if (!this$static.injected) {
     this$static.injected = true;
@@ -21592,61 +21657,6 @@ _.getClass$ = function getClass_447(){
   return Lorg_purewidgets_shared_events_ActionEvent_2_classLit;
 }
 ;
-function $ageDay(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 day)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' days ago)';
-}
-
-function $ageHour(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 hour ago)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' hours ago)';
-}
-
-function $ageMinute(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 minute ago)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' minutes ago)';
-}
-
-function $ageSecond(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 second ago)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' seconds ago)';
-}
-
-function $ageWeek(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 week ago)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format_0(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1($getDefaultNative())) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' weeks ago)';
-}
-
 function $setAge(this$static, age){
   this$static.age_0 = age;
 }

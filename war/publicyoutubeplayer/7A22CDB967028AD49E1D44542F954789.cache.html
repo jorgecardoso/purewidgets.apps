@@ -4,7 +4,7 @@ var $gwt_version = "2.4.0";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = '200CA212CB53134C2D8D5DEBE7614956';
+var $strongName = '7A22CDB967028AD49E1D44542F954789';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'publicyoutubeplayer',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
@@ -13528,8 +13528,8 @@ function $saveOptions(this$static){
 }
 
 function Admin_0(){
-  this.OPTIONS = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$String_$1]), Q$String, ['maxvideotime', 'maxfeaturedvideotime', 'activityscreentime', 'tagcloudscreentime', 'toplaynextscreentime', 'placetags', 'featuredusers', 'featurevideopercentage', 'maxfeaturedvideos', 'reset', 'videoBlackList']);
-  this.DESCRIPTIONS = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$String_$1]), Q$String, ['(seconds) The maximum video duration for played videos', '(seconds) The maximum video duration for videos from featured users', '(seconds) How much time to stay at the activity screen', '(seconds) How much time to stay at the tagcloud screen', '(seconds) How much time to stay at the results screen', '(comma separated list) base place tags that are always present in the tag cloud', '(comma separated list) featured youtube usernames.', '(float) percentage of videos from featured users to provide', '(int) load at most this number of latest videos from each featured user', '(true/false) Reset the tag cloud in the nex run?', 'List of blacklisted video ids']);
+  this.OPTIONS = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$String_$1]), Q$String, ['maxvideotime', 'maxfeaturedvideotime', 'activityscreentime', 'tagcloudscreentime', 'toplaynextscreentime', 'placetags', 'featuredusers', 'featurevideopercentage', 'maxfeaturedvideos', 'reset', 'videoBlackList', 'font-size']);
+  this.DESCRIPTIONS = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$String_$1]), Q$String, ['(seconds) The maximum video duration for played videos', '(seconds) The maximum video duration for videos from featured users', '(seconds) How much time to stay at the activity screen', '(seconds) How much time to stay at the tagcloud screen', '(seconds) How much time to stay at the results screen', '(comma separated list) base place tags that are always present in the tag cloud', '(comma separated list) featured youtube usernames.', '(float) percentage of videos from featured users to provide', '(int) load at most this number of latest videos from each featured user', '(true/false) Reset the tag cloud in the nex run?', 'List of blacklisted video ids', 'Body font size']);
 }
 
 function Admin(){
@@ -13869,7 +13869,7 @@ function $onModuleLoad_1(this$static){
 }
 
 function $onPDApplicationLoaded(this$static, app){
-  var featuredUsers, featuredVideoPercentage, maxFeaturedVideoDurationParameter, maxFeaturedVideos, page;
+  var featuredUsers, featuredVideoPercentage, fontSize, maxFeaturedVideoDurationParameter, maxFeaturedVideos, page;
   this$static.pdApplication = app;
   pdApplication = app;
   page = $wnd.location.pathname;
@@ -13901,6 +13901,8 @@ function $onPDApplicationLoaded(this$static, app){
   info_0(Lorg_jorgecardoso_purewidgets_demo_publicyoutubeplayer_client_PublicYoutubePlayer_2_classLit.typeName + ": Loaded 'featurevideopercentage' parameter with value: " + featuredVideoPercentage);
   maxFeaturedVideos = $getParameterInt(app, 'maxfeaturedvideos', 10);
   info_0(Lorg_jorgecardoso_purewidgets_demo_publicyoutubeplayer_client_PublicYoutubePlayer_2_classLit.typeName + ": Loaded 'maxfeaturedvideos' parameter with value: " + maxFeaturedVideos);
+  fontSize = $getParameterString(app, 'font-size', '100%');
+  $getParentElement(getBodyElement()).style['fontSize'] = fontSize;
   app.parameters_0.put('reset', 'false');
   $setString_0(app.remoteStorage, 'reset', 'false', new PDApplication$4_0(app));
   if (this$static.resetParameter) {
@@ -14179,7 +14181,7 @@ var css_0 = null;
 function $ensureInjected(this$static){
   if (!this$static.injected) {
     this$static.injected = true;
-    inject(($clinit_LocaleInfo() , '.pwCumulativeInputFeedbackPanel{background:rgba(255,255,255,0.9);border:3px solid black;border-radius:5px;}.pwCumulativeInputFeedbackPanel .title{font-family:"Nunito", sans-serif;font-size:3.1em;text-align:center;background:#c8c8c8;padding:2px 5px 2px 5px;}.pwCumulativeInputFeedbackPanel .accepted,.pwCumulativeInputFeedbackPanel .notaccepted{background-size:40px 40px;color:black;font-family:"Nunito", sans-serif;font-size:3em;word-wrap:normal;padding:2px 5px 2px 45px;}'));
+    inject(($clinit_LocaleInfo() , 'html,body{height:100%;margin:0;overflow:hidden;font-family:"Nunito", sans-serif;font-size:100%;}.pwCumulativeInputFeedbackPanel{background:rgba(255,255,255,0.9);border:3px solid black;border-radius:5px;}.pwCumulativeInputFeedbackPanel .title{font-family:"Nunito", sans-serif;font-size:3.1rem;text-align:center;background:#c8c8c8;padding:2px 5px 2px 5px;}.pwCumulativeInputFeedbackPanel .accepted,.pwCumulativeInputFeedbackPanel .notaccepted{background-size:40px 40px;color:black;font-family:"Nunito", sans-serif;font-size:3rem;word-wrap:normal;padding:2px 5px 2px 45px;}'));
     return true;
   }
   return false;
@@ -14656,7 +14658,7 @@ var style_0 = null;
 function $ensureInjected_0(this$static){
   if (!this$static.injected) {
     this$static.injected = true;
-    inject(($clinit_LocaleInfo() , '.GJWGXPGDFJ{background:#fff;float:right;width:100%;height:100%;border-radius:20px;border:1px solid #ed1c24;box-shadow:2px 2px 1px 1px #ed1c24;}.GJWGXPGDFJ h2{margin-top:0;margin-bottom:0;padding-left:10px;padding-right:10px;font-family:"Nunito", sans-serif;font-size:3em;color:#000;text-align:center;border-top-left-radius:20px;border-top-right-radius:20px;background-color:#fff;}.GJWGXPGDFJ .gwt-Label{font-size:2.4em;margin-top:5px;margin-bottom:5px;margin-left:10px;margin-right:10px;font-family:"Nunito", sans-serif;}.gwt-PopupPanel{background:transparent;border:none;}'));
+    inject(($clinit_LocaleInfo() , '.GJWGXPGDFJ{background:#fff;float:right;width:100%;height:100%;border-radius:20px;border:1px solid #ed1c24;box-shadow:2px 2px 1px 1px #ed1c24;}.GJWGXPGDFJ h2{margin-top:0;margin-bottom:0;padding-left:10px;padding-right:10px;font-family:"Nunito", sans-serif;font-size:3rem;color:#000;text-align:center;border-top-left-radius:20px;border-top-right-radius:20px;background-color:#fff;}.GJWGXPGDFJ .gwt-Label{font-size:2.4rem;margin-top:5px;margin-bottom:5px;margin-left:10px;margin-right:10px;font-family:"Nunito", sans-serif;}.gwt-PopupPanel{background:transparent;border:none;}'));
     return true;
   }
   return false;
@@ -14718,7 +14720,7 @@ function $setVideoEventListener(this$static, videoEventListener){
 
 function VideoActionEntry_0(video, order, actionLabel, actionId, createDownloadButton, createReportButton){
   var buttonPanel, f_VerticalPanel1, f_VerticalPanel2, image, outerPanel, title, uiLabelUser, btn, btn_0, btn_1, sb;
-  $initWidget(this, ($clinit_VideoActionEntry_VideoActionEntryUiBinderImpl_GenBundle_default_InlineClientBundleGenerator$styleInitializer() , image = new Image_1 , uiLabelUser = new Label_0 , f_VerticalPanel1 = new VerticalPanel_0 , title = new Label_0 , buttonPanel = new HTMLPanel_0((sb = new StringBuilder_0 , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb.impl.string)).html) , f_VerticalPanel2 = new VerticalPanel_0 , outerPanel = new HorizontalPanel_0 , image.element['className'] = 'GJWGXPGDBK' , $add_6(f_VerticalPanel1, image) , uiLabelUser.element['className'] = 'GJWGXPGDPJ' , $add_6(f_VerticalPanel1, uiLabelUser) , $add_4(outerPanel, f_VerticalPanel1) , $setCellWidth(outerPanel, f_VerticalPanel1, '180px') , title.element['className'] = 'GJWGXPGDOJ' , $add_6(f_VerticalPanel2, title) , $setCellVerticalAlignment(f_VerticalPanel2, title, ($clinit_HasVerticalAlignment() , ALIGN_TOP)) , $setCellWidth(f_VerticalPanel2, title, '100%') , buttonPanel.element['className'] = 'GJWGXPGDMJ' , $add_6(f_VerticalPanel2, buttonPanel) , $setCellVerticalAlignment(f_VerticalPanel2, buttonPanel, ALIGN_BOTTOM) , $setCellWidth(f_VerticalPanel2, buttonPanel, '100%') , f_VerticalPanel2.element['className'] = 'GJWGXPGDNJ' , $add_4(outerPanel, f_VerticalPanel2) , $setCellWidth(outerPanel, f_VerticalPanel2, '100%') , $setCellHeight(outerPanel, f_VerticalPanel2, '100%') , outerPanel.element['className'] = 'GJWGXPGDAK' , this.buttonPanel = buttonPanel , this.image = image , this.title_0 = title , this.uiLabelUser = uiLabelUser , $ensureInjected_1(style_1) , outerPanel));
+  $initWidget(this, ($clinit_VideoActionEntry_VideoActionEntryUiBinderImpl_GenBundle_default_InlineClientBundleGenerator$styleInitializer() , image = new Image_1 , uiLabelUser = new Label_0 , f_VerticalPanel1 = new VerticalPanel_0 , title = new Label_0 , buttonPanel = new HTMLPanel_0((sb = new StringBuilder_0 , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb.impl.string)).html) , f_VerticalPanel2 = new VerticalPanel_0 , outerPanel = new HorizontalPanel_0 , image.element['className'] = 'GJWGXPGDBK' , $add_6(f_VerticalPanel1, image) , uiLabelUser.element['className'] = 'GJWGXPGDPJ' , $add_6(f_VerticalPanel1, uiLabelUser) , $add_4(outerPanel, f_VerticalPanel1) , $setCellWidth(outerPanel, f_VerticalPanel1, '180px') , title.element['className'] = 'GJWGXPGDOJ' , $add_6(f_VerticalPanel2, title) , $setCellVerticalAlignment(f_VerticalPanel2, title, ($clinit_HasVerticalAlignment() , ALIGN_TOP)) , $setCellWidth(f_VerticalPanel2, title, '100%') , buttonPanel.element['className'] = 'GJWGXPGDMJ' , $add_6(f_VerticalPanel2, buttonPanel) , $setCellVerticalAlignment(f_VerticalPanel2, buttonPanel, ALIGN_BOTTOM) , $setCellWidth(f_VerticalPanel2, buttonPanel, '100%') , $setCellHeight(f_VerticalPanel2, buttonPanel, '50px') , f_VerticalPanel2.element['className'] = 'GJWGXPGDNJ' , $add_4(outerPanel, f_VerticalPanel2) , $setCellWidth(outerPanel, f_VerticalPanel2, '100%') , $setCellHeight(outerPanel, f_VerticalPanel2, '100%') , outerPanel.element['className'] = 'GJWGXPGDAK' , this.buttonPanel = buttonPanel , this.image = image , this.title_0 = title , this.uiLabelUser = uiLabelUser , $ensureInjected_1(style_1) , outerPanel));
   this.actionId = actionId;
   this.video = video;
   this.order = order;
@@ -14815,7 +14817,7 @@ var style_1 = null;
 function $ensureInjected_1(this$static){
   if (!this$static.injected) {
     this$static.injected = true;
-    inject(($clinit_LocaleInfo() , '.GJWGXPGDAK{width:550px;padding:5px;margin:0;margin-left:auto;margin-right:auto;max-width:550px;box-shadow:2px 2px 2px 2px #ccc;border:1px solid #aaa;}.GJWGXPGDAK td{margin:0;padding:0;}.GJWGXPGDBK{height:130px;width:180px;margin-right:10px;margin-bottom:0;}.GJWGXPGDNJ{display:inline-table;height:100%;width:370px;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;}.GJWGXPGDOJ{font-size:2.2em;height:75px;width:100%;overflow:hidden;font-family:"Nunito", sans-serif;}.GJWGXPGDPJ{font-size:1.5em;width:100%;overflow:hidden;font-family:"Nunito", sans-serif;}.GJWGXPGDMJ{height:75px;width:50%;margin-top:auto;margin-bottom:0;padding:0;}.GJWGXPGDMJ .pwButton{display:inline-table;width:100%;height:50px;font-family:"Nunito", sans-serif;background-image:-webkit-linear-gradient(top, #FFFFFF 0%, #1CA312 150%);}'));
+    inject(($clinit_LocaleInfo() , '.GJWGXPGDAK{width:550px;padding:5px;margin:0;margin-left:auto;margin-right:auto;max-width:550px;box-shadow:2px 2px 2px 2px #ccc;border:1px solid #aaa;}.GJWGXPGDAK td{margin:0;padding:0;}.GJWGXPGDBK{height:130px;width:180px;margin-right:10px;margin-bottom:0;}.GJWGXPGDNJ{display:inline-table;height:100%;width:370px;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;}.GJWGXPGDOJ{font-size:2rem;line-height:2.1rem;height:130px;width:100%;overflow:hidden;font-family:"Nunito", sans-serif;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;}.GJWGXPGDPJ{font-size:1.5rem;width:100%;max-width:180px;overflow:hidden;font-family:"Nunito", sans-serif;}.GJWGXPGDMJ{position:relative;height:50px;margin-top:auto;margin-bottom:0;padding:0;}.GJWGXPGDMJ .pwButton{display:inline-table;position:absolute;bottom:0;width:100%;height:50px;font-family:"Nunito", sans-serif;font-size:2rem;background-image:-webkit-linear-gradient(top, #FFFFFF 0%, #1CA312 150%);}'));
     return true;
   }
   return false;
@@ -15016,7 +15018,7 @@ var style_2 = null;
 function $ensureInjected_2(this$static){
   if (!this$static.injected) {
     this$static.injected = true;
-    inject(($clinit_LocaleInfo() , '.GJWGXPGDIJ{text-align:center;margin-left:auto;margin-right:auto;}.GJWGXPGDKJ{background-image:-webkit-linear-gradient(top left, #FFFFFF 0%, #1CA312 150%);font-size:42pt;margin-left:auto;margin-right:auto;width:100%;padding-left:5px;font-family:"Nunito", sans-serif;height:30px;line-height:22px;}.GJWGXPGDGJ{padding:10px 30px 10px 30px;width:50%;horizontalAlign:center;}.GJWGXPGDHJ{padding-left:0;text-align:left;}.GJWGXPGDJJ{padding-right:0;text-align:right;}'));
+    inject(($clinit_LocaleInfo() , '.GJWGXPGDIJ{text-align:center;margin-left:auto;margin-right:auto;}.GJWGXPGDKJ{background-image:-webkit-linear-gradient(top left, #FFFFFF 0%, #1CA312 150%);font-size:4rem;margin-left:auto;margin-right:auto;width:100%;padding-left:5px;font-family:"Nunito", sans-serif;height:2rem;line-height:1.4rem;}.GJWGXPGDGJ{padding:10px 30px 10px 30px;width:50%;horizontalAlign:center;}.GJWGXPGDHJ{padding-left:0;text-align:left;}.GJWGXPGDJJ{padding-right:0;text-align:right;}'));
     return true;
   }
   return false;
@@ -15087,7 +15089,7 @@ function VideoScreen_0(){
   var logo, attachRecord0, deckPanelBottom, deckPanelTop, domId0, domId0Element, f_Label2, f_VerticalPanel1, htmlPanel, recentlyPlayed, simplePanelPlayer, tagCloud, toPlayNext, sb;
   $clinit_Log();
   debugFinest(Lorg_jorgecardoso_purewidgets_demo_publicyoutubeplayer_client_ui_VideoScreen_2_classLit.typeName + ': Creating main screen');
-  $initWidget(this, ($clinit_VideoScreen_VideoScreenUiBinderImpl_GenBundle_default_InlineClientBundleGenerator$styleInitializer() , simplePanelPlayer = new SimplePanel_0 , domId0 = $createUniqueId($doc) , recentlyPlayed = new VideoList_0('Like', 'Recently played', 'Like', true, true, 1) , f_Label2 = new Label_0 , tagCloud = new PdTagCloud_0 , f_VerticalPanel1 = new VerticalPanel_0 , toPlayNext = new VideoList_0('Play', 'What to play next', 'Play', false, false, 2) , deckPanelBottom = new DeckPanel_0 , htmlPanel = new HTMLPanel_0((sb = new StringBuilder_0 , sb.impl.string += "<h1 align='center' class='" , $append_6(sb, htmlEscape('GJWGXPGDMI')) , sb.impl.string += "'><img src='horizontalIcon.svg'><\/h1> <span id='" , $append_6(sb, htmlEscape(domId0)) , sb.impl.string += "'><\/span>" , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb.impl.string)).html) , deckPanelTop = new DeckPanel_0 , simplePanelPlayer.getStyleElement()['className'] = 'GJWGXPGDNI' , $add_1(deckPanelTop, simplePanelPlayer) , recentlyPlayed.element['className'] = 'GJWGXPGDJI' , $add_1(deckPanelBottom, recentlyPlayed) , $setTextOrHtml(f_Label2.directionalTextHelper, 'Tag cloud', false) , f_Label2.element['className'] = 'GJWGXPGDLI' , $add_6(f_VerticalPanel1, f_Label2) , $setCellHeight(f_VerticalPanel1, f_Label2, '50px') , tagCloud.element['className'] = 'GJWGXPGDKI' , $add_6(f_VerticalPanel1, tagCloud) , $add_1(deckPanelBottom, f_VerticalPanel1) , $add_1(deckPanelBottom, toPlayNext) , deckPanelBottom.element['className'] = 'GJWGXPGDII' , $add_1(deckPanelTop, htmlPanel) , deckPanelTop.element['className'] = 'GJWGXPGDHI' , attachRecord0 = attachToDom(htmlPanel.element) , domId0Element = $getElementById($doc, domId0) , attachRecord0.origParent?$insertBefore(attachRecord0.origParent, attachRecord0.element, attachRecord0.origSibling):orphan(attachRecord0.element) , $addAndReplaceElement(htmlPanel, deckPanelBottom, domId0Element) , this.deckPanelBottom = deckPanelBottom , this.deckPanelTop = deckPanelTop , this.recentlyPlayed = recentlyPlayed , this.simplePanelPlayer = simplePanelPlayer , this.tagCloud = tagCloud , this.toPlayNext = toPlayNext , $ensureInjected_3(style_3) , deckPanelTop));
+  $initWidget(this, ($clinit_VideoScreen_VideoScreenUiBinderImpl_GenBundle_default_InlineClientBundleGenerator$styleInitializer() , simplePanelPlayer = new SimplePanel_0 , domId0 = $createUniqueId($doc) , recentlyPlayed = new VideoList_0('Like', 'Recently played', 'Like', true, true, 1) , f_Label2 = new Label_0 , tagCloud = new PdTagCloud_0 , f_VerticalPanel1 = new VerticalPanel_0 , toPlayNext = new VideoList_0('Play', 'What to play next', 'Play', false, false, 2) , deckPanelBottom = new DeckPanel_0 , htmlPanel = new HTMLPanel_0((sb = new StringBuilder_0 , sb.impl.string += "<h1 align='center' class='" , $append_6(sb, htmlEscape('GJWGXPGDMI')) , sb.impl.string += "'><img src='horizontalIcon.svg'><\/h1> <span id='" , $append_6(sb, htmlEscape(domId0)) , sb.impl.string += "'><\/span>" , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb.impl.string)).html) , deckPanelTop = new DeckPanel_0 , simplePanelPlayer.getStyleElement()['className'] = 'GJWGXPGDNI' , $add_1(deckPanelTop, simplePanelPlayer) , $add_1(deckPanelBottom, recentlyPlayed) , $setTextOrHtml(f_Label2.directionalTextHelper, 'Tag cloud', false) , f_Label2.element['className'] = 'GJWGXPGDLI' , $add_6(f_VerticalPanel1, f_Label2) , $setCellHeight(f_VerticalPanel1, f_Label2, '50px') , tagCloud.element['className'] = 'GJWGXPGDKI' , $add_6(f_VerticalPanel1, tagCloud) , $add_1(deckPanelBottom, f_VerticalPanel1) , $add_1(deckPanelBottom, toPlayNext) , deckPanelBottom.element['className'] = 'GJWGXPGDII' , $add_1(deckPanelTop, htmlPanel) , deckPanelTop.element['className'] = 'GJWGXPGDHI' , attachRecord0 = attachToDom(htmlPanel.element) , domId0Element = $getElementById($doc, domId0) , attachRecord0.origParent?$insertBefore(attachRecord0.origParent, attachRecord0.element, attachRecord0.origSibling):orphan(attachRecord0.element) , $addAndReplaceElement(htmlPanel, deckPanelBottom, domId0Element) , this.deckPanelBottom = deckPanelBottom , this.deckPanelTop = deckPanelTop , this.recentlyPlayed = recentlyPlayed , this.simplePanelPlayer = simplePanelPlayer , this.tagCloud = tagCloud , this.toPlayNext = toPlayNext , $ensureInjected_3(style_3) , deckPanelTop));
   this.deckPanelBottom.isAnimationEnabled = true;
   this.deckPanelTop.isAnimationEnabled = true;
   this.queue = new Queue_0;
@@ -15120,7 +15122,7 @@ var style_3 = null;
 function $ensureInjected_3(this$static){
   if (!this$static.injected) {
     this$static.injected = true;
-    inject(($clinit_LocaleInfo() , '.GJWGXPGDHI{height:100%;width:100%;}.GJWGXPGDMI{font-size:5em !important;margin-top:25px;margin-bottom:0;padding-top:0;padding-bottom:0;font-family:"Nunito", sans-serif;}.GJWGXPGDMI img{height:100px;}.GJWGXPGDNI{height:100%;width:100%;background-color:#bbb;}.GJWGXPGDNI div{height:100%;width:100%;margin-top:auto;margin-bottom:auto;margin-left:auto;margin-right:auto;}.GJWGXPGDII{height:75%;width:90%;background-color:transparent;margin-left:auto;margin-top:0;margin-bottom:0;margin-right:auto;}.GJWGXPGDJI{background-color:#fff;height:100%;width:75%;}.GJWGXPGDLI{background-image:-webkit-linear-gradient(top left, #FFFFFF 0%, #1CA312 150%);font-size:42pt;margin:0;padding:0;padding-left:5px;margin-left:auto;margin-right:auto;width:100%;font-family:"Nunito", sans-serif;height:30px;line-height:22px;}.GJWGXPGDKI{height:100%;text-align:center;}.GJWGXPGDKI span{font-family:"Nunito", sans-serif;}'));
+    inject(($clinit_LocaleInfo() , '.GJWGXPGDHI{height:100%;width:100%;}.GJWGXPGDMI{margin-top:25px;margin-bottom:0;padding-top:0;padding-bottom:0;}.GJWGXPGDMI img{height:100px;}.GJWGXPGDNI{height:100%;width:100%;background-color:#bbb;}.GJWGXPGDNI div{height:100%;width:100%;margin-top:auto;margin-bottom:auto;margin-left:auto;margin-right:auto;}.GJWGXPGDII{height:75%;width:90%;background-color:transparent;margin-left:auto;margin-top:0;margin-bottom:0;margin-right:auto;}.GJWGXPGDLI{background-image:-webkit-linear-gradient(top left, #FFFFFF 0%, #1CA312 150%);font-size:4rem;margin:0;padding:0;padding-left:5px;margin-left:auto;margin-right:auto;width:100%;font-family:"Nunito", sans-serif;height:2rem;line-height:1.4rem;}.GJWGXPGDKI{height:100%;text-align:center;}.GJWGXPGDKI span{font-family:"Nunito", sans-serif;}'));
     return true;
   }
   return false;
@@ -15640,8 +15642,6 @@ _.getClass$ = function getClass_333(){
   return Lorg_purewidgets_client_feedback_CumulativeInputFeedbackPanel_2_classLit;
 }
 ;
---></script>
-<script><!--
 _.castableTypeMap$ = makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$HasWidgets, Q$IsWidget, Q$UIObject, Q$Widget]);
 _.accumulatedFeedback = null;
 _.mainPanel = null;
@@ -15649,6 +15649,8 @@ _.maxLines = 0;
 _.newOnTop = false;
 _.showTitles = false;
 _.timer = null;
+--></script>
+<script><!--
 _.vPanel = null;
 function CumulativeInputFeedbackPanel$1_0(this$0){
   $clinit_Timer();
@@ -16372,14 +16374,14 @@ _.onFailure_1 = function onFailure_8(caught){
   this.val$listener?$onFailure_2(this.val$listener, caught):warn_2(this.this$0, 'No callback defined');
 }
 ;
---></script>
-<script><!--
 _.onSuccess_1 = function onSuccess_8(json){
   $onSuccess_6(this, dynamicCast(json, Q$String));
 }
 ;
 _.this$0 = null;
 _.val$listener = null;
+--></script>
+<script><!--
 function $onSuccess_7(this$static, result){
   var widgetList, widgetListJson;
   debug_2(this$static.this$0, 'Got response to addition of widgets.');
@@ -17175,8 +17177,6 @@ function $setControlType(this$static, type){
   this$static.controlType = type;
 }
 
---></script>
-<script><!--
 function $setLongDescription(this$static, longDescription){
   this$static.longDescription = longDescription;
 }
@@ -17185,6 +17185,8 @@ function $setPlaceId(this$static, placeId){
   this$static.placeId = placeId;
 }
 
+--></script>
+<script><!--
 function $setShortDescription(this$static, shortDescription){
   this$static.shortDescription = shortDescription;
 }
@@ -17560,6 +17562,61 @@ function setString(item, value){
   localStorage.setItem(item, value);
 }
 
+function $ageDay(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 day)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' days ago)';
+}
+
+function $ageHour(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 hour ago)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' hours ago)';
+}
+
+function $ageMinute(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 minute ago)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' minutes ago)';
+}
+
+function $ageSecond(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 second ago)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' seconds ago)';
+}
+
+function $ageWeek(arg0){
+  var arg0_form, returnVal;
+  returnVal = null;
+  arg0_form = arg0 == 1?1:0;
+  arg0_form == 1 && (returnVal = '(1 week ago)');
+  if (returnVal != null) {
+    return returnVal;
+  }
+  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' weeks ago)';
+}
+
 function $addActionListener(this$static, handler){
   $add_8(this$static.actionListeners, handler);
 }
@@ -17579,6 +17636,16 @@ function $generateUserInputFeedbackMessage(this$static, inputEvent, inputFeedbac
   $setInfo(inputFeedback, $replaceParameters(this$static, this$static.userInputFeedbackPattern, inputEvent));
   $setSharedFeedbackTitle(inputFeedback, $replaceParameters(this$static, this$static.userSharedTitleInputFeedbackPattern, inputEvent));
   $setSharedFeedbackInfo(inputFeedback, $replaceParameters(this$static, this$static.userSharedInfoInputFeedbackPattern, inputEvent));
+}
+
+function $getAgeString(milli){
+  var ageDays, ageHours, ageMinutes, ageSeconds, ageWeeks;
+  ageSeconds = toDouble(div(milli, P3e8_longLit));
+  ageMinutes = ageSeconds / 60;
+  ageHours = ageMinutes / 60;
+  ageDays = ageHours / 24;
+  ageWeeks = ageDays / 7;
+  return ageWeeks > 1?$ageWeek(round_int(ageWeeks)):ageDays > 1?$ageDay(round_int(ageDays)):ageHours > 1?$ageHour(round_int(ageHours)):ageMinutes > 1?$ageMinute(round_int(ageMinutes)):$ageSecond(round_int(ageSeconds));
 }
 
 function $inputFeedbackStarted(this$static, feedback){
@@ -17689,14 +17756,14 @@ function $replaceParameter(this$static, inputString, parameter, replacement){
 }
 
 function $replaceParameters(this$static, inputString, inputEvent){
-  var ageString, i, ageDays, ageHours, ageMinutes, ageSeconds, ageWeeks;
+  var ageString, i;
   inputString = $replaceParameter(this$static, inputString, '%U%', inputEvent.nickname_0);
   inputString = $replaceParameter(this$static, inputString, '%WS%', this$static.widget.shortDescription_0);
   inputString = $replaceParameter(this$static, inputString, '%WL%', this$static.widget.longDescription_0);
   inputString = $replaceParameter(this$static, inputString, '%WOS%', inputEvent.widgetOption.shortDescription_0);
   inputString = $replaceParameter(this$static, inputString, '%WOL%', inputEvent.widgetOption.longDescription_0);
   inputString = $replaceParameter(this$static, inputString, '%WOR%', inputEvent.widgetOption.referenceCode_0);
-  ageString = (ageSeconds = toDouble(div(inputEvent.age_0, P3e8_longLit)) , ageMinutes = ageSeconds / 60 , ageHours = ageMinutes / 60 , ageDays = ageHours / 24 , ageWeeks = ageDays / 7 , ageWeeks > 1?$ageWeek(round_int(ageWeeks)):ageDays > 1?$ageDay(round_int(ageDays)):ageHours > 1?$ageHour(round_int(ageHours)):ageMinutes > 1?$ageMinute(round_int(ageMinutes)):$ageSecond(round_int(ageSeconds)));
+  ageString = $getAgeString(inputEvent.age_0);
   lt(inputEvent.age_0, Pea60_longLit) && (ageString = '');
   inputString = $replaceParameter(this$static, inputString, '%AGE%', ageString);
   $clinit_Log_0();
@@ -17805,6 +17872,8 @@ _.getClass$ = function getClass_370(){
   return Lorg_purewidgets_client_widgets_PdButton_2_classLit;
 }
 ;
+--></script>
+<script><!--
 _.handleInput = function handleInput_0(ie){
   var ae, feedback;
   feedback = new InputFeedback_0;
@@ -17858,8 +17927,6 @@ function PdButton_PdButtonUiBinderImpl_GenBundle_default_InlineClientBundleGener
 function PdButton_PdButtonUiBinderImpl_GenBundle_default_InlineClientBundleGenerator$1(){
 }
 
---></script>
-<script><!--
 _ = PdButton_PdButtonUiBinderImpl_GenBundle_default_InlineClientBundleGenerator$1_0.prototype = PdButton_PdButtonUiBinderImpl_GenBundle_default_InlineClientBundleGenerator$1.prototype = new Object_0;
 _.getClass$ = function getClass_372(){
   return Lorg_purewidgets_client_widgets_PdButton_1PdButtonUiBinderImpl_1GenBundle_1default_1InlineClientBundleGenerator$1_2_classLit;
@@ -18477,6 +18544,8 @@ function $setThumbnailURL(this$static, thumbnailUrl){
   this$static.thumbnail.sqDefault = thumbnailUrl;
 }
 
+--></script>
+<script><!--
 function $setTitle(this$static, title){
   this$static.title = title;
   ;
@@ -18542,8 +18611,6 @@ _.getClass$ = function getClass_383(){
 }
 ;
 _.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Enum, Q$PlayerState]);
---></script>
-<script><!--
 var $VALUES_12, BUFFERING, ENDED, PAUSED, PLAYING_0, UNSTARTED, VIDEOCUED;
 function $setDefaultPlayer(this$static, defaultPlayer){
   this$static.defaultPlayer = defaultPlayer;
@@ -18711,61 +18778,6 @@ _.nickname_0 = null;
 _.optionId = null;
 _.param = null;
 _.userId_0 = null;
-function $ageDay(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 day)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' days ago)';
-}
-
-function $ageHour(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 hour ago)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' hours ago)';
-}
-
-function $ageMinute(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 minute ago)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' minutes ago)';
-}
-
-function $ageSecond(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 second ago)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' seconds ago)';
-}
-
-function $ageWeek(arg0){
-  var arg0_form, returnVal;
-  returnVal = null;
-  arg0_form = arg0 == 1?1:0;
-  arg0_form == 1 && (returnVal = '(1 week ago)');
-  if (returnVal != null) {
-    return returnVal;
-  }
-  return '(' + $format(($clinit_NumberFormat() , !cachedDecimalFormat && (cachedDecimalFormat = new NumberFormat_1('#,##0.###', $getDefaultNative(), false)) , $clinit_NumberFormat() , cachedDecimalFormat), arg0) + ' weeks ago)';
-}
-
 function $setAge(this$static, age){
   this$static.age_0 = age;
 }
