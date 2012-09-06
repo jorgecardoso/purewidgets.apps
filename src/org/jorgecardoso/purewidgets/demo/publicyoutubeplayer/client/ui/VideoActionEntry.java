@@ -73,7 +73,16 @@ public class VideoActionEntry extends Composite {
 		this.actionId = actionId;
 		this.video = video;
 		this.order = order;
-		title.setText( video.getTitle() );
+		
+		String title = video.getTitle();
+		title = title.replaceAll("_", " ");
+		title = title.replaceAll("\"", " ");
+		title = title.toLowerCase();
+		
+		if ( null != title && title.length() > 30 ) {
+			title = title.substring(0, 30) + "...";
+		}
+		this.title.setText( title );
 		
 		uiLabelUser.setText( video.getAuthor() );
 		
