@@ -74,7 +74,7 @@ public class MainScreen extends Composite  {
 		int total = deckPanel.getWidgetCount();
 		index = (int)(Math.random()*total);
 		Log.debug(this, "Showing screen number " + index);
-		this.deckPanel.showWidget(index);
+		this.deckPanel.showWidget(0);//index);
 	}
 
 	public void showNext() {

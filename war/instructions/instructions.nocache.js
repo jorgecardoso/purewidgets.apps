@@ -298,8 +298,8 @@ function instructions(){
   $stats && $stats({moduleName:'instructions', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'selectingPermutation'});
   if (!isHostedMode()) {
     try {
-      unflattenKeylistIntoAnswers(['pt'], '7ADD90B4D8F129A995EC8CE89F0E961A');
-      unflattenKeylistIntoAnswers(['default'], 'B8EBDE5CFCD60AED93236F062C870500');
+      unflattenKeylistIntoAnswers(['pt'], '0ECB116E6D8632827AB254FA2186D929');
+      unflattenKeylistIntoAnswers(['default'], '7200B5045885AC4A703D60ADEF35FFF4');
       strongName = answers[computePropValue('locale')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {

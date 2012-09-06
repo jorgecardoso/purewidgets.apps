@@ -10,31 +10,31 @@
 			height: 100%;
 			
 		}
-		#title {
+		.main #title {
 			font-size: 30pt !important;
 			font-family: 'Nunito' sans-serif !important;
 		}
-		#subtitle {
+		.main #subtitle {
 			font-size: 30pt !important;
 			font-family: 'Nunito' sans-serif !important;
 		}
-		#buttonLabel {
+		.main #buttonLabel {
 			font-size: 30pt !important;
 			font-family: 'Nunito' sans-serif !important;
 		}
-		#buttonReference {
+		.main #buttonReference {
 			font-size: 30pt !important;
 			font-family: 'Nunito' sans-serif !important;
 		}
-		#phoneNumber {
+		.main #phoneNumber {
 			font-size: 30pt !important;
 			font-family: 'Nunito' sans-serif !important;
 		}
-		#smsText1 {
+		.main #smsText1 {
 			font-size: 30pt !important;
 			font-family: 'Nunito' sans-serif !important;
 		}
-		#smsText2 {
+		.main #smsText2 {
 			font-size: 30pt !important;
 			font-family: 'Nunito' sans-serif !important;
 		}

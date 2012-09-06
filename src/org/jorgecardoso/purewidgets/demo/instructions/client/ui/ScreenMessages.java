@@ -4,10 +4,10 @@ import com.google.gwt.i18n.client.LocalizableResource.DefaultLocale;;
 
 @DefaultLocale("en")
 public interface ScreenMessages extends Messages{
-	@DefaultMessage("How to interact with this screen")
+	@DefaultMessage("How to interact with this display?")
 	String title();
 	
-	@DefaultMessage("Web: {0}")
+	@DefaultMessage("{0}")
 	String webAddressTitle(String address);
 	
 	@DefaultMessage("SMS: {0}")
