@@ -1,4 +1,6 @@
 gwt-unitCache 
 gwt-unitCache/*
+extra
+extra/*
 .settings
 .classpath

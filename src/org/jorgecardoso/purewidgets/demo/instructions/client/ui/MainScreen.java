@@ -70,11 +70,16 @@ public class MainScreen extends Composite  {
 		return new QrCodeScreen(this.place);
 	}	
 	
+	@UiFactory
+	public DirectQrCodeScreen createDirectQrCodeScreen() {
+		return new DirectQrCodeScreen(this.place);
+	}
+	
 	public void showRandom() {
 		int total = deckPanel.getWidgetCount();
 		index = (int)(Math.random()*total);
 		Log.debug(this, "Showing screen number " + index);
-		this.deckPanel.showWidget(0);//index);
+		this.deckPanel.showWidget(index);
 	}
 
 	public void showNext() {

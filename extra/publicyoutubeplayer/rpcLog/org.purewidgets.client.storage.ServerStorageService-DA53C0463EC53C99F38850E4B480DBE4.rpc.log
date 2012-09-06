@@ -2,7 +2,7 @@
 Types potentially sent from browser:
 ====================================
 
-Reachable types computed on: Thu Sep 06 10:29:19 WEST 2012
+Reachable types computed on: Thu Sep 06 16:00:40 WEST 2012
 E
    Serialization status
       Not serializable
@@ -74,13 +74,22 @@ java.util.ArrayList<java.lang.String>
 Types potentially sent from server:
 ===================================
 
-Reachable types computed on: Thu Sep 06 10:29:19 WEST 2012
+Reachable types computed on: Thu Sep 06 16:00:40 WEST 2012
+K
+   Serialization status
+      Not serializable
+   Path
+      'K' is reachable from field 'exposeKey' of type 'java.util.IdentityHashMap<K, V>'
+      'java.util.IdentityHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
+      Started from 'java.util.Map<java.lang.String, java.lang.String>'
+
 K
    Serialization status
       Not serializable
    Path
       'K' is reachable from field 'exposeKey' of type 'java.util.HashMap<K, V>'
-      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
+      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a supertype of type 'class java.util.LinkedHashMap<java.lang.String, java.lang.String>'
+      'java.util.LinkedHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'
 
 K
@@ -91,12 +100,12 @@ K
       'java.util.TreeMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'
 
-K
+V
    Serialization status
       Not serializable
    Path
-      'K' is reachable from field 'exposeKey' of type 'java.util.IdentityHashMap<K, V>'
-      'java.util.IdentityHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
+      'V' is reachable from field 'exposeValueType' of type 'java.util.TreeMap<K, V>'
+      'java.util.TreeMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'
 
 V
@@ -104,15 +113,8 @@ V
       Not serializable
    Path
       'V' is reachable from field 'exposeValue' of type 'java.util.HashMap<K, V>'
-      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
-      Started from 'java.util.Map<java.lang.String, java.lang.String>'
-
-V
-   Serialization status
-      Not serializable
-   Path
-      'V' is reachable from field 'exposeValueType' of type 'java.util.TreeMap<K, V>'
-      'java.util.TreeMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
+      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a supertype of type 'class java.util.LinkedHashMap<java.lang.String, java.lang.String>'
+      'java.util.LinkedHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'
 
 V
@@ -211,7 +213,8 @@ java.util.HashMap<java.lang.String, java.lang.String>
    Serialization status
       Instantiable
    Path
-      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
+      'java.util.HashMap<java.lang.String, java.lang.String>' is reachable as a supertype of type 'class java.util.LinkedHashMap<java.lang.String, java.lang.String>'
+      'java.util.LinkedHashMap<java.lang.String, java.lang.String>' is reachable as a subtype of type 'interface java.util.Map<java.lang.String, java.lang.String>'
       Started from 'java.util.Map<java.lang.String, java.lang.String>'
 
 java.util.IdentityHashMap<java.lang.String, java.lang.String>

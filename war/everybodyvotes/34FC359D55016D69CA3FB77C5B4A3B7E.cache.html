@@ -4,7 +4,7 @@ var $gwt_version = "2.4.0";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = '9CF00C91FF64B8E918EE23A8EED652B7';
+var $strongName = '34FC359D55016D69CA3FB77C5B4A3B7E';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'everybodyvotes',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
@@ -18821,6 +18821,10 @@ function $getParameterInt(this$static){
 
 function $getParameterString(this$static, name_0, defaultValue){
   var remoteValue, urlValue;
+  urlValue = (ensureParameterMap() , dynamicCast(paramMap.get(name_0), Q$String));
+  if (null != urlValue) {
+    return urlValue;
+  }
   if (!!this$static.parameters_0 && this$static.parameters_0.size_0() > 0) {
     remoteValue = dynamicCast(this$static.parameters_0.get(name_0), Q$String);
     $clinit_Log();
@@ -18828,10 +18832,6 @@ function $getParameterString(this$static, name_0, defaultValue){
     if (null != remoteValue) {
       return remoteValue;
     }
-  }
-  urlValue = (ensureParameterMap() , dynamicCast(paramMap.get(name_0), Q$String));
-  if (null != urlValue) {
-    return urlValue;
   }
   return defaultValue;
 }
@@ -21232,7 +21232,7 @@ function $replaceParameters(this$static, inputString, inputEvent){
   debugFinest(this$static.getClass$().typeName + ': Replacing widget parameters: ' + inputString);
   if (!!inputEvent.parameters_0 && inputEvent.parameters_0.size > 0) {
     for (i = 0; i < inputEvent.parameters_0.size; ++i) {
-      inputString = $replaceParameter(this$static, inputString, '%P[' + i + ']%', dynamicCast($get_4(inputEvent.parameters_0, i), Q$String));
+      inputString = $replaceParameter(this$static, inputString, '%P' + i + '%', dynamicCast($get_4(inputEvent.parameters_0, i), Q$String));
     }
   }
   return inputString;
@@ -21434,8 +21434,8 @@ function PdTextBox_0(){
   var attachRecord0, domId0, domId0Element, domId1, domId1Element, f_HorizontalPanel1, uiLabelCaption, uiLabelCaret, uiLabelReferencecode, uiPanelMain, uiTextbox, sb;
   PdWidget_0.call(this, 'suggest');
   $initWidget(this, ($clinit_PdTextBox_PdTextBoxUiBinderImpl_GenBundle_pt_InlineClientBundleGenerator$styleInitializer() , domId0 = $createUniqueId($doc) , uiTextbox = new TextBox_0 , domId1 = $createUniqueId($doc) , uiLabelCaret = new Label_0 , uiLabelCaption = new Label_0 , uiLabelReferencecode = new Label_0 , f_HorizontalPanel1 = new HorizontalPanel_0 , uiPanelMain = new ClickableHTMLPanel_0((sb = new StringBuilder_0 , sb.impl.string += "<span id='" , $append_5(sb, htmlEscape(domId0)) , sb.impl.string += "'><\/span>  <span id='" , $append_5(sb, htmlEscape(domId1)) , sb.impl.string += "'><\/span>" , new OnlyToBeUsedInGeneratedCodeStringBlessedAsSafeHtml_0(sb.impl.string)).html) , uiTextbox.element['className'] = 'pwTextBoxTextbox' , uiLabelCaret.element['className'] = 'pwTextBoxCaret' , $add_2(f_HorizontalPanel1, uiLabelCaret) , $setCellVerticalAlignment(f_HorizontalPanel1, uiLabelCaret, ($clinit_HasVerticalAlignment() , ALIGN_MIDDLE)) , uiLabelCaption.element['className'] = 'pwTextBoxCaptioncontainerCaption' , $add_2(f_HorizontalPanel1, uiLabelCaption) , $setCellVerticalAlignment(f_HorizontalPanel1, uiLabelCaption, ALIGN_MIDDLE) , uiLabelReferencecode.element['className'] = 'pwTextBoxCaptioncontainerReferencecode' , $add_2(f_HorizontalPanel1, uiLabelReferencecode) , $setCellVerticalAlignment(f_HorizontalPanel1, uiLabelReferencecode, ALIGN_MIDDLE) , f_HorizontalPanel1.element['className'] = 'pwTextBoxCaptioncontainer' , uiPanelMain.element['className'] = 'pwTextBox' , attachRecord0 = attachToDom(uiPanelMain.element) , domId0Element = $getElementById($doc, domId0) , domId1Element = $getElementById($doc, domId1) , attachRecord0.origParent?$insertBefore(attachRecord0.origParent, attachRecord0.element, attachRecord0.origSibling):orphan(attachRecord0.element) , $addAndReplaceElement(uiPanelMain, uiTextbox, domId0Element) , $addAndReplaceElement(uiPanelMain, f_HorizontalPanel1, domId1Element) , this.uiLabelCaption = uiLabelCaption , this.uiLabelCaret = uiLabelCaret , this.uiLabelReferencecode = uiLabelReferencecode , this.uiTextbox = uiTextbox , $ensureInjected_9(style_8) , uiPanelMain));
-  this.userInputFeedbackPattern = '%U%: %P[0]%(10) %AGE%';
-  this.userSharedInfoInputFeedbackPattern = '%P[0]%(10)';
+  this.userInputFeedbackPattern = '%U%: %P0%(10) %AGE%';
+  this.userSharedInfoInputFeedbackPattern = '%P0%(10)';
   this.userSharedTitleInputFeedbackPattern = '%U% %AGE%';
   this.widgetTextBox = new TextBox_3;
   $setWidget_3(this, this.widgetTextBox);

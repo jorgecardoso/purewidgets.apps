@@ -15,5 +15,7 @@
 	    <i:EmailTextScreen/>
 	    <i:EmailButtonScreen/>
 	    <i:QrCodeScreen/>
+	    <i:DirectQrCodeScreen/>
+	    
 	</g:DeckPanel>
 </ui:UiBinder> 

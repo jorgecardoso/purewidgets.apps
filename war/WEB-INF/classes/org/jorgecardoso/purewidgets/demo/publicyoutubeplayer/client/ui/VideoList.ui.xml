@@ -8,6 +8,7 @@
 <ui:style type='org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.ui.VideoList.Style'>
 .mainPanel {
 	text-align:center;
+	margin-top:10px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
@@ -28,7 +29,7 @@
 }
 
 .cell {
-	padding: 10px 20px 10px 20px;
+	padding: 15px 20px 10px 20px;
 	width:50%;
 	horizontalAlign: center;
 }
