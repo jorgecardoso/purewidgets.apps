@@ -2,7 +2,7 @@
 Types potentially sent from browser:
 ====================================
 
-Reachable types computed on: Wed Sep 05 19:50:20 WEST 2012
+Reachable types computed on: Thu Sep 06 09:32:57 WEST 2012
 com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException
    Serialization status
       Instantiable
@@ -52,7 +52,7 @@ java.lang.Throwable
 Types potentially sent from server:
 ===================================
 
-Reachable types computed on: Wed Sep 05 19:50:20 WEST 2012
+Reachable types computed on: Thu Sep 06 09:32:57 WEST 2012
 com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException
    Serialization status
       Instantiable

@@ -4,7 +4,7 @@ var $gwt_version = "2.4.0";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = 'A09A4D532F8F164F22F57F858EED4A32';
+var $strongName = 'BD6E4219C90200C27F2C5675D70C6058';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'publicyoutubeplayer',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
@@ -13796,6 +13796,9 @@ function $gotoState(this$static, state){
       this$static.currentState = NEXT;
       while (!$isFull(this$static.screen_0.toPlayNext)) {
         videos = $getVideo(this$static.videoSearcher);
+        if (videos.size < 1) {
+          break;
+        }
         for (v$iterator = new AbstractList$IteratorImpl_0(videos); v$iterator.i < v$iterator.this$0_0.size_0();) {
           v = dynamicCast($next_3(v$iterator), Q$Video);
           $addEntry(this$static.screen_0.toPlayNext, v);
@@ -18488,12 +18491,21 @@ function $getFavoriteCount(this$static){
 
 function $getKeywords(this$static){
   var i, jsArrayString, keywords;
-  jsArrayString = this$static.tags;
+  jsArrayString = $getKeywordsAsJsArray(this$static);
   keywords = initDim(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable, Q$String_$1]), Q$String, jsArrayString.length, 0);
   for (i = 0; i < jsArrayString.length; ++i) {
     keywords[i] = jsArrayString[i];
   }
   return keywords;
+}
+
+function $getKeywordsAsJsArray(this$static){
+  if (typeof this$static.tags == 'undefined') {
+    return Array();
+  }
+   else {
+    return this$static.tags;
+  }
 }
 
 function $getRatingAverage(this$static){
@@ -18539,13 +18551,13 @@ function $setRatingAverage(this$static, ratingAverage){
   this$static.rating = ratingAverage;
 }
 
+--></script>
+<script><!--
 function $setThumbnailURL(this$static, thumbnailUrl){
   typeof this$static.thumbnail == 'undefined' && (this$static.thumbnail = {});
   this$static.thumbnail.sqDefault = thumbnailUrl;
 }
 
---></script>
-<script><!--
 function $setTitle(this$static, title){
   this$static.title = title;
   ;
@@ -19464,12 +19476,12 @@ function $setFrequency(this$static, frequency){
   this$static.frequency = frequency;
 }
 
+--></script>
+<script><!--
 function $setNormalizedFrequency(this$static, normalizedFrequency){
   this$static.normalizedFrequency = normalizedFrequency;
 }
 
---></script>
-<script><!--
 function $toString_6(this$static){
   return 'Tag: ' + this$static.word + ': ' + this$static.frequency + ': ' + this$static.normalizedFrequency;
 }

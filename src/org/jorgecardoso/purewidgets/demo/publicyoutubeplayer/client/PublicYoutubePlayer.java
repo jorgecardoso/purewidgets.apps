@@ -500,6 +500,12 @@ public class PublicYoutubePlayer implements PDApplicationLifeCycle, EntryPoint, 
 				while ( !this.screen.toPlayNext.isFull() ) {
 					List<Video> videos = this.videoSearcher.getVideo(1);
 					
+					/*
+					 * In the remote change that the video searcher has no more videos, just skip
+					 */
+					if ( videos.size() < 1 ) {
+						break;
+					}
 					for (Video v : videos) { 
 						this.screen.toPlayNext.addEntry(v);
 					}
