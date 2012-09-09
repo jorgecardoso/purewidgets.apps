@@ -39,6 +39,9 @@ public interface ScreenMessages extends Messages{
 	String emailSubject();	
 	
 	
+	@DefaultMessage("3ax")
+	String emailButtonSubject();	
+	
 	@DefaultMessage("QR Codes")
 	String qrCodeTitle();		
 }

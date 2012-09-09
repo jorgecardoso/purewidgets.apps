@@ -10,5 +10,8 @@ public interface SuggestScreenMessages extends Messages {
 	
 	@DefaultMessage("Suggest your own poll!")
 	String askForPolls();
+	
+	@DefaultMessage("Obrigado pela sugestão")
+	String userFeedback();
 }
 	 

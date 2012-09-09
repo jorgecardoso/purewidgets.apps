@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.client.EveryBodyVotes;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao;
 import org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao;
+import org.purewidgets.client.feedback.MessagePattern;
 import org.purewidgets.client.widgets.PdListBox;
 import org.purewidgets.client.widgets.PdTextBox;
 import org.purewidgets.shared.events.ActionEvent;
@@ -44,7 +45,9 @@ public class SuggestScreen extends Composite  {
 	 PdTextBox makePdTextbox() { 
 		 
 			PdTextBox tb = new PdTextBox("suggest", msgs.askForPolls(), null);
-			
+			tb.setUserInputFeedbackPattern(msgs.userFeedback()+", "+MessagePattern.PATTERN_USER_NICKNAME);
+			tb.setUserSharedTitleInputFeedbackPattern(MessagePattern.PATTERN_USER_NICKNAME);
+			tb.setUserSharedInfoInputFeedbackPattern(msgs.userFeedback());
 			//tb.setLongDescription(poll.getPollQuestion() );
 						return tb;
    }

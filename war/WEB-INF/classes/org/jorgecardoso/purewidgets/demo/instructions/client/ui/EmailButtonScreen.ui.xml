@@ -11,32 +11,32 @@
 			
 		}
 		.main #title {
-			font-size: 30pt !important;
-			font-family: 'Nunito' sans-serif !important;
+			font-size: 40pt !important;
+			/*font-family: 'Nunito' sans-serif !important;*/
 		}
 		.main #subtitle {
-			font-size: 30pt !important;
-			font-family: 'Nunito' sans-serif !important;
+			font-size: 50pt !important;
+			/*font-family: 'Nunito' sans-serif !important;*/
 		}
 		.main #buttonLabel {
 			font-size: 30pt !important;
-			font-family: 'Nunito' sans-serif !important;
+			
 		}
 		.main #buttonReference {
-			font-size: 30pt !important;
-			font-family: 'Nunito' sans-serif !important;
+			font-size: 40pt !important;
+			
 		}
 		.main #phoneNumber {
-			font-size: 30pt !important;
-			font-family: 'Nunito' sans-serif !important;
+			/*font-size: 40pt !important;*/
+		
 		}
 		.main #smsText1 {
-			font-size: 30pt !important;
-			font-family: 'Nunito' sans-serif !important;
+			font-size: 40pt !important;
+			
 		}
 		.main #smsText2 {
-			font-size: 30pt !important;
-			font-family: 'Nunito' sans-serif !important;
+			/*font-size: 40pt !important;*/
+			
 		}
 	</ui:style>
 	
