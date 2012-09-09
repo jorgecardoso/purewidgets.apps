@@ -149,7 +149,7 @@ public class VideoActionEntry extends Composite {
 	 * 
 	 */
 	private PdButton createButton(Video video, final String label) {
-		PdButton btn = new PdButton(this.actionId + video.getId(), label, null, video.getTitle(), createSortParameter("d", this.order));
+		PdButton btn = new PdButton(this.actionId + " " + video.getId(), label, null, video.getTitle(), createSortParameter("d", this.order));
 		
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		

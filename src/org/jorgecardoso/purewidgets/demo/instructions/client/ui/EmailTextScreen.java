@@ -67,7 +67,7 @@ public class EmailTextScreen extends Composite  {
 
 		e = MainScreen.getElemById(this.getElement(), "subject");
 		if ( null != e) {
-			e.setInnerText(msgs.emailSubject(place.getPlaceReferenceCode()));
+			e.setInnerText(msgs.emailSubject());
 		}			
 			
 	}

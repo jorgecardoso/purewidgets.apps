@@ -11,10 +11,10 @@
 	<g:DeckPanel ui:field='deckPanel' styleName='{style.panel}'>
 	    <i:WebScreen/>
 	    <i:SMSTextScreen/>
-	    <i:SMSButtonScreen/>
+	    <!--  <i:SMSButtonScreen/>   -->
 	    <i:EmailTextScreen/>
-	    <i:EmailButtonScreen/>
-	    <i:QrCodeScreen/>
+	    <!--<i:EmailButtonScreen/>-->
+	    <i:QrCodeScreen/> 
 	    <i:DirectQrCodeScreen/>
 	    
 	</g:DeckPanel>

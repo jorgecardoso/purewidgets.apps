@@ -10,35 +10,35 @@ public interface ScreenMessages extends Messages{
 	@DefaultMessage("{0}")
 	String webAddressTitle(String address);
 	
-	@DefaultMessage("SMS: {0}")
+	@DefaultMessage("Send an SMS to: {0}")
 	String smsAddressTitle(String address);	
 	
-	@DefaultMessage("Texxt me")
+	@DefaultMessage("Text me")
 	String textLabel();
 	
 	@DefaultMessage("Click me")
 	String buttonLabel();	
 	
-	@DefaultMessage("3ax")
+	@DefaultMessage("(3ax)")
 	String buttonReferenceCode();
 	
 	@DefaultMessage("97..")
 	String smsPhoneNumber();	
 	
-	@DefaultMessage("{0}.3ax message")
+	@DefaultMessage("{0}.3ax")
 	String smsText1(String place);		
 	
-	@DefaultMessage("xpto")
+	@DefaultMessage("message")
 	String smsText2();	
 	
 	
-	@DefaultMessage("Email: {0}")
+	@DefaultMessage("Send an Email to: {0}")
 	String emailTitle(String emailAddres);		
 	
-	@DefaultMessage("{0}.ref")
-	String emailSubject(String placeReferenceCode);	
+	@DefaultMessage("3ax Message")
+	String emailSubject();	
 	
 	
-	@DefaultMessage("QR Code")
+	@DefaultMessage("QR Codes")
 	String qrCodeTitle();		
 }

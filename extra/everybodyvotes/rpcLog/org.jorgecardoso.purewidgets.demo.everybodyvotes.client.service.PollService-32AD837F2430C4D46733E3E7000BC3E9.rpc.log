@@ -2,7 +2,7 @@
 Types potentially sent from browser:
 ====================================
 
-Reachable types computed on: Thu Sep 06 18:45:34 WEST 2012
+Reachable types computed on: Sun Sep 09 15:37:12 WEST 2012
 E
    Serialization status
       Not serializable
@@ -132,17 +132,13 @@ org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao
 Types potentially sent from server:
 ===================================
 
-Reachable types computed on: Thu Sep 06 18:45:34 WEST 2012
+Reachable types computed on: Sun Sep 09 15:37:12 WEST 2012
 E
    Serialization status
       Not serializable
    Path
-      'E' is reachable from field 'exposeElement' of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable as a subtype of type 'class java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable from field 'pollOptions' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'E' is reachable from field 'element' of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 E
@@ -157,17 +153,20 @@ E
    Serialization status
       Not serializable
    Path
-      'E' is reachable from field 'element' of type 'java.util.Collections.SingletonList<E>'
-      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'E' is reachable from field 'exposeElement' of type 'java.util.Vector<E>'
+      'java.util.Vector<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 E
    Serialization status
       Not serializable
    Path
-      'E' is reachable from field 'exposeElement' of type 'java.util.Vector<E>'
-      'java.util.Vector<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a supertype of type 'class java.util.Stack<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
-      'java.util.Stack<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'E' is reachable from field 'exposeElement' of type 'java.util.ArrayList<E>'
+      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable as a subtype of type 'class java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>'
+      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable from field 'pollOptions' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 E[]
@@ -200,8 +199,8 @@ int
       'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable as a subtype of type 'class java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>'
       'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable from field 'pollOptions' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
       'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 java.lang.Exception
@@ -219,8 +218,8 @@ java.lang.Long
    Path
       'java.lang.Long' is reachable from field 'pollId' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
       'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 java.lang.Number
@@ -231,8 +230,8 @@ java.lang.Number
       'java.lang.Long' is reachable as a subtype of type 'class java.lang.Long'
       'java.lang.Long' is reachable from field 'pollId' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
       'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 java.lang.RuntimeException
@@ -259,24 +258,14 @@ java.lang.Throwable
       'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
       Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
 
-java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>
-   Serialization status
-      Instantiable
-   Path
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable from field 'pollOptions' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
-      Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
-
 java.util.ArrayList<java.lang.String>
    Serialization status
       Instantiable
    Path
       'java.util.ArrayList<java.lang.String>' is reachable from field 'voters' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
       'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>
@@ -284,6 +273,16 @@ java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.
       Instantiable
    Path
       'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+
+java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>
+   Serialization status
+      Instantiable
+   Path
+      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable from field 'pollOptions' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 java.util.Arrays.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>
@@ -339,8 +338,7 @@ java.util.Vector<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBV
    Serialization status
       Instantiable
    Path
-      'java.util.Vector<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a supertype of type 'class java.util.Stack<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
-      'java.util.Stack<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'java.util.Vector<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 long
@@ -349,16 +347,16 @@ long
    Path
       'long' is reachable from field 'closesOn' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
       'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao
    Serialization status
       Instantiable
    Path
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 
 org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao[]
@@ -377,7 +375,7 @@ org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao
       'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable as a subtype of type 'class java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>'
       'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollOptionDao>' is reachable from field 'pollOptions' of type 'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
       'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable as a subtype of type 'class org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao'
-      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.ArrayList<E>'
-      'java.util.ArrayList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
+      'org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao' is reachable from type argument 0 of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>' is reachable as a subtype of type 'interface java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
       Started from 'java.util.List<org.jorgecardoso.purewidgets.demo.everybodyvotes.shared.dao.EBVPollDao>'
 

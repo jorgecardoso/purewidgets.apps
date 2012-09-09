@@ -2,15 +2,13 @@
 Types potentially sent from browser:
 ====================================
 
-Reachable types computed on: Thu Sep 06 18:45:13 WEST 2012
+Reachable types computed on: Sun Sep 09 15:36:52 WEST 2012
 E
    Serialization status
       Not serializable
    Path
-      'E' is reachable from type argument 0 of type 'java.util.TreeMap<K, V>'
-      'java.util.TreeMap<E, java.lang.Boolean>' is reachable as a subtype of type 'interface java.util.SortedMap<E, java.lang.Boolean>'
-      'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
-      'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
+      'E' is reachable from field 'exposeElement' of type 'java.util.HashSet<E>'
+      'java.util.HashSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
       'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
@@ -21,9 +19,10 @@ E
    Serialization status
       Not serializable
    Path
-      'E' is reachable from field 'exposeElement' of type 'java.util.HashSet<E>'
-      'java.util.HashSet<java.lang.Throwable>' is reachable as a supertype of type 'class java.util.LinkedHashSet<java.lang.Throwable>'
-      'java.util.LinkedHashSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
+      'E' is reachable from type argument 0 of type 'java.util.TreeMap<K, V>'
+      'java.util.TreeMap<E, java.lang.Boolean>' is reachable as a subtype of type 'interface java.util.SortedMap<E, java.lang.Boolean>'
+      'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
+      'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
       'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
@@ -281,7 +280,8 @@ java.lang.Error
    Serialization status
       Instantiable
    Path
-      'java.lang.Error' is reachable as a subtype of type 'class java.lang.Throwable'
+      'java.lang.Error' is reachable as a supertype of type 'class java.lang.annotation.AnnotationFormatError'
+      'java.lang.annotation.AnnotationFormatError' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -299,8 +299,7 @@ java.lang.IllegalArgumentException
    Serialization status
       Instantiable
    Path
-      'java.lang.IllegalArgumentException' is reachable as a supertype of type 'class java.lang.NumberFormatException'
-      'java.lang.NumberFormatException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'java.lang.IllegalArgumentException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -506,8 +505,7 @@ java.util.HashSet<java.lang.Throwable>
    Serialization status
       Instantiable
    Path
-      'java.util.HashSet<java.lang.Throwable>' is reachable as a supertype of type 'class java.util.LinkedHashSet<java.lang.Throwable>'
-      'java.util.LinkedHashSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
+      'java.util.HashSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
       'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
@@ -607,7 +605,8 @@ javax.validation.ConstraintDeclarationException
    Serialization status
       Instantiable
    Path
-      'javax.validation.ConstraintDeclarationException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'javax.validation.ConstraintDeclarationException' is reachable as a supertype of type 'class javax.validation.UnexpectedTypeException'
+      'javax.validation.UnexpectedTypeException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -652,8 +651,9 @@ javax.validation.ValidationException
    Serialization status
       Instantiable
    Path
-      'javax.validation.ValidationException' is reachable as a supertype of type 'class javax.validation.ConstraintViolationException'
-      'javax.validation.ConstraintViolationException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'javax.validation.ValidationException' is reachable as a supertype of type 'class javax.validation.ConstraintDeclarationException'
+      'javax.validation.ConstraintDeclarationException' is reachable as a supertype of type 'class javax.validation.UnexpectedTypeException'
+      'javax.validation.UnexpectedTypeException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -709,7 +709,7 @@ org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator
 Types potentially sent from server:
 ===================================
 
-Reachable types computed on: Thu Sep 06 18:45:13 WEST 2012
+Reachable types computed on: Sun Sep 09 15:36:52 WEST 2012
 com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException
    Serialization status
       Instantiable

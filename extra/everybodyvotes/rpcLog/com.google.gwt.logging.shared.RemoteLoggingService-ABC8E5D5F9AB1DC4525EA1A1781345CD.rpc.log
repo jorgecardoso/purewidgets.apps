@@ -2,15 +2,14 @@
 Types potentially sent from browser:
 ====================================
 
-Reachable types computed on: Thu Sep 06 18:45:34 WEST 2012
+Reachable types computed on: Sun Sep 09 15:37:12 WEST 2012
 E
    Serialization status
       Not serializable
    Path
-      'E' is reachable from type argument 0 of type 'java.util.TreeMap<K, V>'
-      'java.util.TreeMap<E, java.lang.Boolean>' is reachable as a subtype of type 'interface java.util.SortedMap<E, java.lang.Boolean>'
-      'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
-      'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
+      'E' is reachable from field 'exposeElement' of type 'java.util.HashSet<E>'
+      'java.util.HashSet<java.lang.Throwable>' is reachable as a supertype of type 'class java.util.LinkedHashSet<java.lang.Throwable>'
+      'java.util.LinkedHashSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
       'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
@@ -21,9 +20,10 @@ E
    Serialization status
       Not serializable
    Path
-      'E' is reachable from field 'exposeElement' of type 'java.util.HashSet<E>'
-      'java.util.HashSet<java.lang.Throwable>' is reachable as a supertype of type 'class java.util.LinkedHashSet<java.lang.Throwable>'
-      'java.util.LinkedHashSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
+      'E' is reachable from type argument 0 of type 'java.util.TreeMap<K, V>'
+      'java.util.TreeMap<E, java.lang.Boolean>' is reachable as a subtype of type 'interface java.util.SortedMap<E, java.lang.Boolean>'
+      'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
+      'java.util.TreeSet<java.lang.Throwable>' is reachable as a subtype of type 'interface java.util.Set<java.lang.Throwable>'
       'java.util.Set<java.lang.Throwable>' is reachable from field 'causes' of type 'com.google.web.bindery.event.shared.UmbrellaException'
       'com.google.web.bindery.event.shared.UmbrellaException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
@@ -62,8 +62,8 @@ boolean
    Serialization status
       Not serializable
    Path
-      'boolean' is reachable from field 'desc' of type 'org.purewidgets.shared.widgets.TagCloud.AlphaTagComparator'
-      'org.purewidgets.shared.widgets.TagCloud.AlphaTagComparator' is reachable as a subtype of type 'interface java.util.Comparator<? super K>'
+      'boolean' is reachable from field 'desc' of type 'org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator'
+      'org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator' is reachable as a subtype of type 'interface java.util.Comparator<? super K>'
       'java.util.Comparator<? super K>' is reachable from field 'cmp' of type 'java.util.TreeMap<K, V>'
       'java.util.TreeMap<E, java.lang.Boolean>' is reachable as a subtype of type 'interface java.util.SortedMap<E, java.lang.Boolean>'
       'java.util.SortedMap<E, java.lang.Boolean>' is reachable from field 'map' of type 'java.util.TreeSet<E>'
@@ -327,8 +327,8 @@ java.lang.IndexOutOfBoundsException
    Serialization status
       Instantiable
    Path
-      'java.lang.IndexOutOfBoundsException' is reachable as a supertype of type 'class java.lang.StringIndexOutOfBoundsException'
-      'java.lang.StringIndexOutOfBoundsException' is reachable as a subtype of type 'class java.lang.Throwable'
+      'java.lang.IndexOutOfBoundsException' is reachable as a supertype of type 'class java.lang.ArrayIndexOutOfBoundsException'
+      'java.lang.ArrayIndexOutOfBoundsException' is reachable as a subtype of type 'class java.lang.Throwable'
       'java.lang.Throwable' is reachable from field 'thrown' of type 'java.util.logging.LogRecord'
       'java.util.logging.LogRecord' is reachable as a subtype of type 'class java.util.logging.LogRecord'
       Started from 'java.util.logging.LogRecord'
@@ -718,7 +718,7 @@ org.purewidgets.shared.widgets.TagCloud.FrequencyTagComparator
 Types potentially sent from server:
 ===================================
 
-Reachable types computed on: Thu Sep 06 18:45:34 WEST 2012
+Reachable types computed on: Sun Sep 09 15:37:12 WEST 2012
 com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException
    Serialization status
       Instantiable
