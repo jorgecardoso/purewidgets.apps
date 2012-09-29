@@ -151,7 +151,7 @@ public class EveryBodyVotes implements ActionListener, PDApplicationLifeCycle, E
 		 * 
 		 */
 		pollService.updatePolls(application.getPlaceId(), 
-				application.getApplicationName(), new AsyncCallback<Void>() {
+				application.getApplicationId(), new AsyncCallback<Void>() {
 
 					@Override
 					public void onFailure(Throwable caught) {

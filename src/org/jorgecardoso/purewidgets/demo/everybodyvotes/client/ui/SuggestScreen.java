@@ -45,9 +45,9 @@ public class SuggestScreen extends Composite  {
 	 PdTextBox makePdTextbox() { 
 		 
 			PdTextBox tb = new PdTextBox("suggest", msgs.askForPolls(), null);
-			tb.setUserInputFeedbackPattern(msgs.userFeedback()+", "+MessagePattern.PATTERN_USER_NICKNAME);
-			tb.setUserSharedTitleInputFeedbackPattern(MessagePattern.PATTERN_USER_NICKNAME);
-			tb.setUserSharedInfoInputFeedbackPattern(msgs.userFeedback());
+			tb.setOnScreenFeedbackInfo(msgs.userFeedback()+", "+MessagePattern.PATTERN_USER_NICKNAME);
+			tb.setOffScreenFeedbackTitle(MessagePattern.PATTERN_USER_NICKNAME);
+			tb.setOffScreenFeedbackInfo(msgs.userFeedback());
 			//tb.setLongDescription(poll.getPollQuestion() );
 						return tb;
    }

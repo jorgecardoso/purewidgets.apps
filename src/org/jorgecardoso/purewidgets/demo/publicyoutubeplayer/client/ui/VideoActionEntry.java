@@ -153,7 +153,7 @@ public class VideoActionEntry extends Composite {
 		
 		btn.getWidgetOptions().get(0).setIconUrl(video.getThumbnail());
 		
-		btn.setUserSharedInfoInputFeedbackPattern(MessagePattern.PATTERN_WIDGET_SHORT_DESCRIPTION + ": " + MessagePattern.PATTERN_WIDGET_LONG_DESCRIPTION+"(10)");
+		btn.setOffScreenFeedbackInfo(MessagePattern.PATTERN_WIDGET_SHORT_DESCRIPTION + ": " + MessagePattern.PATTERN_WIDGET_LONG_DESCRIPTION+"(10)");
 		btn.getFeedbackSequencer().setFeedbackFinalDelay(5000);
 		btn.addActionListener(new ActionListener() {
 
