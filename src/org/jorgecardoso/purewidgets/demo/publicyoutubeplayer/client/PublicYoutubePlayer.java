@@ -11,16 +11,16 @@ import java.util.logging.Logger;
 
 import org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.ui.VideoActionListener;
 import org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.ui.VideoScreen;
-import org.purewidgets.client.widgets.youtube.EmbeddedPlayer;
-import org.purewidgets.client.widgets.youtube.PlayerError;
-import org.purewidgets.client.widgets.youtube.PlayerListener;
-import org.purewidgets.client.widgets.youtube.PlayerState;
+import org.purewidgets.client.htmlwidgets.youtube.EmbeddedPlayer;
+import org.purewidgets.client.htmlwidgets.youtube.PlayerError;
+import org.purewidgets.client.htmlwidgets.youtube.PlayerListener;
+import org.purewidgets.client.htmlwidgets.youtube.PlayerState;
 import org.purewidgets.client.application.PDApplication;
 import org.purewidgets.client.application.PDApplicationLifeCycle;
 import org.purewidgets.client.feedback.FeedbackSequencer;
 
 
-import org.purewidgets.client.widgets.youtube.Video;
+import org.purewidgets.client.htmlwidgets.youtube.Video;
 
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.widgets.TagCloud;

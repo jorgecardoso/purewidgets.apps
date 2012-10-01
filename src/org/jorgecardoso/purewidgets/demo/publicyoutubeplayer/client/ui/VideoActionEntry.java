@@ -10,7 +10,7 @@ import org.purewidgets.client.feedback.InputFeedback;
 import org.purewidgets.client.feedback.MessagePattern;
 import org.purewidgets.client.widgets.PdButton;
 import org.purewidgets.client.widgets.PdDownload;
-import org.purewidgets.client.widgets.youtube.Video;
+import org.purewidgets.client.htmlwidgets.youtube.Video;
 import org.purewidgets.shared.events.ActionEvent;
 import org.purewidgets.shared.events.ActionListener;
 import org.purewidgets.shared.im.WidgetParameter;

@@ -10,9 +10,9 @@ import java.util.ListIterator;
 
 import org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Log;
 import org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.Util;
-import org.purewidgets.client.widgets.youtube.JsonVideoEntry;
-import org.purewidgets.client.widgets.youtube.Video;
-import org.purewidgets.client.widgets.youtube.VideoAdapter;
+import org.purewidgets.client.htmlwidgets.youtube.json.JsonVideoEntry;
+import org.purewidgets.client.htmlwidgets.youtube.Video;
+import org.purewidgets.client.htmlwidgets.youtube.VideoAdapter;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.json.client.JSONNumber;

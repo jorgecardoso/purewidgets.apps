@@ -1,6 +1,6 @@
 package org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.client.ui;
 
-import org.purewidgets.client.widgets.youtube.Video;
+import org.purewidgets.client.htmlwidgets.youtube.Video;
 import org.purewidgets.shared.events.ActionEvent;
 
 public interface VideoActionListener {

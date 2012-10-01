@@ -9,10 +9,10 @@ import java.util.List;
 
 import org.purewidgets.client.json.GenericJson;
 import org.purewidgets.client.widgets.PdTagCloud;
-import org.purewidgets.client.widgets.youtube.JsonVideoEntry;
-import org.purewidgets.client.widgets.youtube.Video;
-import org.purewidgets.client.widgets.youtube.VideoAdapter;
-import org.purewidgets.client.widgets.youtube.VideoFeed;
+import org.purewidgets.client.htmlwidgets.youtube.json.JsonVideoEntry;
+import org.purewidgets.client.htmlwidgets.youtube.Video;
+import org.purewidgets.client.htmlwidgets.youtube.VideoAdapter;
+import org.purewidgets.client.htmlwidgets.youtube.VideoFeed;
 import org.purewidgets.shared.widgets.TagCloud;
 
 

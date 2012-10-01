@@ -5,9 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.purewidgets.client.storage.LocalStorage;
-import org.purewidgets.client.widgets.youtube.JsonVideoEntry;
-import org.purewidgets.client.widgets.youtube.Video;
-import org.purewidgets.client.widgets.youtube.VideoAdapter;
+import org.purewidgets.client.htmlwidgets.youtube.json.JsonVideoEntry;
+import org.purewidgets.client.htmlwidgets.youtube.Video;
+import org.purewidgets.client.htmlwidgets.youtube.VideoAdapter;
 
 public class PlayHistory {
 	private static final int MAX_VIDEOS = 150;

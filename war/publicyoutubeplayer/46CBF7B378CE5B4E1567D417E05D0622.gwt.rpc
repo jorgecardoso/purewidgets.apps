@@ -4,7 +4,6 @@ com.google.gwt.user.client.rpc.XsrfToken, false, false, true, true, com.google.g
 java.lang.Exception, true, false, true, false, java.lang.Exception/1920171873, 1920171873
 java.lang.RuntimeException, true, false, true, false, java.lang.RuntimeException/515124647, 515124647
 java.lang.String, true, true, true, true, java.lang.String/2004016611, 2004016611
-[Ljava.lang.String;, true, true, false, false, [Ljava.lang.String;/2600011424, 2600011424
 java.lang.Throwable, true, false, true, false, java.lang.Throwable/2953622131, 2953622131
 java.util.ArrayList, false, false, true, true, java.util.ArrayList/4159755760, 4159755760
 java.util.Collections$EmptyMap, true, true, false, false, java.util.Collections$EmptyMap/4174664486, 4174664486
@@ -13,5 +12,7 @@ java.util.IdentityHashMap, true, true, false, false, java.util.IdentityHashMap/1
 java.util.LinkedHashMap, true, true, false, false, java.util.LinkedHashMap/3008245022, 3008245022
 java.util.TreeMap, true, true, false, false, java.util.TreeMap/1493889780, 1493889780
 org.purewidgets.client.storage.ServerStorageService, false, false, false, false, _, 1245238411
+org.purewidgets.shared.storage.KeyValue, true, true, false, false, org.purewidgets.shared.storage.KeyValue/2843241285, 2843241285
+[Lorg.purewidgets.shared.storage.KeyValue;, true, true, false, false, [Lorg.purewidgets.shared.storage.KeyValue;/1691262382, 1691262382
 org.purewidgets.shared.widgets.TagCloud$AlphaTagComparator, true, true, false, false, org.purewidgets.shared.widgets.TagCloud$AlphaTagComparator/1262238153, 1262238153
 org.purewidgets.shared.widgets.TagCloud$FrequencyTagComparator, true, true, false, false, org.purewidgets.shared.widgets.TagCloud$FrequencyTagComparator/3962053624, 3962053624
