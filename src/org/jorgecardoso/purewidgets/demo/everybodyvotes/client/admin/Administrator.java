@@ -17,11 +17,13 @@ public class Administrator {
 	
 	private String parameterNames[] = {
 			PARAM_NAME_SCREEN_INTERVAL,
-			PARAM_NAME_SUGGEST_PROBABILITY};
+			PARAM_NAME_SUGGEST_PROBABILITY,
+			org.purewidgets.shared.application.Constants.INTERACTION_MANAGER_URL_PARAMETER_NAME};
 
 	private String parameterDescriptions[] = {
 			"(seconds) The duration of each screen.",
-			"(0..1) The probability of showing the suggest screen."};
+			"(0..1) The probability of showing the suggest screen.",
+			"Interaction Manager Server url."};
 
 	
 	private PDApplication pdApplication;
