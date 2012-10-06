@@ -1,6 +1,6 @@
 package org.jorgecardoso.purewidgets.demo.wordgame.client.ui;
 
-import org.jorgecardoso.purewidgets.demo.wordgame.client.ui.CorrectPopupUi.Style;
+import org.jorgecardoso.purewidgets.demo.wordgame.client.ui.HighScoresUi.Style;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -12,25 +12,30 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class ProcessingPopup extends PopupPanel  {
+public class IncorrectPopupUi extends PopupPanel {
 	interface Style extends CssResource {
 	    String popupPanel();	
 	}
 	
 	@UiField Style style;
-	private static ProcessingPopupUiBinder uiBinder = GWT.create(ProcessingPopupUiBinder.class);
+	
+	private static IncorrectPopupUiUiBinder uiBinder = GWT.create(IncorrectPopupUiUiBinder.class);
 
-	interface ProcessingPopupUiBinder extends UiBinder<Widget, ProcessingPopup> {
+	interface IncorrectPopupUiUiBinder extends UiBinder<Widget, IncorrectPopupUi> {
 	}
 
-	public ProcessingPopup() {
-		super(false);
+	@UiField
+	Label labelUser;
+	
+	
+	public IncorrectPopupUi(String nickname) {
 		add(uiBinder.createAndBindUi(this));
 		this.setStyleName(style.popupPanel());
+		this.labelUser.setText("Tenta outra vez " + nickname + "!");
+		
 	}
-
-	
 }

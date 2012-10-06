@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="PW Apps" default="gwtc-all" basedir=".">
     
-  <property name="production" value = "true" />
+  <property name="production" value = "false" />
   
   <property name="module.publicyoutubeplayer" value = "org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.PublicYoutubePlayer" />
   <property name="module.everybodyvotes" value = "org.jorgecardoso.purewidgets.demo.everybodyvotes.EveryBodyVotes" />
   <property name="module.instructions" value = "org.jorgecardoso.purewidgets.demo.instructions.Instructions" />
+  <property name="module.wordgame" value = "org.jorgecardoso.purewidgets.demo.wordgame.WordGame" />
   <property name="appid.test" value = "pw-apps-test" />
   <property name="appid.prod" value = "pw-apps" />
   
@@ -112,7 +113,7 @@
   
   <target name="gwtc-all"  description="GWT compile to JavaScript (production mode)">
     <antcall target="gwtc">
-      <param name="modules" value="${module.publicyoutubeplayer} ${module.everybodyvotes} ${module.instructions}"/>
+      <param name="modules" value="${module.publicyoutubeplayer} ${module.everybodyvotes} ${module.instructions} ${module.wordgame}"/>
     </antcall>
   </target>
   

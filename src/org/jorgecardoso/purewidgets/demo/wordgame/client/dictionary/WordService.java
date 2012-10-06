@@ -2,6 +2,7 @@ package org.jorgecardoso.purewidgets.demo.wordgame.client.dictionary;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 import org.jorgecardoso.purewidgets.demo.wordgame.client.Log;
 import org.purewidgets.client.application.PDApplication;
@@ -76,11 +77,11 @@ public class WordService {
 	
 	
 	private void requestRandomWord(final AsyncCallback<String> callback) {
-		
-		int maxPrefixChars = (int)(Math.random()*3+1);
+		final Random random = new Random(System.currentTimeMillis());
+		int maxPrefixChars = random.nextInt(3)+1;
 		String prefix = "";
 		for (int i = 0; i < maxPrefixChars; i++ ) {
-			int r = (int)(Math.random()*chars.length());
+			int r = random.nextInt(chars.length());
 			prefix += chars.charAt(r);
 		}
 		
@@ -134,7 +135,7 @@ public class WordService {
 				Log.debug(WordService.this, "Filtered:" +  Arrays.toString( words));
 				
 				if ( words.length > 0 ) {
-					int r = (int)(Math.random()*words.length );
+					int r = random.nextInt(words.length );
 					callback.onSuccess(words[r]);
 				} else {
 					Log.warn(WordService.this, "Got an empty set of words. Retrying in 1500 milliseconds.");

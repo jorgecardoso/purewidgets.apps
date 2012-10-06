@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.jorgecardoso.purewidgets.demo.wordgame.client.dictionary.WordService;
 import org.jorgecardoso.purewidgets.demo.wordgame.client.ui.CorrectPopupUi;
+import org.jorgecardoso.purewidgets.demo.wordgame.client.ui.IncorrectPopupUi;
 import org.jorgecardoso.purewidgets.demo.wordgame.client.ui.ProcessingPopup;
 
 import com.google.gwt.user.client.Timer;
@@ -30,11 +31,19 @@ public class CheckWord {
 	
 				@Override
 				public void onFailure(Throwable caught) {
-					Log.warn(CheckWord.class, "Could not the definition.", caught);
+					Log.warn(CheckWord.class, "Could not load the definition.", caught);
 					pp.hide();
-					CorrectPopupUi cpp = new CorrectPopupUi("Failure", caught.getMessage());
-					showTemporarily(cpp, 30000);
-					callback.onFailure(caught);
+					if ( word.equalsIgnoreCase(toCheck) ) {
+						CorrectPopupUi cpp = new CorrectPopupUi(nickname, toCheck+": Não foi possível carregar a definição da palavra");
+						cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
+						showTemporarily(cpp, 30000);
+						callback.onSuccess(true);
+					} else {
+						IncorrectPopupUi cpp = new IncorrectPopupUi(nickname);
+						cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
+						showTemporarily(cpp, 15000);
+						callback.onFailure(caught);
+					}
 				}
 	
 				@Override
@@ -53,12 +62,26 @@ public class CheckWord {
 			Log.debug(CheckWord.class, "Sorry, words don't match");
 			pp.hide();
 			
-			CorrectPopupUi cpp = new CorrectPopupUi("Failure", toCheck);
-			cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
-			showTemporarily(cpp, 30000);
-			callback.onSuccess(false);
-			
+			if ( word.equalsIgnoreCase(toCheck) ) {
+				CorrectPopupUi cpp = new CorrectPopupUi(nickname, toCheck+": Não foi possível carregar a definição da palavra");
+				cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
+				showTemporarily(cpp, 30000);
+				callback.onSuccess(true);
+			} else {
+				IncorrectPopupUi cpp = new IncorrectPopupUi(nickname);
+				cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
+				showTemporarily(cpp, 15000);
+				callback.onSuccess(false);
+			}	
 		}
+	}
+	
+	private static void showError() {
+		
+	}
+	
+	private static void showDefinition() {
+		
 	}
 	
 	private static void showTemporarily(final PopupPanel panel, int milliseconds) {

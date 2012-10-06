@@ -48,6 +48,7 @@ public class HighScoresUi extends Composite  {
 	public void update() {
 		verticalPanel.clear();
 		
+		int i = 0;
 		for ( HighScores.Score s : this.highScores.getScores() ) {
 			HorizontalPanel p = new HorizontalPanel();
 			verticalPanel.add(p);
@@ -58,6 +59,11 @@ public class HighScoresUi extends Composite  {
 			
 			p.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
 			p.add(new Label( s.getScore()+"" ));
+			
+			i++;
+			if ( i >= 10 ) {
+				break;
+			}
 		}
 		
 	}

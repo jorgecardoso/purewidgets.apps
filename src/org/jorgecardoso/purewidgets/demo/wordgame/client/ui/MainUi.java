@@ -1,5 +1,7 @@
 package org.jorgecardoso.purewidgets.demo.wordgame.client.ui;
 
+import java.util.ArrayList;
+
 import org.jorgecardoso.purewidgets.demo.wordgame.client.HighScores;
 import org.purewidgets.client.feedback.MessagePattern;
 import org.purewidgets.client.widgets.PdButton;
@@ -41,9 +43,13 @@ public class MainUi extends Composite {
 	@UiField
 	HighScoresUi highScoresUi;
 	
+	@UiField
+	PdTextBox pdTextBox;
+	
 	public void setWord(String word) {
-		
 		this.wordUi.setText(word);
+		this.pdTextBox.setLongDescription("Que palavra é esta: " + this.shuffle(word));
+		this.pdTextBox.sendToServer();
 	}
 	
 	
@@ -57,11 +63,25 @@ public class MainUi extends Composite {
 		 return hs;
 	 }
 	 
+	private String shuffle(String word) {
+		char letters[] = word.toCharArray();
+		
+		
+		for ( int i = 0; i < letters.length; i++ ) {
+				int newIndex = (int)(Math.random()*letters.length);
+				char toMove = letters[i];
+				letters[i] = letters[newIndex];
+				letters[newIndex] = toMove;
+		}
+		return new String(letters);
+	}
+	 
 	 @UiFactory 
 	 PdButton makePdButton() { 
 		 
 		 PdButton tb = new PdButton("another", "Esta é muito difícil!");
-			tb.addActionListener(this.listener);
+		 tb.setLongDescription("Por favor, gera outra palavra...");
+		tb.addActionListener(this.listener);
 //			tb.setOnScreenFeedbackInfo(msgs.userFeedback()+", "+MessagePattern.PATTERN_USER_NICKNAME);
 //			tb.setOffScreenFeedbackTitle(MessagePattern.PATTERN_USER_NICKNAME);
 //			tb.setOffScreenFeedbackInfo(msgs.userFeedback());

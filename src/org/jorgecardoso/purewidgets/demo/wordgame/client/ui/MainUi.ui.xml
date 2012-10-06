@@ -95,7 +95,7 @@
 	.pwTextBoxTextbox {
 		
 		background-color: white;
-		color: white;
+		color: black;
 		border: 10px solid #7ac144;
 		border-radius: 15px;
 		box-shadow: 1px 1px 3px 3px #AAA;
@@ -135,7 +135,7 @@
 	    <g:Label styleName="{style.titlehighscores}">HighScores</g:Label>
 	    <wg:HighScoresUi styleName="{style.highscores}" ui:field="highScoresUi"/>
 		<wg:WordUi styleName="{style.word}" ui:field="wordUi"/>
-		<pw:PdTextBox styleName="{style.textbox}"/>
+		<pw:PdTextBox styleName="{style.textbox}" ui:field="pdTextBox"/>
 		<pw:PdButton styleName="{style.button}"/>
 	</g:HTMLPanel>
 </ui:UiBinder> 
