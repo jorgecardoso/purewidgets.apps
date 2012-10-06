@@ -1,0 +1,46 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		@external gwt-PopupPanel;
+
+		.gwt-PopupPanel {
+			border: 10px solid #7ac144;
+			border-radius: 15px;
+			box-shadow: 1px 1px 3px 3px #AAA;
+			margin: 0px;
+			padding: 0px;
+			overflow: hidden !important;
+		}
+
+		.main {
+			/*position: absolute;
+			top: 20%;
+			bottom: 20%;
+			left: 20%;
+			right: 20%;*/
+		}
+		.labelTitle {
+			text-align: center;
+			font-family: 'Nunito', sans-serif;
+			font-size: 4.5rem;
+		}
+		.labelUser {
+			margin-top: 25px;
+			text-align: center;
+			font-family: 'Nunito', sans-serif;
+			font-size: 3rem;
+		}
+		.labelDefinition {
+			margin: 10px;
+			margin-top: 50px;
+			font-family: 'Nunito', sans-serif;
+			font-size: 3.5rem;
+		}
+	</ui:style>
+	<g:HTMLPanel styleName="{style.main}">
+		<g:Label ui:field="labelTitle" styleName="{style.labelTitle}">Correcto!</g:Label>
+		<g:Label ui:field="labelUser" styleName="{style.labelUser}"/>
+		<g:Label ui:field="labelDefinition" styleName="{style.labelDefinition}"/>
+	</g:HTMLPanel>
+</ui:UiBinder> 

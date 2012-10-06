@@ -1,0 +1,28 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		@external gwt-PopupPanel;
+		.gwt-PopupPanel {
+			border: 10px solid #7ac144;
+			border-radius: 15px;
+			box-shadow: 1px 1px 3px 3px #AAA;
+			margin: 0px;
+			padding: 0px;
+			overflow: hidden;
+		}
+		.img {
+			width: 100%;
+			height: 100%;
+		}
+		.title {
+			text-align: center;
+			font-family: 'Nunito', sans-serif;
+			font-size: 2.5rem;
+		}
+	</ui:style>
+	<g:HTMLPanel>
+	   <!--  <g:Label  styleName="{style.title}"> A verificar... </g:Label> -->
+		<img src="loader.svg" class="{style.img}" />
+	</g:HTMLPanel>
+</ui:UiBinder> 
