@@ -12,10 +12,13 @@
 		left: 0%;
 		right: 0%;
 		bottom: 85%;
+		height: 15%;
+		margin:5px;
 		
-		font-family: 'Nunito', sans-serif;
-		font-size: 5.5rem;
-		text-align:center;
+		padding:0px;
+	}
+	.title img {
+		height: 90%;
 	}
 	.highscores {
 		display: block;
@@ -131,7 +134,7 @@
 	</ui:style>
 	
 	<g:HTMLPanel>
-	    <g:Label styleName="{style.title}">Wrod Game</g:Label>
+	    <h1 align="center" class="{style.title}"><img src="icon-horizontal.svg"/></h1>
 	    <g:Label styleName="{style.titlehighscores}">HighScores</g:Label>
 	    <wg:HighScoresUi styleName="{style.highscores}" ui:field="highScoresUi"/>
 		<wg:WordUi styleName="{style.word}" ui:field="wordUi"/>

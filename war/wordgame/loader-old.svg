@@ -1,0 +1,25 @@
+<svg  version="1.1" width="460px" height="460px"
+     viewBox="0 0 460 460" preserveAspectRatio="none"
+     xmlns="http://www.w3.org/2000/svg">
+
+<ellipse cx="240" cy="240" rx="220" ry="30" style="fill:none; stroke:black"  stroke-width="4" >
+<animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0 240 240" to="360 240 240" dur="15s" repeatCount="indefinite"
+                    additive="replace" fill="freeze"/>
+</ellipse>
+
+
+<ellipse cx="240" cy="240" rx="220" ry="30" style="fill:none; stroke:black" stroke-width="4"  >
+<animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0 240 240" to="360 240 240" dur="5s" repeatCount="indefinite"
+                    additive="replace" fill="freeze"/>
+</ellipse>
+
+
+<ellipse cx="240" cy="240" rx="220" ry="30" style="fill:none; stroke:black" stroke-width="4"  >
+<animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0 240 240" to="360 240 240" dur="10s" repeatCount="indefinite"
+                    additive="replace" fill="freeze"/>
+</ellipse>
+
+</svg>
