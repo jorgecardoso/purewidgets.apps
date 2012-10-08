@@ -60,10 +60,8 @@ public class WordGame implements EntryPoint, PDApplicationLifeCycle, ActionListe
 			final WordService searchWord = new WordService();
 			
 			final ProcessingPopup pp = new ProcessingPopup();
-			pp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
 			pp.show();
-			pp.center();
-			
+
 			searchWord.getRandomWord(new AsyncCallback<String>() {
 
 				@Override

@@ -77,20 +77,14 @@ public class WordService {
 	
 	
 	private void requestRandomWord(final AsyncCallback<String> callback) {
-		final Random random = new Random(System.currentTimeMillis());
-		int maxPrefixChars = random.nextInt(3)+1;
-		String prefix = "";
-		for (int i = 0; i < maxPrefixChars; i++ ) {
-			int r = random.nextInt(chars.length());
-			prefix += chars.charAt(r);
-		}
+	
 		
 		
 		JsonpRequestBuilder builder = new JsonpRequestBuilder();//RequestBuilder.GET, url);
 		
 	    
 	      //Request request = 
-	    builder.requestObject("http://www.dicionario-aberto.net/search-json?prefix="+prefix, new AsyncCallback<WordListJson>() {
+	    builder.requestObject("http://www.dicionario-aberto.net/search-json?random=1", new AsyncCallback<WordDefinitionJson>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
@@ -106,39 +100,25 @@ public class WordService {
 			}
 
 			@Override
-			public void onSuccess(WordListJson result) {
-				String []words = result.getList();
-				Log.debug(WordService.this, Arrays.toString( words));
+			public void onSuccess(WordDefinitionJson result) {
+				String word = result.getWord();
+				Log.debug(WordService.this,  word);
 				
-				ArrayList<String> filteredWords = new ArrayList<String>();
-				
-				for ( String word : words ) {
-					boolean remove = false;
-					for ( int i = 0; i < word.length(); i++ ) {
-						if ( chars.indexOf(word.charAt(i)) < 0 ) {
-							
-							remove = true;
-							break;
-						}
+				boolean noGood = false;
+				for ( int i = 0; i < word.length(); i++ ) {
+					if ( chars.indexOf(word.charAt(i)) < 0 ) {
+						
+						noGood = true;
+						break;
 					}
-					if ( word.length() < 4 || word.length() > 8) {
-						remove = true;
-					}
-					if ( !remove ) {
-						filteredWords.add(word);
-					}
-					
 				}
-				
-				words = filteredWords.toArray(new String[]{});
-				
-				Log.debug(WordService.this, "Filtered:" +  Arrays.toString( words));
-				
-				if ( words.length > 0 ) {
-					int r = random.nextInt(words.length );
-					callback.onSuccess(words[r]);
-				} else {
-					Log.warn(WordService.this, "Got an empty set of words. Retrying in 1500 milliseconds.");
+				if ( word.length() < 4 || word.length() > 12) {
+					noGood = true;
+				}
+		
+					
+				if ( noGood ) {
+					Log.warn(WordService.this, "Got an empty word. Retrying in 1500 milliseconds.");
 					new Timer() {
 						@Override
 						public void run() {
@@ -146,11 +126,90 @@ public class WordService {
 						}
 					
 					}.schedule(1500);
-				
-				
-					
-				}
+				} else {
+
+					callback.onSuccess(word);
+				} 
 			}
 	    });
 	}
+	
+//
+//	private void requestRandomWord(final AsyncCallback<String> callback) {
+//		final Random random = new Random(System.currentTimeMillis());
+//		int maxPrefixChars = random.nextInt(3)+1;
+//		String prefix = "";
+//		for (int i = 0; i < maxPrefixChars; i++ ) {
+//			int r = random.nextInt(chars.length());
+//			prefix += chars.charAt(r);
+//		}
+//		
+//		
+//		JsonpRequestBuilder builder = new JsonpRequestBuilder();//RequestBuilder.GET, url);
+//		
+//	    
+//	      //Request request = 
+//	    builder.requestObject("http://www.dicionario-aberto.net/search-json?prefix="+prefix, new AsyncCallback<WordListJson>() {
+//
+//			@Override
+//			public void onFailure(Throwable caught) {
+//				Log.warn(WordService.this, "Could not get word list. ", caught);
+//				Log.warn(WordService.this, "Retrying in 1500 milliseconds.");
+//				new Timer() {
+//					@Override
+//					public void run() {
+//						requestRandomWord(callback);
+//					}
+//				
+//				}.schedule(1500);
+//			}
+//
+//			@Override
+//			public void onSuccess(WordListJson result) {
+//				String []words = result.getList();
+//				Log.debug(WordService.this, Arrays.toString( words));
+//				
+//				ArrayList<String> filteredWords = new ArrayList<String>();
+//				
+//				for ( String word : words ) {
+//					boolean remove = false;
+//					for ( int i = 0; i < word.length(); i++ ) {
+//						if ( chars.indexOf(word.charAt(i)) < 0 ) {
+//							
+//							remove = true;
+//							break;
+//						}
+//					}
+//					if ( word.length() < 4 || word.length() > 8) {
+//						remove = true;
+//					}
+//					if ( !remove ) {
+//						filteredWords.add(word);
+//					}
+//					
+//				}
+//				
+//				words = filteredWords.toArray(new String[]{});
+//				
+//				Log.debug(WordService.this, "Filtered:" +  Arrays.toString( words));
+//				
+//				if ( words.length > 0 ) {
+//					int r = random.nextInt(words.length );
+//					callback.onSuccess(words[r]);
+//				} else {
+//					Log.warn(WordService.this, "Got an empty set of words. Retrying in 1500 milliseconds.");
+//					new Timer() {
+//						@Override
+//						public void run() {
+//							requestRandomWord(callback);
+//						}
+//					
+//					}.schedule(1500);
+//				
+//				
+//					
+//				}
+//			}
+//	    });
+//	}
 }

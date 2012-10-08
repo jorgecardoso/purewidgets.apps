@@ -3,6 +3,7 @@ package org.jorgecardoso.purewidgets.demo.wordgame.client.ui;
 import org.jorgecardoso.purewidgets.demo.wordgame.client.ui.CorrectPopupUi.Style;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -30,6 +31,17 @@ public class ProcessingPopup extends PopupPanel  {
 		super(false);
 		add(uiBinder.createAndBindUi(this));
 		this.setStyleName(style.popupPanel());
+	}
+	
+	@Override
+	public void show() {
+		super.show();
+		//super.setSize((Window.getClientWidth())+"px", (Window.getClientHeight())+"px");
+		
+		super.setPopupPosition(0, 0);
+		super.getElement().getStyle().setTop(15, Unit.PCT);
+		super.getElement().getStyle().setBottom(0, Unit.PX);
+		super.getElement().getStyle().setRight(0, Unit.PX);
 	}
 
 	

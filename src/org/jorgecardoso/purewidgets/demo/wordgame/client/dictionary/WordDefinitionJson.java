@@ -7,7 +7,16 @@ public class WordDefinitionJson extends GenericJson  {
 
 	protected WordDefinitionJson() {}
 	
-	
+    public native final String getWord() /*-{
+    	if ( typeof( this.entry ) == "undefined"  ) {
+    		return "";
+    	} else if ( typeof( this.entry['@id'] ) == "undefined" ) {
+			return ""
+		} else {
+			return this.entry['@id'];
+		}
+	}-*/;
+    
     public native final String getDefinition() /*-{
 		if ( typeof(this.entry) == "undefined" ) {
 			if ( typeof(this.superEntry) == "undefined" ) {

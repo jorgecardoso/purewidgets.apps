@@ -298,8 +298,8 @@ function wordgame(){
   $stats && $stats({moduleName:'wordgame', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'selectingPermutation'});
   if (!isHostedMode()) {
     try {
-      unflattenKeylistIntoAnswers(['pt'], '096300331DDD25F9D2E10FAB6B0AF5A2');
-      unflattenKeylistIntoAnswers(['default'], '52CBE2107C64D3AB07EDF5366F6056F8');
+      unflattenKeylistIntoAnswers(['default'], '36800D08961997E261B3A4DBF150C628');
+      unflattenKeylistIntoAnswers(['pt'], '42B75AB3E61991423BE9DF2B228F91EA');
       strongName = answers[computePropValue('locale')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {

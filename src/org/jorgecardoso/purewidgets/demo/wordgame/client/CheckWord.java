@@ -7,6 +7,7 @@ import org.jorgecardoso.purewidgets.demo.wordgame.client.ui.CorrectPopupUi;
 import org.jorgecardoso.purewidgets.demo.wordgame.client.ui.IncorrectPopupUi;
 import org.jorgecardoso.purewidgets.demo.wordgame.client.ui.ProcessingPopup;
 
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -19,10 +20,8 @@ public class CheckWord {
 		// show pop up with checking message
 		
 		final ProcessingPopup pp = new ProcessingPopup();
-		pp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
 		pp.show();
 		
-		pp.center();
 		if ( isAnagram (word, toCheck) ) {
 			final WordService searchWord = new WordService();
 			
@@ -35,13 +34,12 @@ public class CheckWord {
 					pp.hide();
 					if ( word.equalsIgnoreCase(toCheck) ) {
 						CorrectPopupUi cpp = new CorrectPopupUi(nickname, toCheck+": Não foi possível carregar a definição da palavra");
-						cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
+						
 						showTemporarily(cpp, 30000);
 						callback.onSuccess(true);
 					} else {
 						IncorrectPopupUi cpp = new IncorrectPopupUi(nickname);
-						cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
-						showTemporarily(cpp, 15000);
+						showTemporarily(cpp, 10000);
 						callback.onFailure(caught);
 					}
 				}
@@ -51,7 +49,7 @@ public class CheckWord {
 					Log.debug(CheckWord.class, "Got definition: " + result);
 					pp.hide();
 					CorrectPopupUi cpp = new CorrectPopupUi(nickname, toCheck+": "+result);
-					cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
+				
 					showTemporarily(cpp, 30000);
 					callback.onSuccess(true);
 				}
@@ -64,13 +62,13 @@ public class CheckWord {
 			
 			if ( word.equalsIgnoreCase(toCheck) ) {
 				CorrectPopupUi cpp = new CorrectPopupUi(nickname, toCheck+": Não foi possível carregar a definição da palavra");
-				cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
+				
 				showTemporarily(cpp, 30000);
 				callback.onSuccess(true);
 			} else {
 				IncorrectPopupUi cpp = new IncorrectPopupUi(nickname);
-				cpp.setSize((Window.getClientWidth()-50)+"px", (Window.getClientHeight()-50)+"px");
-				showTemporarily(cpp, 15000);
+				
+				showTemporarily(cpp, 10000);
 				callback.onSuccess(false);
 			}	
 		}
@@ -85,8 +83,12 @@ public class CheckWord {
 	}
 	
 	private static void showTemporarily(final PopupPanel panel, int milliseconds) {
+		//panel.setSize((Window.getClientWidth())+"px", (Window.getClientHeight())+"px");
 		panel.show();
-		panel.center();
+		panel.setPopupPosition(0, 0);
+		panel.getElement().getStyle().setTop(15, Unit.PCT);
+		panel.getElement().getStyle().setBottom(0, Unit.PX);
+		panel.getElement().getStyle().setRight(0, Unit.PX);
 		
 		new Timer() {
 
