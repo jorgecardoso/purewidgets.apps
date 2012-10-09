@@ -4,7 +4,7 @@ var $gwt_version = "2.4.0";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = '42B75AB3E61991423BE9DF2B228F91EA';
+var $strongName = 'A27B246350FC2BD0AA861D7C5AA06AAC';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'wordgame',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
@@ -15648,7 +15648,7 @@ function $onWidgetDelete(this$static, widgetFromServer){
 }
 
 function $onWidgetInput(this$static, inputList){
-  var notProcessed, toDelete, wi, wi$iterator, widgetInput, widgetInput$iterator;
+  var notProcessed, toDelete, w, wi, wi$iterator, widgetInput, widgetInput$iterator;
   toDelete = new ArrayList_0;
   for (widgetInput$iterator = new AbstractList$IteratorImpl_0(inputList); widgetInput$iterator.i < widgetInput$iterator.this$0_0.size_0();) {
     widgetInput = dynamicCast($next_3(widgetInput$iterator), Q$WidgetInput);
@@ -15669,6 +15669,11 @@ function $onWidgetInput(this$static, inputList){
   notProcessed = triggerWidgetInputEvents(inputList, this$static.widgetList);
   $addAll(this$static.unprocessedInput, notProcessed);
   $removeAll(this$static.processedInput, notProcessed);
+  for (wi$iterator = new AbstractList$IteratorImpl_0(notProcessed); wi$iterator.i < wi$iterator.this$0_0.size_0();) {
+    wi = dynamicCast($next_3(wi$iterator), Q$WidgetInput);
+    w = new Widget_1(wi.widgetId_0);
+    $removeWidget_0(this$static, w);
+  }
 }
 
 function $periodicallyAskForInputFromServer(this$static){
@@ -15711,6 +15716,24 @@ function $processPendingInput(this$static, widget){
     debug_3(this$static, 'Processing pending input for widget: ' + widget.widgetId_0);
     $onWidgetInput(this$static, pendingInput);
   }
+}
+
+function $removeWidget_0(this$static, widget){
+  var index;
+  debug_3(this$static, 'Removing widget: ' + widget.widgetId_0);
+  index = $indexOf_3(this$static.widgetList, widget);
+  -1 == index?warn_2(this$static, "Widget '" + widget.widgetId_0 + "' does not exist in widget list."):$remove(this$static.widgetList, index);
+  index = $indexOf_3(this$static.toDeleteWidgetPool, widget);
+  if (-1 == index) {
+    $add(this$static.toDeleteWidgetPool, widget);
+    $saveToDeleteWidgetPoolToLocalStorage(this$static);
+  }
+   else {
+    warn_2(this$static, "Widget '" + widget.widgetId_0 + "' already exists in to delete widget list, replacing entry " + index + '.');
+    $set(this$static.toDeleteWidgetPool, index, widget);
+  }
+  this$static.nextWidgetAction = ($clinit_WidgetManager$NextWidgetAction() , DELETE);
+  $startTimerWidget(this$static);
 }
 
 function $saveToDeleteWidgetPoolToLocalStorage(this$static){
@@ -16086,7 +16109,7 @@ function $addWidgetParameter(this$static, widgetParameter){
 
 function $getWidget(this$static){
   var aw;
-  aw = new Widget_1(this$static.widgetId, this$static.controlType, this$static.shortDescription, this$static.longDescription, $getWidgetOptions(this$static), $getWidgetParameters(this$static));
+  aw = new Widget_2(this$static.widgetId, this$static.controlType, this$static.shortDescription, this$static.longDescription, $getWidgetOptions(this$static), $getWidgetParameters(this$static));
   $setApplicationId_0(aw, this$static.applicationId);
   $setPlaceId_0(aw, this$static.placeId);
   return aw;
@@ -16420,6 +16443,8 @@ function $fireActionEvent(this$static, ae){
   }
 }
 
+--></script>
+<script><!--
 function $generateUserInputFeedbackMessage(this$static, inputEvent, inputFeedback){
   $replaceParameters(this$static, '%U%', inputEvent);
   $setOnScreenWidgetFeedbackInfo(inputFeedback, $replaceParameters(this$static, this$static.onScreenFeedbackInfo, inputEvent));
@@ -16427,8 +16452,6 @@ function $generateUserInputFeedbackMessage(this$static, inputEvent, inputFeedbac
   $setOffScreenWidgetFeedbackInfo(inputFeedback, $replaceParameters(this$static, this$static.offScreenFeedbackInfo, inputEvent));
 }
 
---></script>
-<script><!--
 function $getAgeString(milli){
   var ageDays, ageHours, ageMinutes, ageSeconds, ageWeeks;
   ageSeconds = toDouble(div(milli, P3e8_longLit));
@@ -17055,6 +17078,8 @@ function $compareTo_9(this$static, other){
   return thisSort == null && otherSort == null?compareTo_8(this$static.widgetId_0, other.widgetId_0):thisSort != null && otherSort != null?compareTo_8(thisSort, otherSort):thisSort != null?-1:1;
 }
 
+--></script>
+<script><!--
 function $fireActionEvent_0(this$static, ae){
   var handler, handler$iterator;
   for (handler$iterator = new AbstractList$IteratorImpl_0(this$static.actionListeners); handler$iterator.i < handler$iterator.this$0_0.size_0();) {
@@ -17073,8 +17098,6 @@ function $onInput_0(this$static, ie){
   this$static.handleInput_0(ie);
 }
 
---></script>
-<script><!--
 function $onReferenceCodesUpdated_0(this$static){
   $clinit_Log_0();
   debugFinest(this$static.getClass$().typeName + ': Received onReferenceCodesUpdated');
@@ -17114,7 +17137,11 @@ function $setWidgetId_0(this$static, id){
   }
 }
 
-function Widget_1(widgetId, controlType, shortDescription, longDescription, options, parameters){
+function Widget_1(widgetId){
+  Widget_2.call(this, widgetId, 'imperative_selection', '', '', null, null);
+}
+
+function Widget_2(widgetId, controlType, shortDescription, longDescription, options, parameters){
   var wo;
   this.widgetOptions_0 = new ArrayList_0;
   this.actionListeners = new ArrayList_0;
@@ -17138,7 +17165,7 @@ function Widget_1(widgetId, controlType, shortDescription, longDescription, opti
 function Widget_0(){
 }
 
-_ = Widget_1.prototype = Widget_0.prototype = new Object_0;
+_ = Widget_2.prototype = Widget_1.prototype = Widget_0.prototype = new Object_0;
 _.compareTo$ = function compareTo_12(other){
   return $compareTo_9(this, dynamicCast(other, Q$Widget_0));
 }
@@ -17408,7 +17435,7 @@ function setValue_3(instance, value){
 }
 
 function Button_0(){
-  Widget_1.call(this, 'another', 'imperative_selection', 'Esta \xE9 muito dif\xEDcil!', '', null, null);
+  Widget_2.call(this, 'another', 'imperative_selection', 'Esta \xE9 muito dif\xEDcil!', '', null, null);
 }
 
 function Button(){
@@ -17485,7 +17512,7 @@ function instantiate_11(streamReader){
 }
 
 function TextBox_3(){
-  Widget_1.call(this, 'try', 'entry', 'Adivinha a palavra', '', null, null);
+  Widget_2.call(this, 'try', 'entry', 'Adivinha a palavra', '', null, null);
 }
 
 function TextBox_2(){
