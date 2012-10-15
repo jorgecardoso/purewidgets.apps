@@ -38,10 +38,10 @@ public class ProcessingPopup extends PopupPanel  {
 		super.show();
 		//super.setSize((Window.getClientWidth())+"px", (Window.getClientHeight())+"px");
 		
-		super.setPopupPosition(0, 0);
+		super.setPopupPosition(10, 0);
 		super.getElement().getStyle().setTop(15, Unit.PCT);
-		super.getElement().getStyle().setBottom(0, Unit.PX);
-		super.getElement().getStyle().setRight(0, Unit.PX);
+		super.getElement().getStyle().setBottom(10, Unit.PX);
+		super.getElement().getStyle().setRight(10, Unit.PX);
 	}
 
 	

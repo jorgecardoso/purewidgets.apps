@@ -270,6 +270,65 @@ function wordgame(){
   }
   ;
   values['locale'] = {'default':0, pt:1};
+  providers['user.agent'] = function(){
+    var ua = navigator.userAgent.toLowerCase();
+    var makeVersion = function(result){
+      return parseInt(result[1]) * 1000 + parseInt(result[2]);
+    }
+    ;
+    if (function(){
+      return ua.indexOf('opera') != -1;
+    }
+    ())
+      return 'opera';
+    if (function(){
+      return ua.indexOf('webkit') != -1 || function(){
+        if (ua.indexOf('chromeframe') != -1) {
+          return true;
+        }
+        if (typeof window['ActiveXObject'] != 'undefined') {
+          try {
+            var obj = new ActiveXObject('ChromeTab.ChromeFrame');
+            if (obj) {
+              obj.registerBhoIfNeeded();
+              return true;
+            }
+          }
+           catch (e) {
+          }
+        }
+        return false;
+      }
+      ();
+    }
+    ())
+      return 'safari';
+    if (function(){
+      return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 9;
+    }
+    ())
+      return 'ie9';
+    if (function(){
+      return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 8;
+    }
+    ())
+      return 'ie8';
+    if (function(){
+      var result = /msie ([0-9]+)\.([0-9]+)/.exec(ua);
+      if (result && result.length == 3)
+        return makeVersion(result) >= 6000;
+    }
+    ())
+      return 'ie6';
+    if (function(){
+      return ua.indexOf('gecko') != -1;
+    }
+    ())
+      return 'gecko1_8';
+    return 'unknown';
+  }
+  ;
+  values['user.agent'] = {gecko1_8:0, ie6:1, ie8:2, ie9:3, opera:4, safari:5};
   wordgame.onScriptLoad = function(){
     if (frameInjected) {
       loadDone = true;
@@ -298,9 +357,11 @@ function wordgame(){
   $stats && $stats({moduleName:'wordgame', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'selectingPermutation'});
   if (!isHostedMode()) {
     try {
-      unflattenKeylistIntoAnswers(['default'], '58F2DBAE9FF8CBA6FE05497EC8173606');
-      unflattenKeylistIntoAnswers(['pt'], 'A27B246350FC2BD0AA861D7C5AA06AAC');
-      strongName = answers[computePropValue('locale')];
+      unflattenKeylistIntoAnswers(['pt', 'safari'], '0600C5346ED66E704E573925CC679C9E');
+      unflattenKeylistIntoAnswers(['pt', 'gecko1_8'], '7469C8C390BD10E529F4E97E434D4FF5');
+      unflattenKeylistIntoAnswers(['default', 'gecko1_8'], 'C3E13689FA0F935D2099FB11C2D46C42');
+      unflattenKeylistIntoAnswers(['default', 'safari'], 'F8DA855760987E6CBCA2E52BA7814F16');
+      strongName = answers[computePropValue('locale')][computePropValue('user.agent')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {
         softPermutationId = Number(strongName.substring(idx + 1));

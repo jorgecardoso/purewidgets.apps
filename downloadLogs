@@ -1,0 +1,1 @@
+/Applications/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.7.2/appengine-java-sdk-1.7.2/bin/appcfg.sh --email=jorgecardoso@ieee.org  --append --severity=0 request_logs war purewidgets-apps.logs.txt <../.appengine-credentials 

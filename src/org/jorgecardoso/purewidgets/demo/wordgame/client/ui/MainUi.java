@@ -79,8 +79,9 @@ public class MainUi extends Composite {
 	 @UiFactory 
 	 PdButton makePdButton() { 
 		 
-		 PdButton tb = new PdButton("another", "Esta é muito difícil!");
+		 PdButton tb = new PdButton("another", "Outra palavra!");
 		 tb.setLongDescription("Por favor, gera outra palavra...");
+		 
 		tb.addActionListener(this.listener);
 //			tb.setOnScreenFeedbackInfo(msgs.userFeedback()+", "+MessagePattern.PATTERN_USER_NICKNAME);
 //			tb.setOffScreenFeedbackTitle(MessagePattern.PATTERN_USER_NICKNAME);
@@ -93,6 +94,7 @@ public class MainUi extends Composite {
 	 PdTextBox makePdTextbox() { 
 		 
 			PdTextBox tb = new PdTextBox("try", "Adivinha a palavra", null);
+			tb.getWidgetOptions().get(0).setSuggestedReferenceCode("pal");
 			tb.addActionListener(this.listener);
 //			tb.setOnScreenFeedbackInfo(msgs.userFeedback()+", "+MessagePattern.PATTERN_USER_NICKNAME);
 //			tb.setOffScreenFeedbackTitle(MessagePattern.PATTERN_USER_NICKNAME);

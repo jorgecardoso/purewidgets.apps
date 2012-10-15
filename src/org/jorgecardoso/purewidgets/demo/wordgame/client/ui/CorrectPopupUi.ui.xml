@@ -5,10 +5,10 @@
 		
 
 		.popupPanel {
-			background: white;
-			border: 10px solid #7ac144;
+			background: #dbf3db;
+			/*border: 10px solid #7ac144;
 			border-radius: 15px;
-			box-shadow: 1px 1px 3px 3px #AAA;
+			box-shadow: 1px 1px 3px 3px #AAA;*/
 			margin: 0px;
 			padding: 0px;
 			overflow: hidden !important;
@@ -23,6 +23,7 @@
 			right: 20%;*/
 		}
 		.labelTitle {
+			margin-top: 20px;
 			text-align: center;
 			font-family: 'Nunito', sans-serif;
 			font-size: 4.5rem;

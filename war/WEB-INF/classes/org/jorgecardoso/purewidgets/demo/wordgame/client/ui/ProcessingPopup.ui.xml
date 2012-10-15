@@ -4,9 +4,9 @@
 	<ui:style  type='org.jorgecardoso.purewidgets.demo.wordgame.client.ui.ProcessingPopup.Style'>
 		.popupPanel {
 			background: white;
-			border: 10px solid #7ac144;
+			/*border: 5px solid #008000;
 			border-radius: 15px;
-			box-shadow: 1px 1px 3px 3px #AAA;
+			box-shadow: 1px 1px 3px 3px #AAA;*/
 			margin: 0px;
 			padding: 0px;
 			overflow: hidden;
