@@ -42,14 +42,15 @@ public class SuggestScreen extends Composite  {
 
 
 	 @UiFactory 
-	 PdTextBox makePdTextbox() { 
+	 PdTextBox makePdTextbox() {
 		 
 			PdTextBox tb = new PdTextBox("suggest", msgs.askForPolls(), null);
+			
 			tb.setOnScreenFeedbackInfo(msgs.userFeedback()+", "+MessagePattern.PATTERN_USER_NICKNAME);
 			tb.setOffScreenFeedbackTitle(MessagePattern.PATTERN_USER_NICKNAME);
 			tb.setOffScreenFeedbackInfo(msgs.userFeedback());
-			//tb.setLongDescription(poll.getPollQuestion() );
-						return tb;
+
+			return tb;
    }
 
 }

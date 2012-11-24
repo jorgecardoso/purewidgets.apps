@@ -357,10 +357,10 @@ function wordgame(){
   $stats && $stats({moduleName:'wordgame', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'selectingPermutation'});
   if (!isHostedMode()) {
     try {
-      unflattenKeylistIntoAnswers(['pt', 'safari'], '0600C5346ED66E704E573925CC679C9E');
-      unflattenKeylistIntoAnswers(['pt', 'gecko1_8'], '7469C8C390BD10E529F4E97E434D4FF5');
-      unflattenKeylistIntoAnswers(['default', 'gecko1_8'], 'C3E13689FA0F935D2099FB11C2D46C42');
-      unflattenKeylistIntoAnswers(['default', 'safari'], 'F8DA855760987E6CBCA2E52BA7814F16');
+      unflattenKeylistIntoAnswers(['pt', 'gecko1_8'], '53F78F69AA409DED0DE94B38A9734473');
+      unflattenKeylistIntoAnswers(['default', 'safari'], '622ED188BB8037A75BDBA5AEF5C69563');
+      unflattenKeylistIntoAnswers(['default', 'gecko1_8'], '81F931B576F03AC5ECC1713EE567E8B4');
+      unflattenKeylistIntoAnswers(['pt', 'safari'], 'E1C776F59CC3E7300A7C4614D8523DA4');
       strongName = answers[computePropValue('locale')][computePropValue('user.agent')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {
