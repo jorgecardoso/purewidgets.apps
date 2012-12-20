@@ -6,6 +6,7 @@ war/WEB-INF/deploy
 war/everybodyvotes
 war/instructions
 war/publicyoutubeplayer
+war/wordgame
 extra
 extra/*
 .settings

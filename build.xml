@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="PW Apps" default="gwtc-all" basedir=".">
     
-  <property name="production" value = "true" />
+  <property name="production" value = "false" />
   
   <property name="module.publicyoutubeplayer" value = "org.jorgecardoso.purewidgets.demo.publicyoutubeplayer.PublicYoutubePlayer" />
   <property name="module.everybodyvotes" value = "org.jorgecardoso.purewidgets.demo.everybodyvotes.EveryBodyVotes" />
